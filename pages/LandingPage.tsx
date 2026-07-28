@@ -251,6 +251,9 @@ const LandingPage: React.FC = () => {
                    <Sparkles size={14} />
                    All 12 Premium Courses Included
                  </div>
+                 <p className="block text-sm md:text-base font-bold text-slate-900 mb-2">
+                    🎓 You will get Design Management certificate equivalent to Diploma
+                 </p>
                  <h2 className="text-2xl md:text-4xl font-display font-black text-gray-900 leading-tight">Master Every Tool Needed<br/>For Professional Design</h2>
              </div>
            </div>
