@@ -365,7 +365,7 @@ const LandingPage: React.FC = () => {
         <section className="py-16 bg-slate-50 border-b border-slate-200 grid-bg">
           <div className="max-w-5xl mx-auto px-5 text-center">
             <div className="reveal mb-10">
-              <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 tracking-tight">10,000+ Nigerian Students</h2>
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 tracking-tight">10,000+ {country.name} Students {country.flag}</h2>
             </div>
             <div className="flex flex-col md:flex-row justify-center items-center gap-6 reveal">
               <img src="/student1.jpg" alt="Nigerian Students 1" className="rounded-2xl shadow-xl w-full md:w-1/2 object-cover border border-slate-200 hover:scale-[1.02] transition-transform" />

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, ShieldCheck, Zap, CheckCircle, Users, X } from 'lucide-react';
+import { useCountry } from '../lib/CountryContext';
 
 export const getDriveUrl = (id: string) => `https://drive.google.com/thumbnail?id=${id}&sz=w1600`;
 
@@ -10,10 +11,6 @@ export const RAW_JOINERS = [
   { name: "Tunde B.", city: "Port Harcourt", time: "12 min ago" },
   { name: "Amara E.", city: "Enugu", time: "15 min ago" },
   { name: "Chinedu O.", city: "Lagos", time: "18 min ago" },
-  { name: "Funke K.", city: "Kano", time: "22 min ago" },
-  { name: "Olumide M.", city: "Benin City", time: "25 min ago" },
-  { name: "Blessing P.", city: "Warri", time: "30 min ago" },
-  { name: "Adewale D.", city: "Abuja", time: "33 min ago" },
 ];
 
 export const PROBLEM_POINTS = [
@@ -63,6 +60,7 @@ const FlipDigit = ({ value }: { value: string }) => (
 
 /* ─── CTA WIDGET ─── */
 export const CallToActionWidget = ({ timeLeft, onClick, headline, subtext }: { timeLeft: { h: number; m: number; s: number }; onClick: () => void; headline?: string; subtext?: string }) => {
+  const { country } = useCountry();
   const f = (v: number) => v.toString().padStart(2, '0');
   const h = f(timeLeft.h), m = f(timeLeft.m), s = f(timeLeft.s);
   return (
@@ -81,7 +79,7 @@ export const CallToActionWidget = ({ timeLeft, onClick, headline, subtext }: { t
           <div className="flip-clock-group"><div className="flex gap-1"><FlipDigit value={s[0]} /><FlipDigit value={s[1]} /></div><span className="flip-clock-label">SEC</span></div>
         </div>
         <div className="mb-6">
-          <p className="text-red-400 font-semibold text-sm mt-2">Eid Al-Adha Offer — Don't miss this ₦37,000 steal deal</p>
+          <p className="text-red-400 font-semibold text-sm mt-2">Students Week Offer — Get the bundle for {country.formattedPrice} {country.flag}</p>
         </div>
         <div className="w-full max-w-md mx-auto">
           <button onClick={onClick} className="cta-primary w-full text-white px-8 py-4 md:py-5 rounded-2xl transition-all duration-300 flex items-center justify-center gap-3 group hover:scale-[1.03] active:scale-[0.98] premium-stroke" style={{ background: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)', boxShadow: '0 6px 20px -4px rgba(249,115,22,0.5), 0 12px 40px -8px rgba(234,88,12,0.3)', border: '1px solid rgba(255,255,255,0.15)' }}>
@@ -101,24 +99,38 @@ export const CallToActionWidget = ({ timeLeft, onClick, headline, subtext }: { t
   );
 };
 
-/* ─── SOCIAL PROOF TOAST ─── */
+/* ─── DYNAMIC SOCIAL PROOF TOAST (Adapts to visitor country) ─── */
 export const SocialProofToast: React.FC = () => {
+  const { country } = useCountry();
   const [visible, setVisible] = useState(false);
   const [idx, setIdx] = useState(0);
+
+  const cityList = country.cities && country.cities.length > 0
+    ? country.cities
+    : [{ name: "Chinedu O.", city: "Lagos" }, { name: "Adaeze N.", city: "Abuja" }];
+
   useEffect(() => {
-    const show = () => { setVisible(true); setTimeout(() => { setVisible(false); setTimeout(() => setIdx(p => (p + 1) % RAW_JOINERS.length), 500); }, 4000); };
+    const show = () => {
+      setVisible(true);
+      setTimeout(() => {
+        setVisible(false);
+        setTimeout(() => setIdx(p => (p + 1) % cityList.length), 500);
+      }, 4000);
+    };
     const t1 = setTimeout(show, 6000);
     const t2 = setInterval(show, 15000);
     return () => { clearTimeout(t1); clearInterval(t2); };
-  }, []);
-  const j = RAW_JOINERS[idx];
+  }, [cityList.length]);
+
+  const j = cityList[idx % cityList.length];
+
   return (
     <div className={`fixed bottom-20 left-4 z-[70] transition-all duration-500 ${visible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
       <div className="bg-white/95 backdrop-blur-xl border border-slate-200 rounded-2xl px-5 py-3 shadow-2xl flex items-center gap-3 max-w-xs">
         <div className="w-8 h-8 bg-emerald-50 rounded-full flex items-center justify-center shrink-0"><CheckCircle size={16} className="text-emerald-600" /></div>
         <div>
-          <p className="text-sm font-bold text-slate-900">{j.name} from {j.city}</p>
-          <p className="text-xs text-slate-500">just enrolled • {j.time}</p>
+          <p className="text-sm font-bold text-slate-900">{j.name} from {j.city}, {country.name} {country.flag}</p>
+          <p className="text-xs text-slate-500">just enrolled • 2 min ago</p>
         </div>
       </div>
     </div>
@@ -142,33 +154,29 @@ export const VALUE_STACK_ITEMS = [
 ];
 
 export const TESTIMONIALS_LANDING = [
-  { name: 'Ngozi A.', role: 'Freelance Designer', location: 'Lagos, NG', content: 'I used to cry when V-Ray crashed. Literally. The support team is so incredibly kind and patient. Now I use AI so well that I feel completely secure in my career.' },
-  { name: 'Chinedu O.', role: 'Senior Architect', location: 'Abuja, NG', content: 'I feared AI would replace my studio. But Avada held my hand through the transition. We now use it to generate gorgeous concepts for clients in minutes.' },
-  { name: 'Amara E.', role: '3D Visualizer', location: 'Enugu, NG', content: 'The step-by-step guidance is amazing for beginners. Whenever my scene looks dark or weird, I just ask the support team. They are absolute lifesavers.' },
-  { name: 'Emeka N.', role: 'Architecture Student', location: 'Port Harcourt, NG', content: 'I felt so behind in university because they still teach completely outdated methods. Within two weeks here, I gained the confidence to start taking well-paying projects.' },
-  { name: 'Aisha M.', role: 'Interior Designer', location: 'Kano, NG', content: 'To have someone to actually look at your screen and say "Oh, simply press this button" saves weeks of frustration. Best ₦37,000 I ever spent.' },
-  { name: 'Tunde B.', role: 'Landscape Architect', location: 'Ibadan, NG', content: 'The continuous support makes learning stress-free. D5 Render combined with AI generation is just magical. It took away all my anxiety about falling behind.' },
-  { name: 'Funke K.', role: 'Studio Owner', location: 'Lagos, NG', content: 'My team of 4 now works with zero stress because we integrated AI the way Avada taught us. No more late nights before client meetings.' },
-  { name: 'Olumide M.', role: 'Freelance Visualizer', location: 'Benin City, NG', content: 'I almost quit 3D entirely because it felt too overwhelming. The friendly support team here broke it down to be so simple. I owe them my entire successful freelance business.' },
-  { name: 'Blessing P.', role: 'Design Student', location: 'Warri, NG', content: 'Started from absolute zero. I didn\'t even know what SketchUp was. 15 days later, thanks to their constant hand-holding, my portfolio landed me a paid studio gig.' },
-  { name: 'Adewale D.', role: 'Architect & Educator', location: 'Abuja, NG', content: 'I teach at a university, and sadly, we don\'t provide this level of modern, practical support. I genuinely recommend this to all my anxious students to secure their futures.' },
+  { name: 'Ngozi A.', role: 'Freelance Designer', location: 'Design Studio', content: 'I used to cry when V-Ray crashed. Literally. The support team is so incredibly kind and patient. Now I use AI so well that I feel completely secure in my career.' },
+  { name: 'Chinedu O.', role: 'Senior Architect', location: 'Architectural Firm', content: 'I feared AI would replace my studio. But Avada held my hand through the transition. We now use it to generate gorgeous concepts for clients in minutes.' },
+  { name: 'Amara E.', role: '3D Visualizer', location: 'Rendering Studio', content: 'The step-by-step guidance is amazing for beginners. Whenever my scene looks dark or weird, I just ask the support team. They are absolute lifesavers.' },
+  { name: 'Emeka N.', role: 'Architecture Student', location: 'University Student', content: 'I felt so behind in university because they still teach completely outdated methods. Within two weeks here, I gained the confidence to start taking well-paying projects.' },
+  { name: 'Aisha M.', role: 'Interior Designer', location: 'Interior Studio', content: 'To have someone to actually look at your screen and say "Oh, simply press this button" saves weeks of frustration. Best decision I ever made.' },
+  { name: 'Tunde B.', role: 'Landscape Architect', location: 'Landscape Firm', content: 'The continuous support makes learning stress-free. D5 Render combined with AI generation is just magical. It took away all my anxiety about falling behind.' },
 ];
 
 export const FAQ_ITEMS_LANDING = [
   { question: "I'm terrified of AI taking my job. Will this help?", answer: "We completely understand that fear! AI is scary if you ignore it, but it's an incredible superpower when you master it. We will hold your hand and teach you exactly how to use AI as your personal assistant, making you brilliantly fast and completely irreplaceable." },
   { question: "I am a complete beginner and get overwhelmed easily. Is this for me?", answer: "Yes, this program was built exactly with you in mind. We know learning software can be intimidating. We start from the absolute basics ('how to click here') and our team is always a WhatsApp message away to hold your hand when you feel stuck." },
   { question: "Are you really going to help me, or is this just another course?", answer: "This is a true 24/7 support community. When your render looks weird or your software crashes, you don't have to figure it out alone. You reach out to us, and we patiently help you fix it. Your success is our personal mission." },
-  { question: "Is it really just ₦37,000? What's the catch?", answer: "No catch! We simply want to make high-quality, supportive design education accessible to everyone. It's a one-time payment of ₦37,000 for lifetime access to the courses and our 24/7 support team." },
+  { question: "Is the pricing really affordable? What's the catch?", answer: "No catch! We simply want to make high-quality, supportive design education accessible to everyone. It's a one-time payment for lifetime access to the courses and our 24/7 support team." },
   { question: "Do I need to buy expensive software subscriptions?", answer: "Not at all. We will show you exactly how to easily access official free or student versions of the software. We want you earning safely, not spending unnecessarily on expensive licenses." },
-  { question: "What if I feel like it's not working for me?", answer: "We want this to be completely stress-free for you. If you join and feel it's not a comforting and productive fit, just email us within 7 days. We will refund your ₦37,000 immediately, no questions asked, and we'll still be rooting for you!" },
+  { question: "What if I feel like it's not working for me?", answer: "We want this to be completely stress-free for you. If you join and feel it's not a comforting and productive fit, just email us within 7 days. We will refund your payment immediately, no questions asked, and we'll still be rooting for you!" },
   { question: "Can I access the training safely on my mobile?", answer: "Yes! All courses are hosted clearly online and work perfectly on any device — laptop, tablet, or phone. You can learn comfortably at your own pace anywhere." },
 ];
 
 export const INCOME_TIERS = [
-  { label: 'Single Render Charge', before: 'Struggling to ask ₦15,000', after: 'Confidently quoting ₦100,000+', icon: '🖼️' },
-  { label: 'Interior Design Project', before: 'Rejected for poor 3D quality', after: 'Winning ₦1,500,000+ contracts', icon: '🏠' },
+  { label: 'Single Render Charge', before: 'Struggling with low rates', after: 'Confidently quoting 10x higher rates', icon: '🖼️' },
+  { label: 'Interior Design Project', before: 'Rejected for poor 3D quality', after: 'Winning major luxury contracts', icon: '🏠' },
   { label: 'Time to Finish a Room', before: '3 Frustrating, Sleepless Nights', after: '2 Easy Hours with our AI Workflow', icon: '⏱️' },
-  { label: 'Your Career Confidence', before: 'Constantly Anxious & Overwhelmed', after: 'Relaxed, In-Demand Professional', icon: '🌟' },
+  { label: 'Your Career Confidence', before: 'Constantly Anxious & Overwhelmed', after: 'Relaxed, In-Demand Professional', icon: '🌟' }
 ];
 
 export const COURSES_LANDING = [
