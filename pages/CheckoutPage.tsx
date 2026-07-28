@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Course } from '../types';
 import { COURSES, COURSE_CATEGORIES, BUNDLE_PRICE, TESTIMONIALS, FAQ_ITEMS } from '../constants';
-import { ChevronDown, Sparkles, ArrowRight, Timer, Star, CheckCircle2, Zap, Check, Download, Phone, Mail, Lock, Loader2, X, Eye } from 'lucide-react';
+import { ChevronDown, Sparkles, ArrowRight, Timer, Star, CheckCircle2, Zap, Check, Download, Phone, Mail, Lock, Loader2, X, Eye, Award } from 'lucide-react';
 import { openSelarCheckout } from '../services/razorpay';
 import { CourseDetailModal } from '../components/CourseDetailModal';
 import { TextMarquee } from '../components/ui/text-marquee';
 import { ReviewTicker } from '../components/ReviewTicker';
 import { trackInitiateCheckout, trackLead, trackAddPaymentInfo, trackSubmitApplication, trackPurchase, trackCompleteRegistration } from '../lib/pixel';
 import { useCountry } from '../lib/CountryContext';
-import { DiplomaBadge } from '../components/DiplomaBadge';
 
 
 // Logo Component
@@ -247,12 +246,21 @@ const CheckoutPage: React.FC = () => {
         {/* ═══════ COURSE SLIDESHOW ═══════ */}
         <section className="py-8 md:py-16 bg-white border-b border-gray-100 overflow-hidden relative">
            <div className="container mx-auto px-4 mb-8">
-             <div className="text-center reveal">
+             <div className="text-center reveal flex flex-col items-center">
+                 {/* 🎓 DIPLOMA CERTIFICATE NOTE (OVER All 12 Premium Courses Included) */}
+                 <div className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-500/10 via-amber-400/20 to-amber-500/10 border border-amber-400/50 rounded-full text-slate-900 font-extrabold text-xs md:text-sm shadow-sm backdrop-blur-sm animate-[pulse_3s_infinite] hover:scale-[1.02] transition-transform mb-3">
+                   <span className="text-base">🎓</span>
+                   <span className="text-amber-950 font-black tracking-tight">
+                     You will get Design Management certificate equivalent to Diploma
+                   </span>
+                   <Award size={16} className="text-amber-600 shrink-0" />
+                 </div>
+
                  <div className="inline-flex items-center gap-2 text-brand-primary text-xs font-bold uppercase tracking-widest mb-2">
                    <Sparkles size={14} />
                    All 12 Premium Courses Included
                  </div>
-                 <DiplomaBadge />
+                 
                  <h2 className="text-2xl md:text-4xl font-display font-black text-gray-900 leading-tight">Master Every Tool Needed<br/>For Professional Design</h2>
              </div>
            </div>

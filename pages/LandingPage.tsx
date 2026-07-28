@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Star, CheckCircle, CheckCircle2, X, ChevronDown, Sparkles, Eye, Download, Phone, Mail, Lock, Loader2, Timer, Check } from 'lucide-react';
+import { ArrowRight, Star, CheckCircle, CheckCircle2, X, ChevronDown, Sparkles, Eye, Download, Phone, Mail, Lock, Loader2, Timer, Check, Award } from 'lucide-react';
 import { COURSES } from '../constants';
 import { WhatsAppButton } from '../components/WhatsAppButton';
 import { openSelarCheckout } from '../services/razorpay';
 import { ReviewTicker } from '../components/ReviewTicker';
 import { trackInitiateCheckout, trackLead, trackAddPaymentInfo, trackSubmitApplication, trackPurchase, trackCompleteRegistration } from '../lib/pixel';
 import { useCountry } from '../lib/CountryContext';
-import { DiplomaBadge } from '../components/DiplomaBadge';
 
 import {
   Logo, SocialProofToast,
@@ -235,10 +234,10 @@ const LandingPage: React.FC = () => {
                       <span className="text-xl">🏢</span>
                       <span className="font-display font-extrabold text-slate-900 text-base md:text-lg">Own Design Firm</span>
                     </div>
+                    <p className="text-slate-500 text-xs md:text-sm pl-8 font-medium">Freelance & studio projects</p>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </section>
@@ -246,12 +245,21 @@ const LandingPage: React.FC = () => {
         {/* ═══════ COURSE SLIDESHOW — Master Every Tool ═══════ */}
         <section className="py-8 md:py-16 bg-white border-b border-gray-100 overflow-hidden relative">
            <div className="container mx-auto px-4 mb-8">
-             <div className="text-center reveal">
+             <div className="text-center reveal flex flex-col items-center">
+                 {/* 🎓 DIPLOMA CERTIFICATE NOTE (OVER All 12 Premium Courses Included) */}
+                 <div className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-500/10 via-amber-400/20 to-amber-500/10 border border-amber-400/50 rounded-full text-slate-900 font-extrabold text-xs md:text-sm shadow-sm backdrop-blur-sm animate-[pulse_3s_infinite] hover:scale-[1.02] transition-transform mb-3">
+                   <span className="text-base">🎓</span>
+                   <span className="text-amber-950 font-black tracking-tight">
+                     You will get Design Management certificate equivalent to Diploma
+                   </span>
+                   <Award size={16} className="text-amber-600 shrink-0" />
+                 </div>
+
                  <div className="inline-flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-widest mb-2">
                    <Sparkles size={14} />
                    All 12 Premium Courses Included
                  </div>
-                 <DiplomaBadge />
+
                  <h2 className="text-2xl md:text-4xl font-display font-black text-gray-900 leading-tight">Master Every Tool Needed<br/>For Professional Design</h2>
              </div>
            </div>
