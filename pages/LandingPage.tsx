@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Star, CheckCircle, CheckCircle2, X, ChevronDown, Sparkles, Eye, Download, Phone, Mail, Lock, Loader2, Timer, Check, Globe } from 'lucide-react';
+import { ArrowRight, Star, CheckCircle, CheckCircle2, X, ChevronDown, Sparkles, Eye, Download, Phone, Mail, Lock, Loader2, Timer, Check } from 'lucide-react';
 import { COURSES } from '../constants';
 import { WhatsAppButton } from '../components/WhatsAppButton';
 import { openSelarCheckout } from '../services/razorpay';
 import { ReviewTicker } from '../components/ReviewTicker';
 import { trackInitiateCheckout, trackLead, trackAddPaymentInfo, trackSubmitApplication, trackPurchase, trackCompleteRegistration } from '../lib/pixel';
 import { useCountry } from '../lib/CountryContext';
-import { COUNTRIES } from '../lib/countryConfig';
+
 import {
   Logo, SocialProofToast,
   PROBLEM_POINTS, TRANSFORMATION_STORIES, FEAR_STATS,
@@ -84,7 +84,7 @@ const CtaWithTimer = ({ timeLeft, onClick, variant = 'orange' }: { timeLeft: { h
 };
 
 const LandingPage: React.FC = () => {
-  const { country, setCountryCode } = useCountry();
+  const { country } = useCountry();
   const [timeLeft, setTimeLeft] = useState(() => { const D = (3 * 3600 + 36 * 60 + 20) * 1000, r = D - (Date.now() % D); return { h: Math.floor((r / 3600000) % 24), m: Math.floor((r / 60000) % 60), s: Math.floor((r / 1000) % 60) }; });
   const [showStickyBar, setShowStickyBar] = useState(false);
   useEffect(() => { window.scrollTo(0, 0); }, []);
@@ -142,25 +142,11 @@ const LandingPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans overflow-x-hidden selection:bg-blue-100 grid-bg">
-      {/* ═══ DYNAMIC ANNOUNCEMENT BANNER WITH COUNTRY SELECTOR ═══ */}
+      {/* ═══ DYNAMIC ANNOUNCEMENT BANNER (Auto-detected by IP) ═══ */}
       <div className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 text-white py-2.5 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIi8+PC9zdmc+')] opacity-30"></div>
-        <div className="relative z-10 flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm font-bold">
+        <div className="relative z-10 flex items-center justify-center gap-2 text-sm md:text-base font-bold">
           <span>{country.bannerText}</span>
-          <div className="flex items-center gap-1 bg-black/20 hover:bg-black/40 px-2 py-0.5 rounded-full backdrop-blur-sm transition-colors border border-white/20 ml-1">
-            <Globe size={12} className="text-emerald-200" />
-            <select
-              value={country.code}
-              onChange={(e) => setCountryCode(e.target.value)}
-              className="bg-transparent text-white text-xs font-bold focus:outline-none cursor-pointer pr-1"
-            >
-              {Object.values(COUNTRIES).map((c) => (
-                <option key={c.code} value={c.code} className="bg-gray-900 text-white">
-                  {c.flag} {c.name} ({c.currencySymbol})
-                </option>
-              ))}
-            </select>
-          </div>
         </div>
       </div>
 
@@ -176,7 +162,7 @@ const LandingPage: React.FC = () => {
             <div className="flex flex-col items-center text-center pt-8 md:pt-16">
               <div className="mb-4 inline-flex flex-col items-center">
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-50 border border-orange-200 rounded-full">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-700 whitespace-nowrap">Start charging <span className="text-orange-600">₦500,000-₦1,000,000</span> for designing and rendering.</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-700 whitespace-nowrap">Start charging <span className="text-orange-600">premium rates</span> for designing and rendering.</span>
                 </div>
               </div>
               <h1 className="leading-none md:leading-[1.15] mb-6 text-slate-900 tracking-tight">
@@ -459,7 +445,7 @@ const LandingPage: React.FC = () => {
                   <li className="flex items-center gap-3"><CheckCircle size={18} className="text-orange-500 shrink-0" /><span className="text-slate-800">24/7 support from team, installation help to course doubts—whenever you're stuck, we're here.</span></li>
                 </ul>
                 <div className="mt-6 pt-6 border-t border-orange-100 flex items-center justify-between">
-                  <span className="text-slate-600 text-sm italic font-bold">A complete learning ecosystem for just ₦37,000.</span>
+                  <span className="text-slate-600 text-sm italic font-bold">A complete learning ecosystem for just {country.formattedPrice}.</span>
                   <button onClick={openPaymentModal} className="text-orange-600 font-bold text-sm hover:text-orange-800 flex items-center gap-1 group">Join Our Community <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" /></button>
                 </div>
               </div>
@@ -782,7 +768,7 @@ const LandingPage: React.FC = () => {
             </div>
             <h2 className="text-3xl font-display font-black text-gray-900 mb-2">Payment Successful!</h2>
             <p className="text-gray-500 mb-6 leading-relaxed">
-              Your payment of <span className="font-bold text-gray-900">₦{BUNDLE_PRICE.toLocaleString()}</span> was received. Welcome to Avada!
+              Your payment of <span className="font-bold text-gray-900">{country.formattedPrice}</span> was received. Welcome to Avada!
             </p>
             <div className="bg-gray-50 rounded-2xl p-5 mb-6 text-left border border-gray-100">
               <div className="flex items-center gap-2 mb-2">

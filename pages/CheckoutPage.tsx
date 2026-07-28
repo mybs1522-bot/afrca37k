@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Course } from '../types';
 import { COURSES, COURSE_CATEGORIES, BUNDLE_PRICE, TESTIMONIALS, FAQ_ITEMS } from '../constants';
-import { ChevronDown, Sparkles, ArrowRight, Timer, Star, CheckCircle2, Zap, Check, Download, Phone, Mail, Lock, Loader2, X, Eye, Globe } from 'lucide-react';
+import { ChevronDown, Sparkles, ArrowRight, Timer, Star, CheckCircle2, Zap, Check, Download, Phone, Mail, Lock, Loader2, X, Eye } from 'lucide-react';
 import { openSelarCheckout } from '../services/razorpay';
 import { CourseDetailModal } from '../components/CourseDetailModal';
 import { TextMarquee } from '../components/ui/text-marquee';
 import { ReviewTicker } from '../components/ReviewTicker';
 import { trackInitiateCheckout, trackLead, trackAddPaymentInfo, trackSubmitApplication, trackPurchase, trackCompleteRegistration } from '../lib/pixel';
 import { useCountry } from '../lib/CountryContext';
-import { COUNTRIES } from '../lib/countryConfig';
+
 
 // Logo Component
 const Logo = () => {
@@ -32,7 +32,7 @@ const Logo = () => {
 };
 
 const CheckoutPage: React.FC = () => {
-  const { country, setCountryCode } = useCountry();
+  const { country } = useCountry();
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [timeLeft, setTimeLeft] = useState({ h: 2, m: 23, s: 49 });
@@ -142,25 +142,11 @@ const CheckoutPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-transparent text-gray-900 font-sans overflow-x-hidden selection:bg-blue-100 grid-bg">
-      {/* ═══ DYNAMIC ANNOUNCEMENT BANNER WITH COUNTRY SELECTOR ═══ */}
+      {/* ═══ DYNAMIC ANNOUNCEMENT BANNER (Auto-detected by IP) ═══ */}
       <div className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 text-white py-2.5 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIi8+PC9zdmc+')] opacity-30"></div>
-        <div className="relative z-10 flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm font-bold">
+        <div className="relative z-10 flex items-center justify-center gap-2 text-sm md:text-base font-bold">
           <span>{country.bannerText}</span>
-          <div className="flex items-center gap-1 bg-black/20 hover:bg-black/40 px-2 py-0.5 rounded-full backdrop-blur-sm transition-colors border border-white/20 ml-1">
-            <Globe size={12} className="text-emerald-200" />
-            <select
-              value={country.code}
-              onChange={(e) => setCountryCode(e.target.value)}
-              className="bg-transparent text-white text-xs font-bold focus:outline-none cursor-pointer pr-1"
-            >
-              {Object.values(COUNTRIES).map((c) => (
-                <option key={c.code} value={c.code} className="bg-gray-900 text-white">
-                  {c.flag} {c.name} ({c.currencySymbol})
-                </option>
-              ))}
-            </select>
-          </div>
         </div>
       </div>
       <style>{`
@@ -414,7 +400,7 @@ const CheckoutPage: React.FC = () => {
                     Best Value Deal
                   </div>
                   <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-3">
-                    All {COURSES.length} Courses <span className="text-brand-accent">₦{BUNDLE_PRICE.toLocaleString()}</span>
+                    All {COURSES.length} Courses <span className="text-brand-accent">{country.formattedPrice}</span>
                   </h2>
                   <p className="text-gray-400 text-sm">
                     Lifetime access to every course. Free software included. 7-day money-back guarantee.
@@ -656,7 +642,7 @@ const CheckoutPage: React.FC = () => {
 
               <h2 className="text-3xl font-display font-black text-gray-900 mb-2">Payment Successful!</h2>
               <p className="text-gray-500 mb-6 leading-relaxed">
-                Your payment of <span className="font-bold text-gray-900">₦{BUNDLE_PRICE.toLocaleString()}</span> was received. Welcome to Avada!
+                Your payment of <span className="font-bold text-gray-900">{country.formattedPrice}</span> was received. Welcome to Avada!
               </p>
 
               <div className="bg-gray-50 rounded-2xl p-5 mb-6 text-left border border-gray-100">

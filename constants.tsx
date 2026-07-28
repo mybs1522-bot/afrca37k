@@ -281,7 +281,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'Aisha Mohammed',
     role: 'Interior Designer',
     location: 'Kano, Nigeria',
-    content: 'I can now present 10 variations to clients in the time it used to take for one. Best ₦7,500 I ever spent.'
+    content: 'I can now present 10 variations to clients in the time it used to take for one. Best investment I ever made.'
   },
   {
     name: 'Tunde Bakare',
@@ -298,7 +298,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: "Can I buy individual courses or only the bundle?",
-    answer: "Both options are available! Each course is ₦7,500 individually, or get all 12 for just ₦37,000 — saving over ₦53,000. The bundle is by far the best deal."
+    answer: "Both options are available! Each course is available individually, or get all 12 in the bundle for the best deal — saving over 60%. The bundle is by far the best value."
   },
   {
     question: "Are project files included?",
