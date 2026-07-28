@@ -6,6 +6,7 @@ import { openSelarCheckout } from '../services/razorpay';
 import { ReviewTicker } from '../components/ReviewTicker';
 import { trackInitiateCheckout, trackLead, trackAddPaymentInfo, trackSubmitApplication, trackPurchase, trackCompleteRegistration } from '../lib/pixel';
 import { useCountry } from '../lib/CountryContext';
+import { DiplomaBadge } from '../components/DiplomaBadge';
 
 import {
   Logo, SocialProofToast,
@@ -234,7 +235,6 @@ const LandingPage: React.FC = () => {
                       <span className="text-xl">🏢</span>
                       <span className="font-display font-extrabold text-slate-900 text-base md:text-lg">Own Design Firm</span>
                     </div>
-                    <p className="text-slate-500 text-xs md:text-sm pl-8 font-medium">Freelance & studio projects</p>
                   </div>
                 </div>
               </div>
@@ -251,9 +251,7 @@ const LandingPage: React.FC = () => {
                    <Sparkles size={14} />
                    All 12 Premium Courses Included
                  </div>
-                 <p className="block text-sm md:text-base font-bold text-slate-900 mb-2">
-                    🎓 You will get Design Management certificate equivalent to Diploma
-                 </p>
+                 <DiplomaBadge />
                  <h2 className="text-2xl md:text-4xl font-display font-black text-gray-900 leading-tight">Master Every Tool Needed<br/>For Professional Design</h2>
              </div>
            </div>
