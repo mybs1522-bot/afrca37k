@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShoppingCart, ArrowRight, Sparkles } from 'lucide-react';
+import { useCountry } from '../lib/CountryContext';
 
 interface CartBarProps {
     itemCount: number;
@@ -9,6 +10,7 @@ interface CartBarProps {
 }
 
 export const CartBar: React.FC<CartBarProps> = ({ itemCount, total, onCheckout, onViewCart }) => {
+    const { country } = useCountry();
     const [isBlinking, setIsBlinking] = React.useState(false);
 
     React.useEffect(() => {
@@ -56,13 +58,13 @@ export const CartBar: React.FC<CartBarProps> = ({ itemCount, total, onCheckout, 
                     <div className="flex items-center gap-3">
                         <div className="text-right hidden sm:block">
                             <div className="text-[10px] text-gray-400 uppercase tracking-widest leading-tight">Total</div>
-                            <div className="text-lg font-display font-bold text-white leading-tight">₦{total.toLocaleString()}</div>
+                            <div className="text-lg font-display font-bold text-white leading-tight">{country.currencySymbol}{total.toLocaleString()}</div>
                         </div>
                         <button
                             onClick={onCheckout}
                             className="bg-brand-primary hover:bg-blue-700 text-white font-bold px-5 py-2 rounded-lg flex items-center gap-1.5 transition-all shadow-glow hover:shadow-glow-lg text-sm"
                         >
-                            <span className="sm:hidden font-display text-base">₦{total.toLocaleString()}</span>
+                            <span className="sm:hidden font-display text-base">{country.currencySymbol}{total.toLocaleString()}</span>
                             <span>Checkout</span>
                             <ArrowRight size={14} />
                         </button>

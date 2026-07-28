@@ -2,6 +2,7 @@ import React from 'react';
 import { X, Trash2, ShoppingBag, ArrowRight, Sparkles, Check, Mail, Phone, Timer, Lock } from 'lucide-react';
 import { Course } from '../types';
 import { COURSES, BUNDLE_PRICE } from '../constants';
+import { useCountry } from '../lib/CountryContext';
 
 interface CartDrawerProps {
     isOpen: boolean;
@@ -22,6 +23,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
     onCheckout,
     timeLeft,
 }) => {
+    const { country } = useCountry();
     const [phone, setPhone] = React.useState('');
     const [email, setEmail] = React.useState('');
     const [phoneError, setPhoneError] = React.useState(false);
@@ -112,7 +114,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                                         <div className="font-bold text-gray-900 text-sm truncate">{course.title}</div>
                                     </div>
                                     <div className="text-right shrink-0 flex items-center gap-2">
-                                        <span className="font-display font-bold text-gray-900">₦{course.price.toLocaleString()}</span>
+                                        <span className="font-display font-bold text-gray-900">{course.price.toLocaleString()}</span>
                                         <button
                                             onClick={() => onRemove(course.id)}
                                             aria-label={`Remove ${course.title}`}
@@ -136,10 +138,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                                     <span className="text-xs font-bold uppercase tracking-widest text-brand-accent">Best Deal</span>
                                 </div>
                                 <div className="font-display font-bold text-base mb-1">
-                                    Get all 12 courses for ₦{BUNDLE_PRICE.toLocaleString()}
+                                    Get all 12 courses for {country.formattedPrice}
                                 </div>
                                 <div className="text-gray-400 text-[10px] mb-3 leading-tight">
-                                    Save ₦{(COURSES.length * 7500 - BUNDLE_PRICE).toLocaleString()} vs buying individually
+                                    Save {country.currencySymbol}{(COURSES.length * 7500 - BUNDLE_PRICE).toLocaleString()} vs buying individually
                                 </div>
                                 <button
                                     onClick={onAddAll}
@@ -160,7 +162,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                                 All 12 courses added!
                             </div>
                             <div className="text-green-600 text-xs">
-                                Bundle discount applied: ₦{savings.toLocaleString()} saved
+                                Bundle discount applied: {country.currencySymbol}{savings.toLocaleString()} saved
                             </div>
                         </div>
                     )}
@@ -219,7 +221,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                         <div className="bg-red-50 rounded-xl p-3 mb-4 flex items-center justify-between border border-red-100">
                             <div className="flex items-center gap-2">
                                 <Timer size={16} className="text-brand-primary animate-pulse" />
-                                <span className="text-xs font-bold text-gray-900">Eid Al-Adha offer ends in:</span>
+                                <span className="text-xs font-bold text-gray-900">Students Week Offer ends in:</span>
                             </div>
                             <div className="flex items-center gap-0.5 font-display font-bold text-sm tabular-nums text-brand-primary bg-white px-2.5 py-1 rounded-md border border-red-100 shadow-sm">
                                 <span>{formatTime(timeLeft.h)}</span>
@@ -234,9 +236,9 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                             <span className="text-gray-500 text-sm font-medium">Total Payable</span>
                             <div className="text-right">
                                 {allAdded && (
-                                    <div className="text-xs text-gray-400 line-through">₦{subtotal.toLocaleString()}</div>
+                                    <div className="text-xs text-gray-400 line-through">{country.currencySymbol}{subtotal.toLocaleString()}</div>
                                 )}
-                                <div className="text-2xl font-display font-bold text-gray-900 tracking-tight">₦{finalTotal.toLocaleString()}</div>
+                                <div className="text-2xl font-display font-bold text-gray-900 tracking-tight">{country.currencySymbol}{finalTotal.toLocaleString()}</div>
                             </div>
                         </div>
                         <button

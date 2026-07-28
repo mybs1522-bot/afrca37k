@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Course } from '../types';
 import { Plus, Check, Eye } from 'lucide-react';
+import { useCountry } from '../lib/CountryContext';
 
 interface CourseCardProps {
     course: Course;
@@ -10,6 +11,7 @@ interface CourseCardProps {
 }
 
 export const CourseCard: React.FC<CourseCardProps> = ({ course, isInCart, onToggleCart, onViewDetails }) => {
+    const { country } = useCountry();
     const [imgError, setImgError] = useState(false);
     const fallbackImage = `https://images.unsplash.com/photo-1518005052304-a37d996b0756?q=80&w=600&auto=format&fit=crop`;
 
@@ -62,8 +64,8 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course, isInCart, onTogg
                 {/* Price + Button Row */}
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
                     <div className="flex items-baseline gap-1.5">
-                        <span className="text-xl md:text-2xl font-display font-bold text-gray-900">₦{course.price.toLocaleString()}</span>
-                        <span className="text-[10px] md:text-sm text-gray-400 line-through">₦{course.originalPrice.toLocaleString()}</span>
+                        <span className="text-xl md:text-2xl font-display font-bold text-gray-900">{country.currencySymbol}{course.price.toLocaleString()}</span>
+                        <span className="text-[10px] md:text-sm text-gray-400 line-through">{country.currencySymbol}{course.originalPrice.toLocaleString()}</span>
                     </div>
 
                     <button
