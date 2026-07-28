@@ -1,5 +1,6 @@
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
+import { trackContact } from '../lib/pixel';
 
 interface WhatsAppButtonProps {
     visible?: boolean;
@@ -10,11 +11,16 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ visible = true }
     const phoneNumber = '918454015333';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=Hi, I have a question about the design courses.`;
 
+    const handleClick = () => {
+        trackContact({ method: 'WhatsApp', content_name: 'WhatsApp Float Button' });
+    };
+
     return (
         <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleClick}
             className="fixed bottom-20 right-4 md:bottom-24 md:right-8 z-50 group"
             aria-label="Chat on WhatsApp"
         >

@@ -4,6 +4,7 @@ import { submitPhoneNumber } from '../services/mockBackend';
 import { openRazorpayCheckout } from '../services/razorpay';
 import { PRICING_PLANS, COURSES } from '../constants';
 import { Course } from '../types';
+import { trackInitiateCheckout, trackSubscribe, trackCustomizeProduct, trackAddPaymentInfo, trackPurchase, trackCompleteRegistration } from '../lib/pixel';
 
 interface PaymentModalProps {
   isOpen: boolean;
@@ -31,6 +32,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, ini
     if (isOpen) {
       setStep(initialCourse ? 'DETAILS' : 'PACKAGE_PREVIEW');
       setError('');
+      trackInitiateCheckout();
     }
   }, [isOpen, initialCourse]);
 
@@ -87,6 +89,8 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, ini
 
   const handlePlanSelect = (id: string) => {
     setSelectedPlanId(id);
+    trackCustomizeProduct({ plan_id: id });
+    trackSubscribe({ value: 37000, currency: 'NGN' });
   };
 
   const handleDetailsContinue = () => {
@@ -99,7 +103,8 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, ini
   const handleRazorpaySuccess = (paymentId: string) => {
     setIsLoading(false);
     setStep('SUCCESS');
-    console.log("Transaction ID:", paymentId);
+    trackPurchase({ transaction_id: paymentId, value: 37000, currency: 'NGN' });
+    trackCompleteRegistration({ status: true });
   };
 
   const handleRazorpayFailure = (error: any) => {
@@ -111,6 +116,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, ini
     setError('');
     if (!selectedPlan) return;
     setIsLoading(true);
+    trackAddPaymentInfo({ content_name: selectedPlan.duration, value: 37000, currency: 'NGN' });
 
     try {
       if (selectedPlan.price === '$49') {

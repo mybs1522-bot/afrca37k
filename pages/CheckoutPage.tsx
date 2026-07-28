@@ -6,6 +6,7 @@ import { openSelarCheckout } from '../services/razorpay';
 import { CourseDetailModal } from '../components/CourseDetailModal';
 import { TextMarquee } from '../components/ui/text-marquee';
 import { ReviewTicker } from '../components/ReviewTicker';
+import { trackInitiateCheckout, trackLead, trackAddPaymentInfo, trackSubmitApplication, trackPurchase, trackCompleteRegistration } from '../lib/pixel';
 
 // Logo Component
 const Logo = () => (
@@ -41,6 +42,18 @@ const CheckoutPage: React.FC = () => {
   const [paymentError, setPaymentError] = useState('');
   const [highlightIndex, setHighlightIndex] = useState<number>(-1);
   const [mobileSlideIndex, setMobileSlideIndex] = useState(0);
+
+  const openModal = () => {
+    setShowPaymentModal(true);
+    trackInitiateCheckout();
+  };
+
+  useEffect(() => {
+    if (paymentSuccess) {
+      trackPurchase({ transaction_id: paymentSuccess, value: 37000, currency: 'NGN' });
+      trackCompleteRegistration({ status: true });
+    }
+  }, [paymentSuccess]);
 
   // Auto-slide for mobile showcase
   useEffect(() => {
@@ -102,6 +115,11 @@ const CheckoutPage: React.FC = () => {
     if (!fullName.trim()) { setFullNameError(true); hasError = true; } else { setFullNameError(false); }
     if (!email || !validateEmail(email)) { setEmailError(true); hasError = true; } else { setEmailError(false); }
     if (hasError) return;
+
+    const userData = { email, name: fullName.trim() };
+    trackLead({ content_name: 'Checkout Form Submission' }, userData);
+    trackSubmitApplication({ name: fullName.trim(), email }, userData);
+    trackAddPaymentInfo({ content_name: 'Selar Quick Checkout', value: 37000, currency: 'NGN' }, userData);
 
     openSelarCheckout({ email, name: fullName.trim() });
     setShowPaymentModal(false);
@@ -203,7 +221,7 @@ const CheckoutPage: React.FC = () => {
         <div className="container mx-auto flex items-center justify-between">
           <Logo />
           <button
-            onClick={() => setShowPaymentModal(true)}
+            onClick={openModal}
             className="flex items-center gap-2 bg-gray-900 text-white font-bold text-xs px-5 py-2.5 rounded-full hover:bg-black transition-colors"
           >
             <Download size={14} className="text-yellow-400" />
@@ -324,7 +342,7 @@ const CheckoutPage: React.FC = () => {
               </p>
             </div>
             <button
-              onClick={() => setShowPaymentModal(true)}
+              onClick={openModal}
               className="mt-6 md:mt-8 inline-flex items-center gap-1.5 md:gap-3 px-5 md:px-10 py-3.5 md:py-5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl md:rounded-2xl font-bold text-[13px] md:text-lg shadow-xl shadow-blue-500/30 hover:shadow-blue-500/40 hover:scale-[1.02] transition-all group w-full sm:w-auto justify-center animate-shimmer border border-blue-400/50"
             >
               <Download size={16} className="md:w-5 md:h-5 shrink-0" />
@@ -378,7 +396,7 @@ const CheckoutPage: React.FC = () => {
                   </p>
                 </div>
                 <button
-                  onClick={() => setShowPaymentModal(true)}
+                  onClick={openModal}
                   className="px-5 py-4 md:px-10 md:py-5 bg-brand-primary text-white font-bold text-sm md:text-lg rounded-xl md:rounded-2xl shadow-glow hover:shadow-glow-lg hover:bg-blue-700 transition-all flex items-center justify-center gap-2 md:gap-3 group shrink-0 w-full sm:w-auto animate-shimmer border border-blue-400/30"
                 >
                   <Download size={16} className="md:w-5 md:h-5 shrink-0" />
@@ -467,7 +485,7 @@ const CheckoutPage: React.FC = () => {
             </div>
             <div className="flex items-center gap-3">
               <button
-                onClick={() => setShowPaymentModal(true)}
+                onClick={openModal}
                 className="bg-brand-primary hover:bg-blue-700 text-white font-bold px-5 py-2 rounded-lg flex items-center gap-1.5 transition-all shadow-glow hover:shadow-glow-lg text-sm"
               >
                 <Download size={14} />

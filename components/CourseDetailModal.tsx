@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Course } from '../types';
 import { X, CheckCircle2, Zap, Users, Plus, Check, ArrowRight } from 'lucide-react';
+import { trackViewContent, trackAddToCart } from '../lib/pixel';
 
 interface CourseDetailModalProps {
     course: Course | null;
@@ -19,6 +20,19 @@ export const CourseDetailModal: React.FC<CourseDetailModalProps> = ({
 }) => {
     const [imgError, setImgError] = useState(false);
     const fallbackImage = `https://images.unsplash.com/photo-1518005052304-a37d996b0756?q=80&w=600&auto=format&fit=crop`;
+
+    useEffect(() => {
+        if (isOpen && course) {
+            trackViewContent({ content_name: course.title, value: course.price, currency: 'NGN' });
+        }
+    }, [isOpen, course]);
+
+    const handleCartToggle = () => {
+        if (course) {
+            trackAddToCart({ content_name: course.title, value: course.price, currency: 'NGN' });
+            onToggleCart(course.id);
+        }
+    };
 
     if (!course) return null;
 
@@ -124,7 +138,7 @@ export const CourseDetailModal: React.FC<CourseDetailModalProps> = ({
                             </div>
 
                             <button
-                                onClick={() => onToggleCart(course.id)}
+                                onClick={handleCartToggle}
                                 className={`flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all duration-200 ${isInCart
                                     ? 'bg-green-50 text-green-700 border border-green-200 hover:bg-red-50 hover:text-red-600 hover:border-red-200'
                                     : 'bg-brand-primary text-white hover:bg-blue-700 shadow-glow hover:shadow-glow-lg'

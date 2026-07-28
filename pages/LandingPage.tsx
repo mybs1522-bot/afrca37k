@@ -4,6 +4,7 @@ import { COURSES, BUNDLE_PRICE } from '../constants';
 import { WhatsAppButton } from '../components/WhatsAppButton';
 import { openSelarCheckout } from '../services/razorpay';
 import { ReviewTicker } from '../components/ReviewTicker';
+import { trackInitiateCheckout, trackLead, trackAddPaymentInfo, trackSubmitApplication, trackPurchase, trackCompleteRegistration } from '../lib/pixel';
 import {
   Logo, SocialProofToast,
   PROBLEM_POINTS, TRANSFORMATION_STORIES, FEAR_STATS,
@@ -96,6 +97,13 @@ const LandingPage: React.FC = () => {
   const [paymentSuccess, setPaymentSuccess] = useState<string | null>(null);
 
   useEffect(() => {
+    if (paymentSuccess) {
+      trackPurchase({ transaction_id: paymentSuccess, value: 37000, currency: 'NGN' });
+      trackCompleteRegistration({ status: true });
+    }
+  }, [paymentSuccess]);
+
+  useEffect(() => {
     const calc = () => { const D = (3 * 3600 + 36 * 60 + 20) * 1000, now = Date.now(), r = D - (now % D); setTimeLeft({ h: Math.floor((r / 3600000) % 24), m: Math.floor((r / 60000) % 60), s: Math.floor((r / 1000) % 60) }); };
     const t = setInterval(calc, 1000); calc(); return () => clearInterval(t);
   }, []);
@@ -103,13 +111,21 @@ const LandingPage: React.FC = () => {
 
   const formatTime = (val: number) => val.toString().padStart(2, '0');
   const validateEmail = (e: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
-  const openPaymentModal = () => setShowPaymentModal(true);
+  const openPaymentModal = () => {
+    setShowPaymentModal(true);
+    trackInitiateCheckout();
+  };
 
   const handlePayment = () => {
     let hasError = false;
     if (!fullName.trim()) { setFullNameError(true); hasError = true; } else { setFullNameError(false); }
     if (!email || !validateEmail(email)) { setEmailError(true); hasError = true; } else { setEmailError(false); }
     if (hasError) return;
+
+    const userData = { email, name: fullName.trim() };
+    trackLead({ content_name: 'Landing Page Form Submission' }, userData);
+    trackSubmitApplication({ name: fullName.trim(), email }, userData);
+    trackAddPaymentInfo({ content_name: 'Selar Quick Checkout', value: 37000, currency: 'NGN' }, userData);
 
     openSelarCheckout({ email, name: fullName.trim() });
     setShowPaymentModal(false);
