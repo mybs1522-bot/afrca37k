@@ -1,32 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { Course } from '../types';
 import { COURSES, COURSE_CATEGORIES, BUNDLE_PRICE, TESTIMONIALS, FAQ_ITEMS } from '../constants';
-import { ChevronDown, Sparkles, ArrowRight, Timer, Star, CheckCircle2, Zap, Check, Download, Phone, Mail, Lock, Loader2, X, Eye } from 'lucide-react';
+import { ChevronDown, Sparkles, ArrowRight, Timer, Star, CheckCircle2, Zap, Check, Download, Phone, Mail, Lock, Loader2, X, Eye, Globe } from 'lucide-react';
 import { openSelarCheckout } from '../services/razorpay';
 import { CourseDetailModal } from '../components/CourseDetailModal';
 import { TextMarquee } from '../components/ui/text-marquee';
 import { ReviewTicker } from '../components/ReviewTicker';
 import { trackInitiateCheckout, trackLead, trackAddPaymentInfo, trackSubmitApplication, trackPurchase, trackCompleteRegistration } from '../lib/pixel';
+import { useCountry } from '../lib/CountryContext';
+import { COUNTRIES } from '../lib/countryConfig';
 
 // Logo Component
-const Logo = () => (
-  <div className="flex items-center gap-3 cursor-pointer group" onClick={() => window.location.href = '/'}>
-    <div className="relative w-9 h-9 border-2 border-gray-900 flex items-center justify-center bg-white transition-all duration-300 group-hover:bg-gray-900 group-hover:text-white shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] group-hover:translate-x-[2px] group-hover:translate-y-[2px]">
-      <span className="font-display font-black text-lg tracking-tighter relative z-10">AV</span>
+const Logo = () => {
+  const { country } = useCountry();
+  return (
+    <div className="flex items-center gap-3 cursor-pointer group" onClick={() => window.location.href = '/'}>
+      <div className="relative w-9 h-9 border-2 border-gray-900 flex items-center justify-center bg-white transition-all duration-300 group-hover:bg-gray-900 group-hover:text-white shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] group-hover:translate-x-[2px] group-hover:translate-y-[2px]">
+        <span className="font-display font-black text-lg tracking-tighter relative z-10">AV</span>
+      </div>
+      <div className="flex flex-col">
+        <span className="font-display font-bold text-lg tracking-[0.2em] leading-none text-gray-900">AVADA</span>
+        <div className="w-full h-[1px] bg-gray-200 my-0.5"></div>
+        <span className="text-[7px] font-bold uppercase tracking-widest text-gray-400 flex justify-between w-full leading-none">
+          <span>DESIGN</span>
+          <span>•</span>
+          <span className="text-brand-primary font-black">{country.formattedPrice}</span>
+        </span>
+      </div>
     </div>
-    <div className="flex flex-col">
-      <span className="font-display font-bold text-lg tracking-[0.2em] leading-none text-gray-900">AVADA</span>
-      <div className="w-full h-[1px] bg-gray-200 my-0.5"></div>
-      <span className="text-[7px] font-bold uppercase tracking-widest text-gray-400 flex justify-between w-full leading-none">
-        <span>DESIGN</span>
-        <span>•</span>
-        <span className="text-brand-primary font-black">₦{BUNDLE_PRICE.toLocaleString()}</span>
-      </span>
-    </div>
-  </div>
-);
+  );
+};
 
 const CheckoutPage: React.FC = () => {
+  const { country, setCountryCode } = useCountry();
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [timeLeft, setTimeLeft] = useState({ h: 2, m: 23, s: 49 });
@@ -45,15 +51,15 @@ const CheckoutPage: React.FC = () => {
 
   const openModal = () => {
     setShowPaymentModal(true);
-    trackInitiateCheckout();
+    trackInitiateCheckout({ value: country.price, currency: country.currencyCode });
   };
 
   useEffect(() => {
     if (paymentSuccess) {
-      trackPurchase({ transaction_id: paymentSuccess, value: 37000, currency: 'NGN' });
+      trackPurchase({ transaction_id: paymentSuccess, value: country.price, currency: country.currencyCode });
       trackCompleteRegistration({ status: true });
     }
-  }, [paymentSuccess]);
+  }, [paymentSuccess, country]);
 
   // Auto-slide for mobile showcase
   useEffect(() => {
@@ -117,11 +123,16 @@ const CheckoutPage: React.FC = () => {
     if (hasError) return;
 
     const userData = { email, name: fullName.trim() };
-    trackLead({ content_name: 'Checkout Form Submission' }, userData);
-    trackSubmitApplication({ name: fullName.trim(), email }, userData);
-    trackAddPaymentInfo({ content_name: 'Selar Quick Checkout', value: 37000, currency: 'NGN' }, userData);
+    trackLead({ content_name: 'Checkout Form Submission', value: country.price, currency: country.currencyCode }, userData);
+    trackSubmitApplication({ name: fullName.trim(), email, value: country.price, currency: country.currencyCode }, userData);
+    trackAddPaymentInfo({ content_name: 'Selar Quick Checkout', value: country.price, currency: country.currencyCode }, userData);
 
-    openSelarCheckout({ email, name: fullName.trim() });
+    openSelarCheckout({
+      email,
+      name: fullName.trim(),
+      currency: country.currencyCode,
+      baseUrl: country.selarCheckoutBase
+    });
     setShowPaymentModal(false);
   };
 
@@ -131,11 +142,25 @@ const CheckoutPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-transparent text-gray-900 font-sans overflow-x-hidden selection:bg-blue-100 grid-bg">
-      {/* ═══ NIGERIA ANNOUNCEMENT BANNER ═══ */}
+      {/* ═══ DYNAMIC ANNOUNCEMENT BANNER WITH COUNTRY SELECTOR ═══ */}
       <div className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 text-white py-2.5 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIi8+PC9zdmc+')] opacity-30"></div>
-        <div className="relative z-10 flex items-center justify-center gap-2 text-sm md:text-base font-bold">
-          <span>Limited Time Students Week Offer in Nigeria</span>
+        <div className="relative z-10 flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm font-bold">
+          <span>{country.bannerText}</span>
+          <div className="flex items-center gap-1 bg-black/20 hover:bg-black/40 px-2 py-0.5 rounded-full backdrop-blur-sm transition-colors border border-white/20 ml-1">
+            <Globe size={12} className="text-emerald-200" />
+            <select
+              value={country.code}
+              onChange={(e) => setCountryCode(e.target.value)}
+              className="bg-transparent text-white text-xs font-bold focus:outline-none cursor-pointer pr-1"
+            >
+              {Object.values(COUNTRIES).map((c) => (
+                <option key={c.code} value={c.code} className="bg-gray-900 text-white">
+                  {c.flag} {c.name} ({c.currencySymbol})
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
       <style>{`
@@ -200,7 +225,7 @@ const CheckoutPage: React.FC = () => {
         <div className="container mx-auto flex items-center justify-center gap-4 sm:gap-8 text-sm">
           <div className="flex items-center gap-2 shrink-0">
             <Zap size={14} className="text-yellow-400 fill-yellow-400" />
-            <span className="text-xs sm:text-sm font-bold">All 12 courses for just <span className="text-brand-accent">₦{BUNDLE_PRICE.toLocaleString()}</span></span>
+            <span className="text-xs sm:text-sm font-bold">All 12 courses for just <span className="text-brand-accent">{country.formattedPrice}</span></span>
           </div>
           <div className="w-px h-4 bg-gray-700 hidden sm:block"></div>
           <div className="flex items-center gap-2 shrink-0">
@@ -533,9 +558,9 @@ const CheckoutPage: React.FC = () => {
                 </div>
                 <h3 className="text-2xl font-display font-bold mb-2">All {COURSES.length} Courses</h3>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-display font-black">₦{BUNDLE_PRICE.toLocaleString()}</span>
-                  <span className="text-gray-400 text-sm line-through">₦70,000</span>
-                  <span className="bg-emerald-500/20 text-emerald-400 text-xs font-bold px-2 py-0.5 rounded-full">50% OFF</span>
+                  <span className="text-3xl font-display font-black">{country.formattedPrice} {country.flag}</span>
+                  <span className="text-gray-400 text-sm line-through">{country.formattedOriginalPrice}</span>
+                  <span className="bg-emerald-500/20 text-emerald-400 text-xs font-bold px-2 py-0.5 rounded-full">66% OFF</span>
                 </div>
               </div>
             </div>

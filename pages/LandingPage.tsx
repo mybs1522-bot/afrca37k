@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Star, CheckCircle, CheckCircle2, X, ChevronDown, Sparkles, Eye, Download, Phone, Mail, Lock, Loader2, Timer, Check } from 'lucide-react';
-import { COURSES, BUNDLE_PRICE } from '../constants';
+import { ArrowRight, Star, CheckCircle, CheckCircle2, X, ChevronDown, Sparkles, Eye, Download, Phone, Mail, Lock, Loader2, Timer, Check, Globe } from 'lucide-react';
+import { COURSES } from '../constants';
 import { WhatsAppButton } from '../components/WhatsAppButton';
 import { openSelarCheckout } from '../services/razorpay';
 import { ReviewTicker } from '../components/ReviewTicker';
 import { trackInitiateCheckout, trackLead, trackAddPaymentInfo, trackSubmitApplication, trackPurchase, trackCompleteRegistration } from '../lib/pixel';
+import { useCountry } from '../lib/CountryContext';
+import { COUNTRIES } from '../lib/countryConfig';
 import {
   Logo, SocialProofToast,
   PROBLEM_POINTS, TRANSFORMATION_STORIES, FEAR_STATS,
@@ -14,6 +16,7 @@ import {
 
 /* ─── REUSABLE CTA WITH TIMER (Apple-style proportions) ─── */
 const CtaWithTimer = ({ timeLeft, onClick, variant = 'orange' }: { timeLeft: { h: number; m: number; s: number }; onClick: () => void; variant?: 'orange' | 'dark' | 'blue' }) => {
+  const { country } = useCountry();
   const f = (v: number) => v.toString().padStart(2, '0');
   const bgClass = variant === 'dark'
     ? 'bg-slate-900'
@@ -59,8 +62,8 @@ const CtaWithTimer = ({ timeLeft, onClick, variant = 'orange' }: { timeLeft: { h
 
         {/* Price - tighter on mobile */}
         <div className="flex items-baseline gap-2">
-          <span className={`text-sm md:text-lg ${variant === 'dark' ? 'text-slate-500' : 'text-white/50'} line-through font-bold`}>₦110,000</span>
-          <span className={`text-3xl md:text-4xl font-display font-black ${textColor}`}>₦{BUNDLE_PRICE.toLocaleString()}</span>
+          <span className={`text-sm md:text-lg ${variant === 'dark' ? 'text-slate-500' : 'text-white/50'} line-through font-bold`}>{country.formattedOriginalPrice}</span>
+          <span className={`text-3xl md:text-4xl font-display font-black ${textColor}`}>{country.formattedPrice}</span>
           <span className={`${variant === 'dark' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-white/20 text-white'} text-[9px] md:text-[10px] font-bold px-1.5 py-0.5 rounded-full`}>66% OFF</span>
         </div>
 
@@ -70,7 +73,7 @@ const CtaWithTimer = ({ timeLeft, onClick, variant = 'orange' }: { timeLeft: { h
           className={`${btnClass} ${btnTextColor} font-bold text-sm md:text-base px-6 md:px-10 py-3.5 md:py-4 rounded-xl md:rounded-2xl flex items-center justify-center gap-2 md:gap-3 group hover:scale-[1.02] active:scale-[0.98] transition-all w-full sm:w-auto`}
         >
           <Download size={16} className="shrink-0" />
-          <span>Download All 12 Courses</span>
+          <span>Download All 12 Courses ({country.formattedPrice})</span>
           <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform shrink-0" />
         </button>
 
@@ -81,6 +84,7 @@ const CtaWithTimer = ({ timeLeft, onClick, variant = 'orange' }: { timeLeft: { h
 };
 
 const LandingPage: React.FC = () => {
+  const { country, setCountryCode } = useCountry();
   const [timeLeft, setTimeLeft] = useState(() => { const D = (3 * 3600 + 36 * 60 + 20) * 1000, r = D - (Date.now() % D); return { h: Math.floor((r / 3600000) % 24), m: Math.floor((r / 60000) % 60), s: Math.floor((r / 1000) % 60) }; });
   const [showStickyBar, setShowStickyBar] = useState(false);
   useEffect(() => { window.scrollTo(0, 0); }, []);
@@ -98,10 +102,10 @@ const LandingPage: React.FC = () => {
 
   useEffect(() => {
     if (paymentSuccess) {
-      trackPurchase({ transaction_id: paymentSuccess, value: 37000, currency: 'NGN' });
+      trackPurchase({ transaction_id: paymentSuccess, value: country.price, currency: country.currencyCode });
       trackCompleteRegistration({ status: true });
     }
-  }, [paymentSuccess]);
+  }, [paymentSuccess, country]);
 
   useEffect(() => {
     const calc = () => { const D = (3 * 3600 + 36 * 60 + 20) * 1000, now = Date.now(), r = D - (now % D); setTimeLeft({ h: Math.floor((r / 3600000) % 24), m: Math.floor((r / 60000) % 60), s: Math.floor((r / 1000) % 60) }); };
@@ -113,7 +117,7 @@ const LandingPage: React.FC = () => {
   const validateEmail = (e: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
   const openPaymentModal = () => {
     setShowPaymentModal(true);
-    trackInitiateCheckout();
+    trackInitiateCheckout({ value: country.price, currency: country.currencyCode });
   };
 
   const handlePayment = () => {
@@ -123,21 +127,40 @@ const LandingPage: React.FC = () => {
     if (hasError) return;
 
     const userData = { email, name: fullName.trim() };
-    trackLead({ content_name: 'Landing Page Form Submission' }, userData);
-    trackSubmitApplication({ name: fullName.trim(), email }, userData);
-    trackAddPaymentInfo({ content_name: 'Selar Quick Checkout', value: 37000, currency: 'NGN' }, userData);
+    trackLead({ content_name: 'Landing Page Form Submission', value: country.price, currency: country.currencyCode }, userData);
+    trackSubmitApplication({ name: fullName.trim(), email, value: country.price, currency: country.currencyCode }, userData);
+    trackAddPaymentInfo({ content_name: 'Selar Quick Checkout', value: country.price, currency: country.currencyCode }, userData);
 
-    openSelarCheckout({ email, name: fullName.trim() });
+    openSelarCheckout({
+      email,
+      name: fullName.trim(),
+      currency: country.currencyCode,
+      baseUrl: country.selarCheckoutBase
+    });
     setShowPaymentModal(false);
   };
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans overflow-x-hidden selection:bg-blue-100 grid-bg">
-      {/* ═══ NIGERIA ANNOUNCEMENT BANNER ═══ */}
+      {/* ═══ DYNAMIC ANNOUNCEMENT BANNER WITH COUNTRY SELECTOR ═══ */}
       <div className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 text-white py-2.5 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIi8+PC9zdmc+')] opacity-30"></div>
-        <div className="relative z-10 flex items-center justify-center gap-2 text-sm md:text-base font-bold">
-          <span>Limited Time Students Week Offer in Nigeria</span>
+        <div className="relative z-10 flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm font-bold">
+          <span>{country.bannerText}</span>
+          <div className="flex items-center gap-1 bg-black/20 hover:bg-black/40 px-2 py-0.5 rounded-full backdrop-blur-sm transition-colors border border-white/20 ml-1">
+            <Globe size={12} className="text-emerald-200" />
+            <select
+              value={country.code}
+              onChange={(e) => setCountryCode(e.target.value)}
+              className="bg-transparent text-white text-xs font-bold focus:outline-none cursor-pointer pr-1"
+            >
+              {Object.values(COUNTRIES).map((c) => (
+                <option key={c.code} value={c.code} className="bg-gray-900 text-white">
+                  {c.flag} {c.name} ({c.currencySymbol})
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
 
@@ -673,9 +696,9 @@ const LandingPage: React.FC = () => {
                 </div>
                 <h3 className="text-2xl font-display font-bold mb-2">All {COURSES.length} Courses</h3>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-display font-black">₦{BUNDLE_PRICE.toLocaleString()}</span>
-                  <span className="text-gray-400 text-sm line-through">₦70,000</span>
-                  <span className="bg-emerald-500/20 text-emerald-400 text-xs font-bold px-2 py-0.5 rounded-full">50% OFF</span>
+                  <span className="text-3xl font-display font-black">{country.formattedPrice} {country.flag}</span>
+                  <span className="text-gray-400 text-sm line-through">{country.formattedOriginalPrice}</span>
+                  <span className="bg-emerald-500/20 text-emerald-400 text-xs font-bold px-2 py-0.5 rounded-full">66% OFF</span>
                 </div>
               </div>
             </div>
