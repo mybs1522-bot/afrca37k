@@ -39,7 +39,7 @@ const CtaWithTimer = ({ timeLeft, onClick, variant = 'orange' }: { timeLeft: { h
         {/* Timer label */}
         <div className="flex items-center gap-1.5">
           <Timer size={14} className={`${timerAccent} animate-pulse`} />
-          <span className={`text-[10px] md:text-xs font-bold uppercase tracking-widest ${timerAccent}`}>Eid Al-Adha Offer Ends In</span>
+          <span className={`text-[10px] md:text-xs font-bold uppercase tracking-widest ${timerAccent}`}>Students Week Offer Ends In</span>
         </div>
 
         {/* Timer digits - compact on mobile */}
@@ -137,7 +137,7 @@ const LandingPage: React.FC = () => {
       <div className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 text-white py-2.5 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIi8+PC9zdmc+')] opacity-30"></div>
         <div className="relative z-10 flex items-center justify-center gap-2 text-sm md:text-base font-bold">
-          <span>Limited Time Eid Al-Adha Offer in Nigeria</span>
+          <span>Limited Time Students Week Offer in Nigeria</span>
         </div>
       </div>
 

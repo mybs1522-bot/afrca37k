@@ -135,7 +135,7 @@ const CheckoutPage: React.FC = () => {
       <div className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 text-white py-2.5 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIi8+PC9zdmc+')] opacity-30"></div>
         <div className="relative z-10 flex items-center justify-center gap-2 text-sm md:text-base font-bold">
-          <span>Limited Time Eid Al-Adha Offer in Nigeria</span>
+          <span>Limited Time Students Week Offer in Nigeria</span>
         </div>
       </div>
       <style>{`
@@ -506,7 +506,7 @@ const CheckoutPage: React.FC = () => {
           <div className="relative z-10 w-full max-w-md bg-red-50 rounded-2xl p-3 flex items-center justify-between border border-red-100 shadow-lg animate-[fadeIn_0.3s_ease-out]">
             <div className="flex items-center gap-2">
               <Timer size={14} className="text-brand-primary animate-pulse" />
-              <span className="text-xs font-bold text-gray-900">Eid Al-Adha offer ends in:</span>
+              <span className="text-xs font-bold text-gray-900">Students Week Offer ends in:</span>
             </div>
             <div className="flex items-center gap-0.5 font-display font-bold text-sm tabular-nums text-brand-primary bg-white px-2.5 py-1 rounded-md border border-red-100 shadow-sm">
               <span>{formatTime(timeLeft.h)}</span>
