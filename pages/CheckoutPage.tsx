@@ -256,6 +256,16 @@ const CheckoutPage: React.FC = () => {
                    <Award size={16} className="text-amber-600 shrink-0" />
                  </div>
 
+                 {/* 💡 BEST REASON TO JOIN NOTE */}
+                 <div className="w-full max-w-2xl mx-auto bg-gradient-to-r from-emerald-50 via-green-50 to-emerald-50 border border-emerald-300/80 rounded-2xl p-3.5 md:p-4 text-center shadow-sm mb-4">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-600 text-white font-black text-[11px] uppercase tracking-wider rounded-full mb-1.5">
+                      <span>💡 BEST REASON TO JOIN?</span>
+                    </div>
+                    <p className="text-xs md:text-sm font-black text-slate-900 leading-snug">
+                      💰 3 Paid Freelance Projects <span className="font-bold text-emerald-800">for every student of our course —</span> build connections in community and keep growing!
+                    </p>
+                  </div>
+
                  <div className="inline-flex items-center gap-2 text-brand-primary text-xs font-bold uppercase tracking-widest mb-2">
                    <Sparkles size={14} />
                    All 12 Premium Courses Included

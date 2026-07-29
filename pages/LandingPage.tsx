@@ -159,48 +159,71 @@ const LandingPage: React.FC = () => {
             <div className="absolute bottom-0 left-1/2 w-[300px] h-[300px] bg-cyan-400/5 blur-[120px] rounded-full" />
           </div>
           <div className="max-w-5xl mx-auto px-5 relative z-10">
-            <div className="flex flex-col items-center text-center pt-8 md:pt-16">
-              <div className="mb-4 inline-flex flex-col items-center">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-50 border border-orange-200 rounded-full">
-                  <span className="text-[10px] sm:text-xs font-bold text-slate-700 whitespace-nowrap">Start charging <span className="text-orange-600">premium rates</span> for designing and rendering.</span>
+            <div className="flex flex-col items-center text-center pt-6 md:pt-12">
+              
+              {/* 🚨 PROVOKING BANNER HOOK — Premium Light Theme */}
+              <div className="w-full max-w-4xl mx-auto mb-4 md:mb-6 relative overflow-hidden rounded-2xl md:rounded-3xl bg-gradient-to-b from-orange-50/80 via-white to-amber-50/40 text-slate-900 p-4 md:p-6 shadow-[0_10px_35px_-10px_rgba(249,115,22,0.15)] border border-orange-200/80 text-center">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-orange-400/10 rounded-full blur-[90px] pointer-events-none -mr-20 -mt-20"></div>
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-400/10 rounded-full blur-[90px] pointer-events-none -ml-20 -mb-20"></div>
+
+                <div className="relative z-10 flex flex-col items-center">
+                  {/* Top Badge Banner */}
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-red-50 border border-red-200 rounded-full text-red-600 text-[10px] md:text-xs font-extrabold uppercase tracking-wider mb-2 animate-pulse shadow-xs">
+                    <span>🚨 HARD REALITY IN DESIGN</span>
+                  </div>
+
+                  {/* Main Provoking Statement */}
+                  <h1 className="text-xl sm:text-2xl md:text-4xl font-display font-black tracking-tight leading-tight text-slate-900 mb-2">
+                    No College Teaches How to <span className="text-orange-600 font-black underline decoration-orange-400 decoration-wavy underline-offset-4">Make Money</span> In Design Industry.
+                  </h1>
+
+                  {/* Cut the Crap Box */}
+                  <div className="w-full max-w-3xl bg-white border border-orange-200/90 rounded-xl md:rounded-2xl p-3 md:p-4 my-2 text-center shadow-sm">
+                    <p className="text-sm md:text-lg font-display font-black text-orange-600 mb-1.5 uppercase tracking-wide">
+                      ⚡ CUT THE CRAP & SIMPLY LEARN:
+                    </p>
+                    <div className="flex flex-nowrap items-center justify-center gap-1.5 sm:gap-2.5 md:gap-3 whitespace-nowrap py-0.5">
+                      <span className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs md:text-base font-black rounded-md sm:rounded-lg shadow-md tracking-wider">PLANNING</span>
+                      <span className="text-orange-500 text-xs font-bold">•</span>
+                      <span className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs md:text-base font-black rounded-md sm:rounded-lg shadow-md tracking-wider">DESIGNING</span>
+                      <span className="text-orange-500 text-xs font-bold">•</span>
+                      <span className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs md:text-base font-black rounded-md sm:rounded-lg shadow-md tracking-wider">RENDERING</span>
+                    </div>
+                    {/* Put 'That’s ALL needed to make money in this industry.' in 1 SINGLE LINE */}
+                    <p className="text-[11px] sm:text-sm md:text-base text-slate-700 font-bold mt-2.5 whitespace-nowrap">
+                      That’s <span className="text-slate-900 underline decoration-orange-500 font-black">ALL</span> needed to make money in this industry.
+                    </p>
+                  </div>
+
+                  {/* We Teach You Exactly What Is Required */}
+                  <div className="mt-2 flex items-center justify-center gap-1.5 text-xs sm:text-sm md:text-base font-bold text-emerald-700 px-2">
+                    <span className="shrink-0 text-sm md:text-base self-start sm:self-center">✅</span>
+                    <p className="leading-snug text-center">
+                      We teach you <u className="font-black text-slate-900">EXACTLY</u> what is required.
+                      <br className="block sm:hidden" />
+                      <span className="text-emerald-600 font-semibold sm:font-bold"> Nothing less, nothing more.</span>
+                    </p>
+                  </div>
                 </div>
               </div>
-              <h1 className="leading-none md:leading-[1.15] mb-6 text-slate-900 tracking-tight">
-                <span className="block text-4xl md:text-5xl lg:text-6xl font-display font-bold">
-                  Learn to Design
-                </span>
-                <span className="block text-4xl md:text-5xl lg:text-6xl font-display font-bold mt-0 md:mt-1">
-                  <span className="text-orange-500">Homes</span>
-                  <span className="text-slate-400 font-light mx-1">,</span>
-                  <span className="text-slate-800">Offices</span>
-                  <span className="text-slate-400 font-light mx-2">&</span>
-                  <span className="text-slate-600">Villas</span>
-                </span>
-                <span className="block text-xl md:text-2xl font-serif italic text-slate-500 mt-1.5 md:mt-4">
-                  and show real 3D to clients.
-                </span>
-              </h1>
-              <p className="text-sm md:text-base text-slate-700 mb-8 leading-relaxed max-w-2xl mx-auto">
-                <span className="font-bold">Learn PDR —</span> Planning, Designing & Rendering<br/>
-                <span className="text-slate-500 text-sm">One bundle. Everything included.</span>
-                <span className="text-[10px] md:text-xs font-bold text-orange-600 uppercase tracking-widest mt-3 block">Earn Globally, Design For Clients all over the world.</span>
-              </p>
               
               {/* New Story Section */}
               <div className="w-full max-w-4xl mx-auto mb-10 text-left bg-white p-6 md:p-8 rounded-3xl shadow-[0_0_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100">
+                {/* Hero Video inside the card — at top */}
+                <div style={{ position: 'relative', paddingTop: '56.25%' }} className="rounded-2xl overflow-hidden mb-6 shadow-sm">
+                  <iframe src="https://iframe.mediadelivery.net/embed/494628/1f7b76dd-7d47-4f39-87af-bff5a6b02d08?autoplay=true&loop=true&muted=true&preload=true&responsive=true" loading="lazy" style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowFullScreen={true}></iframe>
+                </div>
+
                 <p className="text-lg md:text-xl font-serif text-slate-600 leading-relaxed mb-6 italic">
                   "In our business of Architecture and Design, <span className="font-bold text-slate-800 border-b border-orange-300">Planning, Design and Rendering</span> matter the most."
                 </p>
                 <p className="text-sm md:text-base text-slate-500 leading-relaxed mb-4">
                   The question isn't <em className="font-semibold text-slate-700">if</em> you can. It's...
                 </p>
-                <p className="text-xl md:text-2xl font-display font-bold text-orange-500 mb-6">
-                  How to do it FASTER?
-                </p>
-                
-                {/* Hero Video inside the card */}
-                <div style={{ position: 'relative', paddingTop: '56.25%' }}>
-                  <iframe src="https://iframe.mediadelivery.net/embed/494628/1f7b76dd-7d47-4f39-87af-bff5a6b02d08?autoplay=true&loop=true&muted=true&preload=true&responsive=true" loading="lazy" style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowFullScreen={true}></iframe>
+                <div className="mb-4">
+                  <p className="text-xl md:text-2xl font-display font-extrabold text-orange-500">
+                    How to do it FASTER?
+                  </p>
                 </div>
 
                 <div className="w-full bg-orange-50/50 rounded-xl p-3 md:p-4 mt-2">
@@ -208,6 +231,12 @@ const LandingPage: React.FC = () => {
                     That's exactly why we built this. A complete blueprint from software basics to client-ready renders designed to make you <strong className="text-orange-600">job or business ready in just one month.</strong>
                   </p>
                 </div>
+              </div>
+
+              {/* 🌱 Start from absolute zero badge — Directly ABOVE First CTA */}
+              <div className="mb-4 inline-flex items-center gap-2 text-xs md:text-sm font-bold text-slate-800 bg-orange-50 border border-orange-200/80 px-4 py-2 rounded-xl shadow-sm">
+                <span>🌱</span>
+                <span><strong className="text-slate-900 font-black">Start from absolute zero</strong> — no previous knowledge required.</span>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 items-center mb-8">
@@ -253,6 +282,16 @@ const LandingPage: React.FC = () => {
                      You will get Design Management certificate equivalent to Diploma
                    </span>
                    <Award size={16} className="text-amber-600 shrink-0" />
+                 </div>
+
+                 {/* 💡 BEST REASON TO JOIN NOTE */}
+                 <div className="w-full max-w-2xl mx-auto bg-gradient-to-r from-emerald-50 via-green-50 to-emerald-50 border border-emerald-300/80 rounded-2xl p-3.5 md:p-4 text-center shadow-sm mb-4">
+                   <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-600 text-white font-black text-[11px] uppercase tracking-wider rounded-full mb-1.5">
+                     <span>💡 BEST REASON TO JOIN?</span>
+                   </div>
+                   <p className="text-xs md:text-sm font-black text-slate-900 leading-snug">
+                     💰 3 Paid Freelance Projects <span className="font-bold text-emerald-800">for every student of our course —</span> build connections in community and keep growing!
+                   </p>
                  </div>
 
                  <div className="inline-flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-widest mb-2">
