@@ -244,8 +244,8 @@ const CheckoutPage: React.FC = () => {
       <main>
         {/* ═══════ HERO SECTION ═══════ */}
         {/* ═══════ COURSE SLIDESHOW ═══════ */}
-        <section className="py-8 md:py-16 bg-white border-b border-gray-100 overflow-hidden relative">
-           <div className="container mx-auto px-4 mb-8">
+        <section className="pt-3 md:pt-6 pb-8 md:pb-16 bg-white border-b border-gray-100 overflow-hidden relative">
+           <div className="container mx-auto px-4 mb-6">
              <div className="text-center reveal flex flex-col items-center">
                  {/* 🎓 DIPLOMA CERTIFICATE NOTE (OVER All 12 Premium Courses Included) */}
                  <div className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-500/10 via-amber-400/20 to-amber-500/10 border border-amber-400/50 rounded-full text-slate-900 font-extrabold text-xs md:text-sm shadow-sm backdrop-blur-sm animate-[pulse_3s_infinite] hover:scale-[1.02] transition-transform mb-3">
