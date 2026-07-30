@@ -42,7 +42,7 @@ export const COUNTRIES: Record<string, CountryConfig> = {
 
     selarCheckoutBase: "https://selar.com/73518502d1",
 
-    bannerText: "🇳🇬 Limited Time Students Week Offer in Nigeria",
+    bannerText: "🇳🇬 3 Freelance Paid Projects For Every Student in Nigeria worth 300 USD",
     heroCurrencyHook: "Naira keeps losing value",
     premiumRentArea: "Lekki",
 
@@ -67,7 +67,7 @@ export const COUNTRIES: Record<string, CountryConfig> = {
 
     selarCheckoutBase: "https://selar.com/73518502d1",
 
-    bannerText: "🇬🇭 Limited Time Students Week Offer in Ghana",
+    bannerText: "🇬🇭 3 Freelance Paid Projects For Every Student in Ghana worth 300 USD",
     heroCurrencyHook: "Cedi keeps falling",
     premiumRentArea: "East Legon",
 
@@ -92,7 +92,7 @@ export const COUNTRIES: Record<string, CountryConfig> = {
 
     selarCheckoutBase: "https://selar.com/73518502d1",
 
-    bannerText: "🇰🇪 Limited Time Students Week Offer in Kenya",
+    bannerText: "🇰🇪 3 Freelance Paid Projects For Every Student in Kenya worth 300 USD",
     heroCurrencyHook: "Shilling is dropping",
     premiumRentArea: "Westlands",
 
@@ -117,7 +117,7 @@ export const COUNTRIES: Record<string, CountryConfig> = {
 
     selarCheckoutBase: "https://selar.com/73518502d1",
 
-    bannerText: "🇿🇦 Limited Time Students Week Offer in South Africa",
+    bannerText: "🇿🇦 3 Freelance Paid Projects For Every Student in South Africa worth 300 USD",
     heroCurrencyHook: "Rand keeps weakening",
     premiumRentArea: "Sandton",
 
@@ -142,7 +142,7 @@ export const COUNTRIES: Record<string, CountryConfig> = {
 
     selarCheckoutBase: "https://selar.com/73518502d1",
 
-    bannerText: "🇹🇿 Limited Time Students Week Offer in Tanzania",
+    bannerText: "🇹🇿 3 Freelance Paid Projects For Every Student in Tanzania worth 300 USD",
     heroCurrencyHook: "Shilling continues to weaken",
     premiumRentArea: "Masaki",
 

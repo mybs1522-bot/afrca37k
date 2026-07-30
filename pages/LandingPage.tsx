@@ -161,109 +161,141 @@ const LandingPage: React.FC = () => {
           <div className="max-w-5xl mx-auto px-5 relative z-10">
             <div className="flex flex-col items-center text-center pt-6 md:pt-12">
               
-              {/* 🚨 PROVOKING BANNER HOOK — Premium Light Theme */}
-              <div className="w-full max-w-4xl mx-auto mb-4 md:mb-6 relative overflow-hidden rounded-2xl md:rounded-3xl bg-gradient-to-b from-orange-50/80 via-white to-amber-50/40 text-slate-900 p-4 md:p-6 shadow-[0_10px_35px_-10px_rgba(249,115,22,0.15)] border border-orange-200/80 text-center">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-orange-400/10 rounded-full blur-[90px] pointer-events-none -mr-20 -mt-20"></div>
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-400/10 rounded-full blur-[90px] pointer-events-none -ml-20 -mb-20"></div>
+              {/* 🚨 PROVOKING POSTER HOOK — Fun Poster Style with Yellow & Red Highlights */}
+              <div className="w-full max-w-4xl mx-auto mb-6 relative overflow-hidden rounded-3xl bg-gradient-to-b from-amber-50 via-yellow-50/50 to-red-50/40 text-slate-900 p-4 sm:p-6 md:p-8 shadow-[0_12px_40px_-12px_rgba(239,68,68,0.2)] border-2 border-red-200 text-center">
+                <div className="absolute -top-10 -right-10 w-48 h-48 bg-yellow-300/40 rounded-full blur-3xl pointer-events-none"></div>
+                <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-red-400/20 rounded-full blur-3xl pointer-events-none"></div>
 
                 <div className="relative z-10 flex flex-col items-center">
-                  {/* Top Badge Banner */}
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-red-50 border border-red-200 rounded-full text-red-600 text-[10px] md:text-xs font-extrabold uppercase tracking-wider mb-2 animate-pulse shadow-xs">
-                    <span>🚨 HARD REALITY IN DESIGN</span>
+                  {/* Poster Sticker Tagline */}
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-yellow-400 border border-yellow-500 text-red-950 text-[10px] md:text-xs font-black uppercase tracking-wider mb-3 rounded-full shadow-sm">
+                    <span className="bg-red-600 text-white px-1.5 py-0.5 rounded-full text-[9px] font-black">MUST READ</span>
+                    <span>Interior Design Shortcut ⚡</span>
                   </div>
 
-                  {/* Main Provoking Statement */}
-                  <h1 className="text-xl sm:text-2xl md:text-4xl font-display font-black tracking-tight leading-tight text-slate-900 mb-2">
-                    No College Teaches How to <span className="text-orange-600 font-black underline decoration-orange-400 decoration-wavy underline-offset-4">Make Money</span> In Design Industry.
+                  {/* Main Provoking Statement — Small but Impactful Poster Title */}
+                  <h1 className="text-lg sm:text-xl md:text-2xl font-display font-black tracking-tight leading-snug text-slate-900 mb-4 max-w-3xl">
+                    You don't need a{' '}
+                    <span className="bg-yellow-300 text-slate-900 px-2 py-0.5 rounded-md border border-yellow-400 shadow-xs inline-block font-black">
+                      degree in Design
+                    </span>{' '}
+                    to Start{' '}
+                    <span className="bg-red-600 text-white px-2 py-0.5 rounded-md shadow-xs inline-block font-black">
+                      Interior Design Career.
+                    </span>
                   </h1>
 
-                  {/* Cut the Crap Box */}
-                  <div className="w-full max-w-3xl bg-white border border-orange-200/90 rounded-xl md:rounded-2xl p-3 md:p-4 my-2 text-center shadow-sm">
-                    <p className="text-sm md:text-lg font-display font-black text-orange-600 mb-1.5 uppercase tracking-wide">
-                      ⚡ CUT THE CRAP & SIMPLY LEARN:
-                    </p>
-                    <div className="flex flex-nowrap items-center justify-center gap-1.5 sm:gap-2.5 md:gap-3 whitespace-nowrap py-0.5">
-                      <span className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs md:text-base font-black rounded-md sm:rounded-lg shadow-md tracking-wider">PLANNING</span>
-                      <span className="text-orange-500 text-xs font-bold">•</span>
-                      <span className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs md:text-base font-black rounded-md sm:rounded-lg shadow-md tracking-wider">DESIGNING</span>
-                      <span className="text-orange-500 text-xs font-bold">•</span>
-                      <span className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs md:text-base font-black rounded-md sm:rounded-lg shadow-md tracking-wider">RENDERING</span>
+                  {/* Poster Cut the Crap Box */}
+                  <div className="w-full max-w-3xl bg-white border-2 border-red-500/80 rounded-2xl p-2.5 sm:p-3.5 my-2 text-center shadow-md relative">
+                    <div className="inline-block bg-red-600 text-white text-[10px] sm:text-[11px] md:text-xs font-black px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider shadow-sm mb-1.5">
+                      ⚡ CUT THE CRAP & SIMPLY LEARN
                     </div>
-                    {/* Put 'That’s ALL needed to make money in this industry.' in 1 SINGLE LINE */}
-                    <p className="text-[11px] sm:text-sm md:text-base text-slate-700 font-bold mt-2.5 whitespace-nowrap">
-                      That’s <span className="text-slate-900 underline decoration-orange-500 font-black">ALL</span> needed to make money in this industry.
-                    </p>
+
+                    {/* Single line steps row */}
+                    <div className="flex flex-nowrap items-center justify-center gap-1 sm:gap-1.5 md:gap-2 whitespace-nowrap py-1 overflow-x-auto">
+                      <span className="bg-yellow-400 text-slate-900 border border-yellow-500 font-black px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs rounded-xl shadow-xs tracking-tight">
+                        1. PLANNING
+                      </span>
+                      <span className="text-red-500 text-[10px] sm:text-xs font-black">→</span>
+                      <span className="bg-red-600 text-white font-black px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs rounded-xl shadow-xs tracking-tight">
+                        2. DESIGNING
+                      </span>
+                      <span className="text-red-500 text-[10px] sm:text-xs font-black">→</span>
+                      <span className="bg-yellow-400 text-slate-900 border border-yellow-500 font-black px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs rounded-xl shadow-xs tracking-tight">
+                        3. RENDERING
+                      </span>
+                    </div>
+
+                    {/* Single line bottom yellow box */}
+                    <div className="mt-1.5 flex justify-center">
+                      <span className="bg-yellow-200 text-slate-900 text-[10px] sm:text-xs md:text-xs font-extrabold px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-xl border border-yellow-300 inline-block shadow-xs whitespace-nowrap max-w-full overflow-hidden text-ellipsis">
+                        That’s <span className="underline decoration-red-600 decoration-2 font-black text-red-700">ALL</span> needed to make money in this industry! 💰
+                      </span>
+                    </div>
                   </div>
 
                   {/* We Teach You Exactly What Is Required */}
-                  <div className="mt-2 flex items-center justify-center gap-1.5 text-xs sm:text-sm md:text-base font-bold text-emerald-700 px-2">
-                    <span className="shrink-0 text-sm md:text-base self-start sm:self-center">✅</span>
-                    <p className="leading-snug text-center">
-                      We teach you <u className="font-black text-slate-900">EXACTLY</u> what is required.
-                      <br className="block sm:hidden" />
-                      <span className="text-emerald-600 font-semibold sm:font-bold"> Nothing less, nothing more.</span>
+                  <div className="mt-3 inline-flex items-center gap-2 bg-red-50 border border-red-200 rounded-xl px-3.5 py-1.5 text-xs md:text-sm font-bold text-slate-800 shadow-xs">
+                    <span>✅</span>
+                    <p className="leading-tight text-center">
+                      We teach you <span className="bg-yellow-300 text-slate-900 font-black px-1.5 py-0.5 rounded">EXACTLY</span> what is required.
+                      <span className="text-red-600 font-extrabold ml-1">Nothing less, nothing more.</span>
                     </p>
                   </div>
                 </div>
               </div>
               
-              {/* New Story Section */}
-              <div className="w-full max-w-4xl mx-auto mb-10 text-left bg-white p-6 md:p-8 rounded-3xl shadow-[0_0_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100">
-                {/* Hero Video inside the card — at top */}
-                <div style={{ position: 'relative', paddingTop: '56.25%' }} className="rounded-2xl overflow-hidden mb-6 shadow-sm">
+              {/* Story & Video Section — Poster Styled */}
+              <div className="w-full max-w-4xl mx-auto mb-10 text-left bg-gradient-to-b from-white via-amber-50/20 to-red-50/20 p-5 md:p-8 rounded-3xl shadow-lg border-2 border-amber-200/80 relative">
+                {/* Hero Video inside card with Overlay Banner */}
+                <div style={{ position: 'relative', paddingTop: '56.25%' }} className="rounded-2xl overflow-hidden mb-6 shadow-md border border-slate-200">
                   <iframe src="https://iframe.mediadelivery.net/embed/494628/1f7b76dd-7d47-4f39-87af-bff5a6b02d08?autoplay=true&loop=true&muted=true&preload=true&responsive=true" loading="lazy" style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowFullScreen={true}></iframe>
+                  
+                  {/* Overlay Banner Over The Video Top */}
+                  <div className="absolute top-1.5 sm:top-3 md:top-4 left-1/2 -translate-x-1/2 z-20 w-auto max-w-[96%] text-center pointer-events-none">
+                    <h2 className="inline-block bg-yellow-400/95 backdrop-blur-sm border border-slate-900 text-slate-950 text-[9px] sm:text-xs md:text-xs font-semibold px-2 py-0.5 sm:px-3.5 sm:py-1 rounded-lg sm:rounded-xl shadow-sm tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
+                      🏡 Learn To Design Complete Homes, Offices and Villas
+                    </h2>
+                  </div>
                 </div>
 
-                <p className="text-lg md:text-xl font-serif text-slate-600 leading-relaxed mb-6 italic">
-                  "In our business of Architecture and Design, <span className="font-bold text-slate-800 border-b border-orange-300">Planning, Design and Rendering</span> matter the most."
-                </p>
-                <p className="text-sm md:text-base text-slate-500 leading-relaxed mb-4">
-                  The question isn't <em className="font-semibold text-slate-700">if</em> you can. It's...
-                </p>
-                <div className="mb-4">
-                  <p className="text-xl md:text-2xl font-display font-extrabold text-orange-500">
-                    How to do it FASTER?
+                <div className="bg-yellow-100/90 border-l-4 border-yellow-500 p-3.5 md:p-4 rounded-r-xl mb-4 shadow-xs">
+                  <p className="text-sm md:text-base font-display font-bold text-slate-900 leading-snug">
+                    "In our business of Architecture and Design, <span className="bg-yellow-300 text-slate-950 font-black px-1.5 py-0.5 rounded">Planning, Design and Rendering</span> matter the most."
                   </p>
                 </div>
 
-                <div className="w-full bg-orange-50/50 rounded-xl p-3 md:p-4 mt-2">
-                  <p className="text-slate-600 text-xs md:text-sm leading-[1.4] md:leading-relaxed">
-                    That's exactly why we built this. A complete blueprint from software basics to client-ready renders designed to make you <strong className="text-orange-600">job or business ready in just one month.</strong>
+                <div className="bg-red-600 text-white rounded-2xl p-4 md:p-5 mb-4 shadow-md text-center">
+                  <p className="text-xs md:text-sm uppercase tracking-wider font-extrabold text-yellow-300 mb-1">
+                    THE BIG QUESTION ISN'T IF YOU CAN...
+                  </p>
+                  <p className="text-base md:text-xl font-display font-black text-white tracking-wide">
+                    ⚡ How to do it <span className="bg-yellow-400 text-slate-950 px-2 py-0.5 rounded-md">FASTER & BETTER?</span>
+                  </p>
+                </div>
+
+                <div className="w-full bg-white border border-red-200 rounded-xl p-3.5 md:p-4 shadow-sm">
+                  <p className="text-slate-800 text-xs md:text-sm font-medium leading-relaxed">
+                    That's exactly why we built this: A complete step-by-step blueprint from software basics to client-ready renders designed to make you <span className="bg-red-100 text-red-700 font-extrabold px-1.5 py-0.5 rounded border border-red-200">job or business ready in 30 days!</span> 🚀
                   </p>
                 </div>
               </div>
 
-              {/* 🌱 Start from absolute zero badge — Directly ABOVE First CTA */}
-              <div className="mb-4 inline-flex items-center gap-2 text-xs md:text-sm font-bold text-slate-800 bg-orange-50 border border-orange-200/80 px-4 py-2 rounded-xl shadow-sm">
+              {/* 🌱 Start from absolute zero badge — Poster Sticker Style */}
+              <div className="mb-4 inline-flex items-center gap-2 text-xs md:text-sm font-black text-slate-900 bg-yellow-400 border-2 border-slate-900 px-4 py-2 rounded-full shadow-[3px_3px_0px_#000]">
                 <span>🌱</span>
-                <span><strong className="text-slate-900 font-black">Start from absolute zero</strong> — no previous knowledge required.</span>
+                <span>Start from absolute zero <span className="bg-red-600 text-white px-2 py-0.5 rounded-full text-[10px] uppercase font-black ml-1">No Experience Needed</span></span>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 items-center mb-8">
-                <button onClick={openPaymentModal} className="px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-2xl font-bold text-lg shadow-xl shadow-orange-500/20 hover:shadow-orange-500/30 hover:scale-[1.03] transition-all flex items-center gap-3 group whitespace-nowrap premium-stroke">
+              <div className="flex flex-col sm:flex-row gap-4 items-center mb-6">
+                <button onClick={openPaymentModal} className="px-8 md:px-10 py-4 md:py-5 bg-gradient-to-r from-red-600 via-orange-600 to-red-600 text-white rounded-2xl font-black text-base md:text-lg border-2 border-slate-900 shadow-[4px_4px_0px_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none transition-all flex items-center gap-3 group whitespace-nowrap">
                   <Download size={18} className="shrink-0" />
                   Get All Courses & 24/7 Team Support <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
                 </button>
               </div>
-              <p className="text-xs text-slate-500 mb-8 font-bold">24/7 support from team, installation help to course doubts • Free Software Links Included • 7-Day Money-Back Guarantee</p>
+              <div className="bg-amber-100/70 border border-amber-300 px-3 py-1.5 rounded-xl text-[11px] md:text-xs text-slate-800 font-extrabold mb-8 inline-block shadow-xs">
+                ✨ 24/7 Team Support • Free Software Links Included • 7-Day Money-Back Guarantee
+              </div>
               
-              {/* ═══════ YOU CAN SECTION ═══════ */}
-              <div className="w-full mt-4">
-                <h2 className="text-center text-2xl md:text-3xl font-display font-black text-slate-800 mb-6">After Course You Can</h2>
+              {/* ═══════ YOU CAN SECTION — Poster Cards ═══════ */}
+              <div className="w-full mt-2">
+                <div className="inline-block bg-red-600 text-white font-black text-xs md:text-sm uppercase tracking-wider px-4 py-1.5 rounded-full shadow-xs mb-4">
+                  🎯 AFTER THIS COURSE YOU CAN
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-                  <div className="bg-amber-50/30 border border-amber-200/70 rounded-2xl p-5 md:p-6 flex flex-col gap-1.5 transition-all hover:shadow-sm">
+                  <div className="bg-yellow-100/90 border-2 border-yellow-400 rounded-2xl p-4 md:p-5 flex flex-col gap-1 shadow-sm transition-all hover:shadow-md">
                     <div className="flex items-center gap-2.5">
-                      <span className="text-xl">💼</span>
-                      <span className="font-display font-extrabold text-slate-900 text-base md:text-lg">Get a Better Job</span>
+                      <span className="text-xl bg-yellow-300 p-1.5 rounded-lg border border-yellow-400">💼</span>
+                      <span className="font-display font-black text-slate-900 text-sm md:text-base">Get a Higher-Paying Job</span>
                     </div>
-                    <p className="text-slate-500 text-xs md:text-sm pl-8 font-medium">Higher-paying design roles</p>
+                    <p className="text-slate-700 text-xs md:text-sm pl-10 font-bold">Land high-paying design & rendering roles fast</p>
                   </div>
-                  <div className="bg-amber-50/30 border border-amber-200/70 rounded-2xl p-5 md:p-6 flex flex-col gap-1.5 transition-all hover:shadow-sm">
+                  <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-4 md:p-5 flex flex-col gap-1 shadow-sm transition-all hover:shadow-md">
                     <div className="flex items-center gap-2.5">
-                      <span className="text-xl">🏢</span>
-                      <span className="font-display font-extrabold text-slate-900 text-base md:text-lg">Own Design Firm</span>
+                      <span className="text-xl bg-red-200 p-1.5 rounded-lg border border-red-300">🏢</span>
+                      <span className="font-display font-black text-slate-900 text-sm md:text-base">Launch Your Own Studio</span>
                     </div>
-                    <p className="text-slate-500 text-xs md:text-sm pl-8 font-medium">Freelance & studio projects</p>
+                    <p className="text-slate-700 text-xs md:text-sm pl-10 font-bold">Take freelance clients & build your firm</p>
                   </div>
                 </div>
               </div>
