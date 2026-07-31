@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/new",
+      "destination": "https://kids-roan-nine.vercel.app/"
+    },
+    {
+      "source": "/new/:path*",
+      "destination": "https://kids-roan-nine.vercel.app/:path*"
+    }
+  ]
+}
