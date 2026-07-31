@@ -1,9 +1,12 @@
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/new",
-      "destination": "https://kids-roan-nine.vercel.app/"
-    },
+      "destination": "/new/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
     {
       "source": "/new/:path*",
       "destination": "https://kids-roan-nine.vercel.app/:path*"
