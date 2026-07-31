@@ -22,6 +22,21 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
+      },
+      esbuild: {
+        drop: ['console', 'debugger'],
+      },
+      build: {
+        target: 'esnext',
+        cssCodeSplit: true,
+        rollupOptions: {
+          output: {
+            manualChunks: {
+              'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+              'vendor-icons': ['lucide-react'],
+            }
+          }
+        }
       }
     };
 });

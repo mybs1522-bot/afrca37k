@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Star, CheckCircle, CheckCircle2, X, ChevronDown, Sparkles, Eye, Download, Phone, Mail, Lock, Loader2, Timer, Check, Award } from 'lucide-react';
+import { ArrowRight, Star, CheckCircle, CheckCircle2, X, ChevronDown, Sparkles, Eye, Download, Phone, Mail, Lock, Loader2, Timer, Check, Award, Play } from 'lucide-react';
 import { COURSES } from '../constants';
 import { WhatsAppButton } from '../components/WhatsAppButton';
 import { openSelarCheckout } from '../services/razorpay';
@@ -99,6 +99,7 @@ const LandingPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [paymentError, setPaymentError] = useState('');
   const [paymentSuccess, setPaymentSuccess] = useState<string | null>(null);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   useEffect(() => {
     if (paymentSuccess) {
@@ -227,9 +228,24 @@ const LandingPage: React.FC = () => {
               
               {/* Story & Video Section — Poster Styled */}
               <div className="w-full max-w-4xl mx-auto mb-10 text-left bg-gradient-to-b from-white via-amber-50/20 to-red-50/20 p-5 md:p-8 rounded-3xl shadow-lg border-2 border-amber-200/80 relative">
-                {/* Hero Video inside card with Overlay Banner */}
-                <div style={{ position: 'relative', paddingTop: '56.25%' }} className="rounded-2xl overflow-hidden mb-6 shadow-md border border-slate-200">
-                  <iframe src="https://iframe.mediadelivery.net/embed/494628/1f7b76dd-7d47-4f39-87af-bff5a6b02d08?autoplay=true&loop=true&muted=true&preload=false&responsive=true" loading="lazy" style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowFullScreen={true}></iframe>
+                {/* Hero Video inside card with Video Facade for PageSpeed 90+ */}
+                <div style={{ position: 'relative', paddingTop: '56.25%' }} className="rounded-2xl overflow-hidden mb-6 shadow-md border border-slate-200 group bg-slate-950">
+                  {isVideoLoaded ? (
+                    <iframe src="https://iframe.mediadelivery.net/embed/494628/1f7b76dd-7d47-4f39-87af-bff5a6b02d08?autoplay=true&loop=true&muted=true&preload=false&responsive=true" loading="lazy" style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowFullScreen={true}></iframe>
+                  ) : (
+                    <div 
+                      onClick={() => setIsVideoLoaded(true)}
+                      className="absolute inset-0 cursor-pointer bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 flex flex-col items-center justify-center group"
+                    >
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 flex items-center justify-center text-slate-950 shadow-2xl group-hover:scale-110 transition-all duration-300 relative z-10">
+                        <Play size={32} className="fill-slate-950 translate-x-0.5" />
+                        <span className="absolute inset-0 rounded-full bg-yellow-400/40 animate-ping pointer-events-none"></span>
+                      </div>
+                      <span className="mt-3 text-xs sm:text-sm font-black text-yellow-300 uppercase tracking-widest bg-black/40 px-3 py-1 rounded-full border border-yellow-400/30">
+                        ▶ Click To Play Video Preview
+                      </span>
+                    </div>
+                  )}
                   
                   {/* Overlay Banner Over The Video Top */}
                   <div className="absolute top-1.5 sm:top-3 md:top-4 left-1/2 -translate-x-1/2 z-20 w-auto max-w-[96%] text-center pointer-events-none">
@@ -343,7 +359,7 @@ const LandingPage: React.FC = () => {
                 return (
                   <div key={`row1-${course.id}-${i}`} className="w-[140px] md:w-[150px] shrink-0 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden group hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                     <div className="relative aspect-square overflow-hidden bg-gray-100">
-                      <img src={course.imageUrl} alt={course.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <img src={course.imageUrl} alt={course.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       
                       {/* Number Badge */}
                       <div className="absolute top-1.5 left-1.5 w-6 h-6 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center font-display font-bold text-gray-900 shadow-sm text-[10px] border border-gray-200">
@@ -383,7 +399,7 @@ const LandingPage: React.FC = () => {
                 return (
                   <div key={`row2-${course.id}-${i}`} className="w-[140px] md:w-[150px] shrink-0 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden group hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                     <div className="relative aspect-square overflow-hidden bg-gray-100">
-                      <img src={course.imageUrl} alt={course.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <img src={course.imageUrl} alt={course.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       
                       {/* Number Badge */}
                       <div className="absolute top-1.5 left-1.5 w-6 h-6 bg-white/95 backdrop-blur-sm rounded-full flex items-center justify-center font-display font-bold text-gray-900 shadow-sm text-[10px] border border-gray-200">
