@@ -160,16 +160,26 @@ export function getCountryConfig(countryCode: string): CountryConfig {
 }
 
 /**
- * IP Auto Detection using ipapi.co with fallback
+ * IP Auto Detection with localStorage caching & quick timeout fallback
  */
 export async function detectCountry(): Promise<string> {
+  if (typeof window !== "undefined") {
+    const cached = localStorage.getItem("user_country_code");
+    if (cached && COUNTRIES[cached]) {
+      return cached;
+    }
+  }
+
   try {
     const res = await fetch("https://ipapi.co/json/", {
-      signal: AbortSignal.timeout(3000)
+      signal: AbortSignal.timeout(1200)
     });
     if (res.ok) {
       const data = await res.json();
       if (data && data.country_code && COUNTRIES[data.country_code]) {
+        if (typeof window !== "undefined") {
+          localStorage.setItem("user_country_code", data.country_code);
+        }
         return data.country_code;
       }
     }

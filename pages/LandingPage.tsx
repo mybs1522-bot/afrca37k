@@ -229,7 +229,7 @@ const LandingPage: React.FC = () => {
               <div className="w-full max-w-4xl mx-auto mb-10 text-left bg-gradient-to-b from-white via-amber-50/20 to-red-50/20 p-5 md:p-8 rounded-3xl shadow-lg border-2 border-amber-200/80 relative">
                 {/* Hero Video inside card with Overlay Banner */}
                 <div style={{ position: 'relative', paddingTop: '56.25%' }} className="rounded-2xl overflow-hidden mb-6 shadow-md border border-slate-200">
-                  <iframe src="https://iframe.mediadelivery.net/embed/494628/1f7b76dd-7d47-4f39-87af-bff5a6b02d08?autoplay=true&loop=true&muted=true&preload=true&responsive=true" loading="lazy" style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowFullScreen={true}></iframe>
+                  <iframe src="https://iframe.mediadelivery.net/embed/494628/1f7b76dd-7d47-4f39-87af-bff5a6b02d08?autoplay=true&loop=true&muted=true&preload=false&responsive=true" loading="lazy" style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowFullScreen={true}></iframe>
                   
                   {/* Overlay Banner Over The Video Top */}
                   <div className="absolute top-1.5 sm:top-3 md:top-4 left-1/2 -translate-x-1/2 z-20 w-auto max-w-[96%] text-center pointer-events-none">

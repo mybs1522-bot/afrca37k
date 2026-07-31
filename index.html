@@ -5,159 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Avada Design — AI-Powered Architecture Design Education Bundle</title>
     <meta name="description" content="Learn Professional Interior & Exterior 3D Design in 15 days. AI-ready workflow. 50,000+ students enrolled. Get all courses with instant access!" />
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
+    <link rel="preconnect" href="https://iframe.mediadelivery.net">
+    <link rel="dns-prefetch" href="https://iframe.mediadelivery.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/index.css">
+
+    <!-- Microsoft Clarity (Deferred) -->
+    <script type="text/javascript" defer>
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "xuqnn63kfp");
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://iframe.mediadelivery.net">
-    <link rel="dns-prefetch" href="https://iframe.mediadelivery.net">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'Outfit', 'system-ui', 'sans-serif'],
-              display: ['Space Grotesk', 'sans-serif'],
-              serif: ['Playfair Display', 'serif'],
-              mono: ['JetBrains Mono', 'monospace'],
-            },
-            colors: {
-              glass: {
-                100: 'rgba(255, 255, 255, 0.7)',
-                200: 'rgba(255, 255, 255, 0.9)',
-                300: 'rgba(255, 255, 255, 0.95)',
-                border: 'rgba(0, 0, 0, 0.05)',
-              },
-              brand: {
-                accent: '#3b82f6',
-                primary: '#2563eb',
-                dark: '#0f172a',
-                success: '#10b981',
-              },
-            },
-            boxShadow: {
-              'glow': '0 0 20px rgba(37, 99, 235, 0.3)',
-              'glow-lg': '0 0 40px rgba(37, 99, 235, 0.5)',
-              'soft': '0 2px 40px rgba(0,0,0,0.06)',
-              'lift': '0 20px 60px rgba(0,0,0,0.1)',
-              'premium': '0 25px 80px -12px rgba(0,0,0,0.15)',
-              'card': '0 4px 24px rgba(0,0,0,0.06)',
-            },
-          }
-        }
-      }
+    <!-- Meta Pixel Code (Deferred) -->
+    <script defer>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2219202925544751');
+    fbq('track', 'PageView');
     </script>
-    <style>
-      ::-webkit-scrollbar { width: 6px; height: 6px; }
-      ::-webkit-scrollbar-track { background: #f7f9fb; }
-      ::-webkit-scrollbar-thumb { background: #c3c6d7; border-radius: 10px; }
-      ::-webkit-scrollbar-thumb:hover { background: #737686; }
-      .no-scrollbar::-webkit-scrollbar { display: none; }
-      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-      html { scroll-behavior: auto; }
-
-      .gradient-text {
-        background: linear-gradient(135deg, #004ac6 0%, #2563eb 50%, #004ac6 100%);
-        -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-      }
-
-      .grid-bg {
-        background-color: #ffffff;
-        background-image: 
-          linear-gradient(to right, rgba(37, 99, 235, 0.05) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
-        background-size: 32px 32px;
-      }
-
-      /* Scroll Reveal — smoother spring */
-      .reveal { opacity: 0; transform: translateY(32px); transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1); }
-      .reveal.revealed { opacity: 1; transform: translateY(0); }
-      .reveal-scale { opacity: 0; transform: scale(0.92); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
-      .reveal-scale.revealed { opacity: 1; transform: scale(1); }
-
-      /* Scroll Carousel */
-      @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-      @keyframes scroll-right { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
-      .animate-scroll-left { display: flex; width: max-content; animation: scroll-left 45s linear infinite; }
-      .animate-scroll-right { display: flex; width: max-content; animation: scroll-right 45s linear infinite; }
-      .hover\:pause:hover { animation-play-state: paused; }
-
-      /* Flip Clock */
-      .flip-clock-group { display: flex; flex-direction: column; align-items: center; gap: 4px; }
-      .flip-clock-label { font-size: 9px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
-      .flip-digit-wrapper { perspective: 200px; }
-      .flip-digit {
-        width: 36px; height: 48px; background: linear-gradient(180deg, #1a1a2e, #0f0f1a); border: 1px solid rgba(255,255,255,0.06);
-        border-radius: 8px; display: flex; align-items: center; justify-content: center;
-        font-family: 'JetBrains Mono', monospace; font-size: 24px; font-weight: 700; color: white;
-        position: relative; overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05);
-      }
-      .flip-digit::after { content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: rgba(255,255,255,0.04); }
-      @media (min-width: 768px) { .flip-digit { width: 48px; height: 64px; font-size: 32px; } }
-
-      /* Premium Stroke */
-      @keyframes borderRotate { 0% { --angle: 0deg; } 100% { --angle: 360deg; } }
-      @property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
-      .premium-stroke { position: relative; z-index: 1; }
-      .premium-stroke::before {
-        content: ''; position: absolute; inset: -1px; padding: 1px; border-radius: inherit;
-        background: conic-gradient(from var(--angle), transparent 0%, transparent 75%, rgba(255,255,255,0.6) 85%, transparent 100%);
-        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor; mask-composite: exclude;
-        animation: borderRotate 4s linear infinite; pointer-events: none; z-index: -1;
-      }
-
-      /* CTA Sweep */
-      .cta-primary { position: relative; overflow: hidden; }
-      .cta-primary::after {
-        content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-        background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.12) 50%, transparent 70%);
-        transform: translateX(-100%); transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .cta-primary:hover::after { transform: translateX(100%); }
-
-      /* Keyframes */
-      @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-      @keyframes glowPulse { 0%, 100% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.25); } 50% { box-shadow: 0 0 50px rgba(37, 99, 235, 0.5); } }
-      @keyframes floatSlow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-
-      body { background: #f7f9fb; }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2219202925544751');
-fbq('track', 'PageView');
-</script>
-<!-- End Meta Pixel Code -->
+    <!-- End Meta Pixel Code -->
 </head>
   <body class="bg-white text-slate-900 overflow-x-hidden antialiased selection:bg-blue-200 selection:text-slate-900 grid-bg">
     <!-- Meta Pixel Fallback (NoScript) -->
