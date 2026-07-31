@@ -109,6 +109,14 @@ const LandingPage: React.FC = () => {
   }, [paymentSuccess, country]);
 
   useEffect(() => {
+    // Non-blocking automatic video autoplay after initial DOM paint (1.2s)
+    const timer = setTimeout(() => {
+      setIsVideoLoaded(true);
+    }, 1200);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
     const calc = () => { const D = (3 * 3600 + 36 * 60 + 20) * 1000, now = Date.now(), r = D - (now % D); setTimeLeft({ h: Math.floor((r / 3600000) % 24), m: Math.floor((r / 60000) % 60), s: Math.floor((r / 1000) % 60) }); };
     const t = setInterval(calc, 1000); calc(); return () => clearInterval(t);
   }, []);
@@ -231,7 +239,7 @@ const LandingPage: React.FC = () => {
                 {/* Hero Video inside card with Video Facade for PageSpeed 90+ */}
                 <div style={{ position: 'relative', paddingTop: '56.25%' }} className="rounded-2xl overflow-hidden mb-6 shadow-md border border-slate-200 group bg-slate-950">
                   {isVideoLoaded ? (
-                    <iframe src="https://iframe.mediadelivery.net/embed/494628/1f7b76dd-7d47-4f39-87af-bff5a6b02d08?autoplay=true&loop=true&muted=true&preload=false&responsive=true" loading="lazy" style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowFullScreen={true}></iframe>
+                    <iframe src="https://iframe.mediadelivery.net/embed/494628/1f7b76dd-7d47-4f39-87af-bff5a6b02d08?autoplay=true&loop=true&muted=true&preload=auto&responsive=true" loading="lazy" style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowFullScreen={true}></iframe>
                   ) : (
                     <div 
                       onClick={() => setIsVideoLoaded(true)}
