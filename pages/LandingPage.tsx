@@ -223,88 +223,10 @@ const LandingPage: React.FC = () => {
           </div>
         </section>
 
-        {/* ═══ INTERIOR & EXTERIOR DESIGN BANNER ═══ */}
+        {/* ═══ BANNER IMAGE ═══ */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 my-8">
-          <div className="bg-white rounded-2xl overflow-hidden relative" style={{ minHeight: 340 }}>
-
-            {/* Decorative: dots grid + quarter-circle */}
-            <div className="absolute top-5 right-16 hidden lg:grid grid-cols-4 gap-[5px] pointer-events-none z-10">
-              {Array.from({ length: 12 }).map((_, i) => <span key={i} className="w-[5px] h-[5px] rounded-full bg-orange-500" />)}
-            </div>
-            <div className="absolute -top-10 -right-10 w-28 h-28 border-[12px] border-orange-500 rounded-full pointer-events-none hidden lg:block" />
-
-            <div className="flex flex-col lg:flex-row">
-
-              {/* LEFT — text content */}
-              <div className="lg:w-[55%] p-6 sm:p-8 flex flex-col justify-center relative z-10">
-
-                {/* Title block */}
-                <span className="font-serif italic text-2xl sm:text-3xl text-orange-600 leading-none">Learn</span>
-                <h2 className="font-display font-black text-slate-950 text-[2.6rem] sm:text-6xl leading-[0.95] tracking-tight mt-0.5">
-                  INTERIOR<br />
-                  <span className="text-orange-600">&amp; EXTERIOR</span>
-                </h2>
-                <span className="inline-block self-start bg-orange-600 text-white font-display font-black text-3xl sm:text-5xl px-4 py-0.5 rounded-xl mt-1">DESIGN</span>
-
-                <p className="text-sm sm:text-base font-bold text-slate-800 mt-4 leading-snug">
-                  Build Skills. Design Spaces.<br />Build Your <span className="text-orange-600">Career.</span>
-                </p>
-
-                {/* 4 features — 2×2 */}
-                <div className="grid grid-cols-2 gap-x-6 gap-y-3 mt-5 text-[13px]">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-orange-50 border border-orange-200 flex items-center justify-center shrink-0"><Play size={15} className="text-orange-600 fill-orange-600" /></div>
-                    <div><p className="font-bold text-slate-900 leading-tight">Recorded</p><p className="text-[11px] text-slate-500 leading-tight">Course Access</p></div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-orange-50 border border-orange-200 flex items-center justify-center shrink-0"><Award size={15} className="text-orange-600" /></div>
-                    <div><p className="font-bold text-slate-900 leading-tight">Certification</p><p className="text-[11px] text-slate-500 leading-tight">Included</p></div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-orange-50 border border-orange-200 flex items-center justify-center shrink-0"><CheckCircle2 size={15} className="text-orange-600" /></div>
-                    <div><p className="font-bold text-slate-900 leading-tight">Real Project</p><p className="text-[11px] text-slate-500 leading-tight">Based Training</p></div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-orange-50 border border-orange-200 flex items-center justify-center shrink-0"><Users size={15} className="text-orange-600" /></div>
-                    <div><p className="font-bold text-slate-900 leading-tight">For Students</p><p className="text-[10px] text-slate-500 leading-tight">Architects | Freelancers | Beginners</p></div>
-                  </div>
-                </div>
-
-                {/* CTA row */}
-                <div className="flex items-center gap-4 mt-5">
-                  <button onClick={openPaymentModal} className="px-7 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-xl font-black text-sm uppercase tracking-wide flex items-center gap-2 transition-colors">
-                    JOIN NOW <ArrowRight size={16} />
-                  </button>
-                  <span className="text-xs font-bold text-slate-600 flex items-center gap-1"><Timer size={14} className="text-orange-600" /> Limited Seats</span>
-                </div>
-              </div>
-
-              {/* RIGHT — visuals (woman + 2 render thumbnails) */}
-              <div className="lg:w-[45%] relative min-h-[280px] lg:min-h-0 hidden lg:block">
-                {/* Woman portrait — fills the right side */}
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" alt="Professional designer" loading="lazy" className="absolute inset-0 w-full h-full object-cover object-top" />
-                {/* Subtle gradient so text on left doesn't clash */}
-                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/40 to-transparent pointer-events-none" />
-
-                {/* Floating render thumbnail — exterior */}
-                <div className="absolute top-6 left-4 w-[48%] rounded-xl overflow-hidden shadow-lg border-2 border-white z-10">
-                  <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=400&auto=format&fit=crop" alt="Exterior render" loading="lazy" className="w-full h-24 object-cover" />
-                </div>
-                {/* Floating render thumbnail — interior */}
-                <div className="absolute top-[110px] left-10 w-[48%] rounded-xl overflow-hidden shadow-lg border-2 border-white z-10">
-                  <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=400&auto=format&fit=crop" alt="Interior render" loading="lazy" className="w-full h-24 object-cover" />
-                </div>
-              </div>
-            </div>
-
-            {/* Software strip — full width bottom */}
-            <div className="border-t border-slate-100 bg-slate-50/80 px-6 sm:px-8 py-3 flex flex-wrap items-center justify-center sm:justify-start gap-5 sm:gap-8 text-xs font-black text-slate-900">
-              <div className="flex items-center gap-1.5"><span className="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px]">S</span> SketchUp</div>
-              <div className="flex items-center gap-1.5"><span className="w-5 h-5 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px]">V</span> V-Ray</div>
-              <div className="flex items-center gap-1.5"><span className="w-5 h-5 rounded bg-purple-600 text-white flex items-center justify-center text-[9px]">D5</span> D5 RENDER</div>
-              <div className="flex items-center gap-1.5"><span className="w-5 h-5 rounded bg-orange-600 text-white flex items-center justify-center text-[9px]">AI</span> AI DESIGN</div>
-            </div>
-
+          <div className="rounded-2xl overflow-hidden cursor-pointer hover:shadow-lg transition-shadow" onClick={openPaymentModal}>
+            <img src="/banner-hero.jpg" alt="Learn to Design Homes, Offices & Villas — Build Skills, Design Spaces, Start Earning From First Month" className="w-full h-auto block" loading="eager" />
           </div>
         </section>
 
