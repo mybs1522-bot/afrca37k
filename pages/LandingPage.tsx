@@ -214,9 +214,14 @@ const LandingPage: React.FC = () => {
 
           {/* Quick CTA Button */}
           <div className="flex flex-col items-center gap-2">
+            {/* Pricing */}
+            <div className="flex items-center gap-3">
+              <span className="text-slate-400 line-through text-base sm:text-lg font-bold">₦1,00,000</span>
+              <span className="text-2xl sm:text-3xl font-black text-emerald-600">₦37,000</span>
+            </div>
             <button onClick={openPaymentModal} className="w-full sm:w-auto px-8 md:px-12 py-4 md:py-5 bg-gradient-to-r from-red-600 via-orange-600 to-red-600 text-white rounded-2xl font-black text-base md:text-lg border-2 border-slate-900 shadow-[4px_4px_0px_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none transition-all inline-flex items-center justify-center gap-3">
               <Download size={20} className="shrink-0" />
-              <span>Get All Courses & Start Learning ({country.formattedPrice})</span>
+              <span>Get All Courses</span>
               <ArrowRight size={20} />
             </button>
             <p className="text-xs text-slate-500 font-bold">✨ Instant Download • 24/7 Support • 7-Day Guarantee</p>
