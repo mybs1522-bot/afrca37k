@@ -242,7 +242,7 @@ const LandingPage: React.FC = () => {
               🎓 Includes Official Certificate Equivalent to Diploma
             </div>
             <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950">
-              12 Software Used in this Industry
+              All 12 Software Used in this Industry
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 font-medium">Learn What You Need and Share With Your Friends ❤️</p>
           </div>
