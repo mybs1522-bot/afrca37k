@@ -223,7 +223,192 @@ const LandingPage: React.FC = () => {
           </div>
         </section>
 
-        {/* ═══ 2. ALL 12 TOOLS SHOWCASE (Carousel Grid) ═══ */}
+        {/* ═══ NEW: INTERIOR & EXTERIOR DESIGN GRAPHIC BANNER SECTION ═══ */}
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 my-10">
+          <div className="bg-white rounded-3xl border border-slate-200/90 shadow-2xl p-6 sm:p-10 relative overflow-hidden text-slate-900">
+            
+            {/* Top Right Decorative Dots & Circle Accent */}
+            <div className="absolute top-4 right-4 z-0 pointer-events-none opacity-80 flex gap-1">
+              <div className="grid grid-cols-5 gap-1.5 text-orange-500/40 text-[10px] font-black">
+                {Array.from({ length: 15 }).map((_, i) => (
+                  <span key={i} className="w-1.5 h-1.5 bg-orange-500 rounded-full inline-block"></span>
+                ))}
+              </div>
+            </div>
+            <div className="absolute -top-12 -right-12 w-32 h-32 border-[14px] border-orange-500 rounded-full opacity-90 pointer-events-none z-0"></div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+              
+              {/* LEFT COLUMN: Typography & Offer Details (7 cols) */}
+              <div className="lg:col-span-7 text-left space-y-5">
+                
+                {/* Top Cursive Accent */}
+                <div>
+                  <span className="font-serif italic text-3xl sm:text-4xl text-orange-600 font-bold block mb-[-6px] tracking-wide">
+                    Learn
+                  </span>
+                  <div className="font-display font-black leading-none tracking-tight">
+                    <span className="block text-4xl sm:text-6xl md:text-7xl text-slate-950">
+                      INTERIOR
+                    </span>
+                    <span className="block text-4xl sm:text-6xl md:text-7xl text-orange-600">
+                      & EXTERIOR
+                    </span>
+                    <span className="inline-block bg-orange-600 text-white text-3xl sm:text-5xl md:text-6xl px-4 py-1 rounded-2xl mt-1 font-black shadow-md">
+                      DESIGN
+                    </span>
+                  </div>
+                </div>
+
+                {/* Subheader */}
+                <p className="text-sm sm:text-base md:text-lg font-bold text-slate-800 tracking-tight">
+                  Build Skills. Design Spaces. Build Your <span className="text-orange-600">Career.</span>
+                </p>
+
+                {/* FEATURE ICONS GRID CARD (Pill Container) */}
+                <div className="bg-slate-50 border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-xs">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                    
+                    {/* Feature 1 */}
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-xl bg-orange-100 border border-orange-200 flex items-center justify-center text-orange-600 shrink-0">
+                        <Play size={18} className="fill-orange-600" />
+                      </div>
+                      <div className="text-left">
+                        <p className="text-xs font-bold text-slate-900 leading-tight">Recorded</p>
+                        <p className="text-[11px] text-slate-500 font-medium leading-tight">Course Access</p>
+                      </div>
+                    </div>
+
+                    {/* Feature 2 */}
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-xl bg-orange-100 border border-orange-200 flex items-center justify-center text-orange-600 shrink-0">
+                        <Award size={18} />
+                      </div>
+                      <div className="text-left">
+                        <p className="text-xs font-bold text-slate-900 leading-tight">Certification</p>
+                        <p className="text-[11px] text-slate-500 font-medium leading-tight">Included</p>
+                      </div>
+                    </div>
+
+                    {/* Feature 3 */}
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-xl bg-orange-100 border border-orange-200 flex items-center justify-center text-orange-600 shrink-0">
+                        <CheckCircle2 size={18} />
+                      </div>
+                      <div className="text-left">
+                        <p className="text-xs font-bold text-slate-900 leading-tight">Real Project</p>
+                        <p className="text-[11px] text-slate-500 font-medium leading-tight">Based Training</p>
+                      </div>
+                    </div>
+
+                    {/* Feature 4 */}
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-xl bg-orange-100 border border-orange-200 flex items-center justify-center text-orange-600 shrink-0">
+                        <Sparkles size={18} />
+                      </div>
+                      <div className="text-left">
+                        <p className="text-xs font-bold text-slate-900 leading-tight">For Students</p>
+                        <p className="text-[10px] text-slate-500 font-medium leading-tight line-clamp-1">Architects | Freelancers | Beginners</p>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                {/* JOIN NOW BUTTON & LIMITED SEATS */}
+                <div className="flex flex-wrap items-center gap-4 pt-1">
+                  <button 
+                    onClick={openPaymentModal}
+                    className="px-8 py-3.5 sm:py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-black text-base uppercase tracking-wider shadow-lg shadow-orange-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2.5 group"
+                  >
+                    <span>JOIN NOW</span>
+                    <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
+                      <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
+                    </div>
+                  </button>
+
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-slate-700">
+                    <Timer size={16} className="text-orange-600 animate-pulse" />
+                    <span>Limited Seats Available</span>
+                  </div>
+                </div>
+
+                {/* BOTTOM SOFTWARE BADGE BAR */}
+                <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center gap-3 sm:gap-6 text-xs font-black text-slate-900">
+                  
+                  {/* SketchUp */}
+                  <div className="flex items-center gap-1.5 bg-slate-100 px-3 py-1.5 rounded-xl border border-slate-200">
+                    <div className="w-4 h-4 bg-blue-600 rounded flex items-center justify-center text-white text-[10px] font-black">S</div>
+                    <span>SketchUp</span>
+                  </div>
+
+                  {/* V-Ray */}
+                  <div className="flex items-center gap-1.5 bg-slate-100 px-3 py-1.5 rounded-xl border border-slate-200">
+                    <div className="w-4 h-4 bg-slate-900 rounded-full border border-white flex items-center justify-center text-white text-[9px] font-black">V</div>
+                    <span>V-Ray</span>
+                  </div>
+
+                  {/* D5 RENDER */}
+                  <div className="flex items-center gap-1.5 bg-slate-100 px-3 py-1.5 rounded-xl border border-slate-200">
+                    <div className="w-4 h-4 bg-purple-600 rounded flex items-center justify-center text-white text-[9px] font-black">D5</div>
+                    <span>D5 RENDER</span>
+                  </div>
+
+                  {/* AI DESIGN */}
+                  <div className="flex items-center gap-1.5 bg-slate-100 px-3 py-1.5 rounded-xl border border-slate-200">
+                    <div className="w-4 h-4 bg-orange-600 rounded flex items-center justify-center text-white text-[9px] font-black">AI</div>
+                    <span>AI DESIGN</span>
+                  </div>
+
+                </div>
+
+              </div>
+
+              {/* RIGHT COLUMN: 3D Renders & Professional Designer Visual (5 cols) */}
+              <div className="lg:col-span-5 relative flex flex-col gap-4">
+                
+                {/* 3D Exterior Render Card */}
+                <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100 group">
+                  <img 
+                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" 
+                    alt="3D Exterior Villa Render" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                {/* 3D Interior Living Room Render Card */}
+                <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100 group">
+                  <img 
+                    src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop" 
+                    alt="3D Interior Dining Render" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                {/* Designer Desk Showcase Card */}
+                <div className="w-full rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100 relative group">
+                  <img 
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" 
+                    alt="Female Architect Designer Working on 3D Render" 
+                    className="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-3">
+                    <div className="text-white text-left">
+                      <p className="text-xs font-black">Professional Interior & Architectural Training</p>
+                      <p className="text-[10px] text-zinc-300 font-medium">Master industry tools with step-by-step guidance</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        {/* ═══ 3. ALL 12 TOOLS SHOWCASE (Carousel Grid) ═══ */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 my-10 overflow-hidden text-center">
           <div className="mb-6">
             <div className="inline-flex items-center justify-center gap-2 px-3.5 py-1 bg-amber-100 border border-amber-300 rounded-full text-slate-900 font-black text-xs mb-2">
