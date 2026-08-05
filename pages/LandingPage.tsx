@@ -365,7 +365,7 @@ const LandingPage: React.FC = () => {
               {[...COURSES.slice(0, 6), ...COURSES.slice(0, 6)].map((course, i) => {
                 const globalIndex = i % 6;
                 return (
-                  <div key={`row1-${course.id}-${i}`} className="w-[140px] md:w-[150px] shrink-0 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden group hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <div key={`row1-${course.id}-${i}`} className="w-[105px] sm:w-[115px] md:w-[125px] shrink-0 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden group hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                     <div className="relative aspect-square overflow-hidden bg-gray-100">
                       <img src={course.imageUrl} alt={course.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       
@@ -405,7 +405,7 @@ const LandingPage: React.FC = () => {
               {[...COURSES.slice(6, 12), ...COURSES.slice(6, 12)].map((course, i) => {
                 const globalIndex = (i % 6) + 6;
                 return (
-                  <div key={`row2-${course.id}-${i}`} className="w-[140px] md:w-[150px] shrink-0 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden group hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <div key={`row2-${course.id}-${i}`} className="w-[105px] sm:w-[115px] md:w-[125px] shrink-0 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden group hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                     <div className="relative aspect-square overflow-hidden bg-gray-100">
                       <img src={course.imageUrl} alt={course.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       
