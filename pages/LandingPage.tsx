@@ -166,12 +166,12 @@ const LandingPage: React.FC = () => {
           
           {/* Top Offer Badge */}
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-yellow-400 border border-yellow-500 text-slate-950 text-[11px] sm:text-xs font-black uppercase tracking-wider mb-4 rounded-full shadow-sm">
-            <span>🇳🇬 NIGERIA STUDENTS WEEK SPECIAL OFFER</span>
+            <span>Avada Academy for Architecture & Interior Design</span>
           </div>
 
           {/* Headline */}
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-display font-black tracking-tight leading-tight text-slate-950 mb-3 max-w-4xl mx-auto">
-            Learn Interior & 3D Design in 30 Days.{' '}
+            Learn Interior & Exterior Designing in 15 days.{' '}
             <span className="bg-yellow-300 text-slate-950 px-2 py-0.5 rounded-md border border-yellow-400 inline-block">
               Start Earning Fast
             </span>{' '}
