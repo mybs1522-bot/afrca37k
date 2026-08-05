@@ -189,6 +189,7 @@ const LandingPage: React.FC = () => {
               <iframe 
                 src="https://iframe.mediadelivery.net/embed/494628/1f7b76dd-7d47-4f39-87af-bff5a6b02d08?autoplay=true&loop=true&muted=true&responsive=true" 
                 loading="eager"
+                fetchPriority="high"
                 style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} 
                 allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" 
                 allowFullScreen={true}
