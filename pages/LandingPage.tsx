@@ -183,25 +183,16 @@ const LandingPage: React.FC = () => {
             No university degree needed. No expensive software to buy. Everything you need is included.
           </p>
 
-          {/* HERO VIDEO PLAYER FACADE */}
+          {/* HERO VIDEO PLAYER */}
           <div className="w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-900 relative bg-slate-950 mb-8">
             <div style={{ position: 'relative', paddingTop: '56.25%' }}>
-              {isVideoLoaded ? (
-                <iframe src="https://iframe.mediadelivery.net/embed/494628/1f7b76dd-7d47-4f39-87af-bff5a6b02d08?autoplay=true&loop=true&muted=true&responsive=true" loading="lazy" style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowFullScreen={true}></iframe>
-              ) : (
-                <div 
-                  onClick={() => setIsVideoLoaded(true)}
-                  className="absolute inset-0 cursor-pointer bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 flex flex-col items-center justify-center group"
-                >
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 flex items-center justify-center text-slate-950 shadow-2xl group-hover:scale-110 transition-all duration-300 relative z-10">
-                    <Play size={32} className="fill-slate-950 translate-x-0.5" />
-                    <span className="absolute inset-0 rounded-full bg-yellow-400/40 animate-ping pointer-events-none"></span>
-                  </div>
-                  <span className="mt-3 text-xs sm:text-sm font-black text-yellow-300 uppercase tracking-widest bg-black/40 px-3 py-1 rounded-full border border-yellow-400/30">
-                    ▶ Click To Play Video Preview
-                  </span>
-                </div>
-              )}
+              <iframe 
+                src="https://iframe.mediadelivery.net/embed/494628/1f7b76dd-7d47-4f39-87af-bff5a6b02d08?autoplay=true&loop=true&muted=true&responsive=true" 
+                loading="eager"
+                style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} 
+                allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" 
+                allowFullScreen={true}
+              ></iframe>
               
               {/* Overlay Banner Over Video */}
               <div className="absolute top-2 sm:top-3 left-1/2 -translate-x-1/2 z-20 w-auto max-w-[96%] text-center pointer-events-none">
