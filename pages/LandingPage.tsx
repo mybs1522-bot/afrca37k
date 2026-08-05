@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Star, CheckCircle, CheckCircle2, X, ChevronDown, Sparkles, Eye, Download, Phone, Mail, Lock, Loader2, Timer, Check, Award, Play } from 'lucide-react';
+import { ArrowRight, Star, CheckCircle, CheckCircle2, X, ChevronDown, Sparkles, Eye, Download, Phone, Mail, Lock, Loader2, Timer, Check, Award, Play, Users } from 'lucide-react';
 import { COURSES } from '../constants';
 import { WhatsAppButton } from '../components/WhatsAppButton';
 import { openSelarCheckout } from '../services/razorpay';
@@ -223,186 +223,86 @@ const LandingPage: React.FC = () => {
           </div>
         </section>
 
-        {/* ═══ NEW: INTERIOR & EXTERIOR DESIGN GRAPHIC BANNER SECTION ═══ */}
-        <section className="max-w-6xl mx-auto px-4 sm:px-6 my-10">
-          <div className="bg-white rounded-3xl border border-slate-200/90 shadow-2xl p-6 sm:p-10 relative overflow-hidden text-slate-900">
-            
-            {/* Top Right Decorative Dots & Circle Accent */}
-            <div className="absolute top-4 right-4 z-0 pointer-events-none opacity-80 flex gap-1">
-              <div className="grid grid-cols-5 gap-1.5 text-orange-500/40 text-[10px] font-black">
-                {Array.from({ length: 15 }).map((_, i) => (
-                  <span key={i} className="w-1.5 h-1.5 bg-orange-500 rounded-full inline-block"></span>
-                ))}
-              </div>
+        {/* ═══ INTERIOR & EXTERIOR DESIGN BANNER ═══ */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-8">
+          <div className="bg-white rounded-2xl overflow-hidden relative" style={{ minHeight: 340 }}>
+
+            {/* Decorative: dots grid + quarter-circle */}
+            <div className="absolute top-5 right-16 hidden lg:grid grid-cols-4 gap-[5px] pointer-events-none z-10">
+              {Array.from({ length: 12 }).map((_, i) => <span key={i} className="w-[5px] h-[5px] rounded-full bg-orange-500" />)}
             </div>
-            <div className="absolute -top-12 -right-12 w-32 h-32 border-[14px] border-orange-500 rounded-full opacity-90 pointer-events-none z-0"></div>
+            <div className="absolute -top-10 -right-10 w-28 h-28 border-[12px] border-orange-500 rounded-full pointer-events-none hidden lg:block" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-              
-              {/* LEFT COLUMN: Typography & Offer Details (7 cols) */}
-              <div className="lg:col-span-7 text-left space-y-5">
-                
-                {/* Top Cursive Accent */}
-                <div>
-                  <span className="font-serif italic text-3xl sm:text-4xl text-orange-600 font-bold block mb-[-6px] tracking-wide">
-                    Learn
-                  </span>
-                  <div className="font-display font-black leading-none tracking-tight">
-                    <span className="block text-4xl sm:text-6xl md:text-7xl text-slate-950">
-                      INTERIOR
-                    </span>
-                    <span className="block text-4xl sm:text-6xl md:text-7xl text-orange-600">
-                      & EXTERIOR
-                    </span>
-                    <span className="inline-block bg-orange-600 text-white text-3xl sm:text-5xl md:text-6xl px-4 py-1 rounded-2xl mt-1 font-black shadow-md">
-                      DESIGN
-                    </span>
-                  </div>
-                </div>
+            <div className="flex flex-col lg:flex-row">
 
-                {/* Subheader */}
-                <p className="text-sm sm:text-base md:text-lg font-bold text-slate-800 tracking-tight">
-                  Build Skills. Design Spaces. Build Your <span className="text-orange-600">Career.</span>
+              {/* LEFT — text content */}
+              <div className="lg:w-[55%] p-6 sm:p-8 flex flex-col justify-center relative z-10">
+
+                {/* Title block */}
+                <span className="font-serif italic text-2xl sm:text-3xl text-orange-600 leading-none">Learn</span>
+                <h2 className="font-display font-black text-slate-950 text-[2.6rem] sm:text-6xl leading-[0.95] tracking-tight mt-0.5">
+                  INTERIOR<br />
+                  <span className="text-orange-600">&amp; EXTERIOR</span>
+                </h2>
+                <span className="inline-block self-start bg-orange-600 text-white font-display font-black text-3xl sm:text-5xl px-4 py-0.5 rounded-xl mt-1">DESIGN</span>
+
+                <p className="text-sm sm:text-base font-bold text-slate-800 mt-4 leading-snug">
+                  Build Skills. Design Spaces.<br />Build Your <span className="text-orange-600">Career.</span>
                 </p>
 
-                {/* FEATURE ICONS GRID CARD (Pill Container) */}
-                <div className="bg-slate-50 border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-xs">
-                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                    
-                    {/* Feature 1 */}
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-orange-100 border border-orange-200 flex items-center justify-center text-orange-600 shrink-0">
-                        <Play size={18} className="fill-orange-600" />
-                      </div>
-                      <div className="text-left">
-                        <p className="text-xs font-bold text-slate-900 leading-tight">Recorded</p>
-                        <p className="text-[11px] text-slate-500 font-medium leading-tight">Course Access</p>
-                      </div>
-                    </div>
-
-                    {/* Feature 2 */}
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-orange-100 border border-orange-200 flex items-center justify-center text-orange-600 shrink-0">
-                        <Award size={18} />
-                      </div>
-                      <div className="text-left">
-                        <p className="text-xs font-bold text-slate-900 leading-tight">Certification</p>
-                        <p className="text-[11px] text-slate-500 font-medium leading-tight">Included</p>
-                      </div>
-                    </div>
-
-                    {/* Feature 3 */}
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-orange-100 border border-orange-200 flex items-center justify-center text-orange-600 shrink-0">
-                        <CheckCircle2 size={18} />
-                      </div>
-                      <div className="text-left">
-                        <p className="text-xs font-bold text-slate-900 leading-tight">Real Project</p>
-                        <p className="text-[11px] text-slate-500 font-medium leading-tight">Based Training</p>
-                      </div>
-                    </div>
-
-                    {/* Feature 4 */}
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-orange-100 border border-orange-200 flex items-center justify-center text-orange-600 shrink-0">
-                        <Sparkles size={18} />
-                      </div>
-                      <div className="text-left">
-                        <p className="text-xs font-bold text-slate-900 leading-tight">For Students</p>
-                        <p className="text-[10px] text-slate-500 font-medium leading-tight line-clamp-1">Architects | Freelancers | Beginners</p>
-                      </div>
-                    </div>
-
+                {/* 4 features — 2×2 */}
+                <div className="grid grid-cols-2 gap-x-6 gap-y-3 mt-5 text-[13px]">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-orange-50 border border-orange-200 flex items-center justify-center shrink-0"><Play size={15} className="text-orange-600 fill-orange-600" /></div>
+                    <div><p className="font-bold text-slate-900 leading-tight">Recorded</p><p className="text-[11px] text-slate-500 leading-tight">Course Access</p></div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-orange-50 border border-orange-200 flex items-center justify-center shrink-0"><Award size={15} className="text-orange-600" /></div>
+                    <div><p className="font-bold text-slate-900 leading-tight">Certification</p><p className="text-[11px] text-slate-500 leading-tight">Included</p></div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-orange-50 border border-orange-200 flex items-center justify-center shrink-0"><CheckCircle2 size={15} className="text-orange-600" /></div>
+                    <div><p className="font-bold text-slate-900 leading-tight">Real Project</p><p className="text-[11px] text-slate-500 leading-tight">Based Training</p></div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-orange-50 border border-orange-200 flex items-center justify-center shrink-0"><Users size={15} className="text-orange-600" /></div>
+                    <div><p className="font-bold text-slate-900 leading-tight">For Students</p><p className="text-[10px] text-slate-500 leading-tight">Architects | Freelancers | Beginners</p></div>
                   </div>
                 </div>
 
-                {/* JOIN NOW BUTTON & LIMITED SEATS */}
-                <div className="flex flex-wrap items-center gap-4 pt-1">
-                  <button 
-                    onClick={openPaymentModal}
-                    className="px-8 py-3.5 sm:py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-2xl font-black text-base uppercase tracking-wider shadow-lg shadow-orange-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2.5 group"
-                  >
-                    <span>JOIN NOW</span>
-                    <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
-                      <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
-                    </div>
+                {/* CTA row */}
+                <div className="flex items-center gap-4 mt-5">
+                  <button onClick={openPaymentModal} className="px-7 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-xl font-black text-sm uppercase tracking-wide flex items-center gap-2 transition-colors">
+                    JOIN NOW <ArrowRight size={16} />
                   </button>
-
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-slate-700">
-                    <Timer size={16} className="text-orange-600 animate-pulse" />
-                    <span>Limited Seats Available</span>
-                  </div>
+                  <span className="text-xs font-bold text-slate-600 flex items-center gap-1"><Timer size={14} className="text-orange-600" /> Limited Seats</span>
                 </div>
-
-                {/* BOTTOM SOFTWARE BADGE BAR */}
-                <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center gap-3 sm:gap-6 text-xs font-black text-slate-900">
-                  
-                  {/* SketchUp */}
-                  <div className="flex items-center gap-1.5 bg-slate-100 px-3 py-1.5 rounded-xl border border-slate-200">
-                    <div className="w-4 h-4 bg-blue-600 rounded flex items-center justify-center text-white text-[10px] font-black">S</div>
-                    <span>SketchUp</span>
-                  </div>
-
-                  {/* V-Ray */}
-                  <div className="flex items-center gap-1.5 bg-slate-100 px-3 py-1.5 rounded-xl border border-slate-200">
-                    <div className="w-4 h-4 bg-slate-900 rounded-full border border-white flex items-center justify-center text-white text-[9px] font-black">V</div>
-                    <span>V-Ray</span>
-                  </div>
-
-                  {/* D5 RENDER */}
-                  <div className="flex items-center gap-1.5 bg-slate-100 px-3 py-1.5 rounded-xl border border-slate-200">
-                    <div className="w-4 h-4 bg-purple-600 rounded flex items-center justify-center text-white text-[9px] font-black">D5</div>
-                    <span>D5 RENDER</span>
-                  </div>
-
-                  {/* AI DESIGN */}
-                  <div className="flex items-center gap-1.5 bg-slate-100 px-3 py-1.5 rounded-xl border border-slate-200">
-                    <div className="w-4 h-4 bg-orange-600 rounded flex items-center justify-center text-white text-[9px] font-black">AI</div>
-                    <span>AI DESIGN</span>
-                  </div>
-
-                </div>
-
               </div>
 
-              {/* RIGHT COLUMN: 3D Renders & Professional Designer Visual (5 cols) */}
-              <div className="lg:col-span-5 relative flex flex-col gap-4">
-                
-                {/* 3D Exterior Render Card */}
-                <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100 group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" 
-                    alt="3D Exterior Villa Render" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
+              {/* RIGHT — visuals (woman + 2 render thumbnails) */}
+              <div className="lg:w-[45%] relative min-h-[280px] lg:min-h-0 hidden lg:block">
+                {/* Woman portrait — fills the right side */}
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" alt="Professional designer" loading="lazy" className="absolute inset-0 w-full h-full object-cover object-top" />
+                {/* Subtle gradient so text on left doesn't clash */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/40 to-transparent pointer-events-none" />
 
-                {/* 3D Interior Living Room Render Card */}
-                <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100 group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop" 
-                    alt="3D Interior Dining Render" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+                {/* Floating render thumbnail — exterior */}
+                <div className="absolute top-6 left-4 w-[48%] rounded-xl overflow-hidden shadow-lg border-2 border-white z-10">
+                  <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=400&auto=format&fit=crop" alt="Exterior render" loading="lazy" className="w-full h-24 object-cover" />
                 </div>
-
-                {/* Designer Desk Showcase Card */}
-                <div className="w-full rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-slate-100 relative group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" 
-                    alt="Female Architect Designer Working on 3D Render" 
-                    className="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-3">
-                    <div className="text-white text-left">
-                      <p className="text-xs font-black">Professional Interior & Architectural Training</p>
-                      <p className="text-[10px] text-zinc-300 font-medium">Master industry tools with step-by-step guidance</p>
-                    </div>
-                  </div>
+                {/* Floating render thumbnail — interior */}
+                <div className="absolute top-[110px] left-10 w-[48%] rounded-xl overflow-hidden shadow-lg border-2 border-white z-10">
+                  <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=400&auto=format&fit=crop" alt="Interior render" loading="lazy" className="w-full h-24 object-cover" />
                 </div>
-
               </div>
+            </div>
 
+            {/* Software strip — full width bottom */}
+            <div className="border-t border-slate-100 bg-slate-50/80 px-6 sm:px-8 py-3 flex flex-wrap items-center justify-center sm:justify-start gap-5 sm:gap-8 text-xs font-black text-slate-900">
+              <div className="flex items-center gap-1.5"><span className="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px]">S</span> SketchUp</div>
+              <div className="flex items-center gap-1.5"><span className="w-5 h-5 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px]">V</span> V-Ray</div>
+              <div className="flex items-center gap-1.5"><span className="w-5 h-5 rounded bg-purple-600 text-white flex items-center justify-center text-[9px]">D5</span> D5 RENDER</div>
+              <div className="flex items-center gap-1.5"><span className="w-5 h-5 rounded bg-orange-600 text-white flex items-center justify-center text-[9px]">AI</span> AI DESIGN</div>
             </div>
 
           </div>
