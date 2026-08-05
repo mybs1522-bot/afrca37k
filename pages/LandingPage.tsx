@@ -161,16 +161,16 @@ const LandingPage: React.FC = () => {
 
       <main className="bg-slate-50 min-h-screen py-4 sm:py-8 font-sans text-slate-900">
         
-        {/* ═══ 1. HERO SECTION — Instant Value in 3 Seconds ═══ */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-8 text-center">
+        {/* ═══ 1. HERO SECTION ═══ */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-8 text-center">
           
           {/* Top Offer Badge */}
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-yellow-400 border border-yellow-500 text-slate-950 text-[11px] sm:text-xs font-black uppercase tracking-wider mb-4 rounded-full shadow-sm">
             <span>🇳🇬 NIGERIA STUDENTS WEEK SPECIAL OFFER</span>
           </div>
 
-          {/* Straight to the Point Headline */}
-          <h1 className="text-2xl sm:text-4xl md:text-5xl font-display font-black tracking-tight leading-tight text-slate-950 mb-3 max-w-3xl mx-auto">
+          {/* Headline */}
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-display font-black tracking-tight leading-tight text-slate-950 mb-3 max-w-4xl mx-auto">
             Learn Interior & 3D Design in 30 Days.{' '}
             <span className="bg-yellow-300 text-slate-950 px-2 py-0.5 rounded-md border border-yellow-400 inline-block">
               Start Earning Fast
@@ -178,12 +178,12 @@ const LandingPage: React.FC = () => {
             with 3 Paid Freelance Projects.
           </h1>
 
-          {/* Simple Subtitle */}
+          {/* Subtitle */}
           <p className="text-sm sm:text-base md:text-lg text-slate-600 font-medium max-w-2xl mx-auto mb-6 leading-relaxed">
             No university degree needed. No expensive software to buy. Everything you need is included.
           </p>
 
-          {/* HERO VIDEO PLAYER FACADE (Preserved for 90+ PageSpeed & Autoplay) */}
+          {/* HERO VIDEO PLAYER FACADE */}
           <div className="w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-900 relative bg-slate-950 mb-8">
             <div style={{ position: 'relative', paddingTop: '56.25%' }}>
               {isVideoLoaded ? (
@@ -224,52 +224,52 @@ const LandingPage: React.FC = () => {
 
         </section>
 
-        {/* ═══ 2. THE 3 GAME-CHANGERS (Why This Course Actually Works) ═══ */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 my-10">
-          <div className="text-center mb-6">
-            <h2 className="text-xl sm:text-3xl font-display font-black text-slate-950">
-              3 Reasons Why 50,000+ Students Succeed With Us
+        {/* ═══ 2. THE 3 CORE GAME-CHANGERS ═══ */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950">
+              Why 50,000+ Students Choose Avada
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 font-medium">Simple, clear, and designed to get you results fast.</p>
+            <p className="text-xs sm:text-sm text-slate-600 font-medium">The 3 game-changing pillars built into your enrollment.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             
             {/* Card 1: Freelance Projects */}
-            <div className="bg-white border-2 border-emerald-500 rounded-2xl p-5 shadow-sm text-left relative overflow-hidden">
-              <div className="w-10 h-10 rounded-xl bg-emerald-100 border border-emerald-300 flex items-center justify-center text-xl mb-3">
+            <div className="bg-white border-2 border-emerald-500 rounded-3xl p-6 shadow-sm text-left relative overflow-hidden group hover:shadow-md transition-all">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-100 border border-emerald-300 flex items-center justify-center text-2xl mb-4">
                 💰
               </div>
-              <h3 className="font-display font-black text-slate-950 text-base mb-1">
+              <h3 className="font-display font-black text-slate-950 text-lg mb-2">
                 3 Paid Freelance Projects Included ($300 Value)
               </h3>
-              <p className="text-xs text-slate-700 leading-relaxed font-medium">
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
                 We don't just teach theory. Every student receives <strong>3 real paid freelance design projects</strong> upon completion so you start earning income and building real client confidence immediately.
               </p>
             </div>
 
             {/* Card 2: Community Connections */}
-            <div className="bg-white border-2 border-blue-500 rounded-2xl p-5 shadow-sm text-left relative overflow-hidden">
-              <div className="w-10 h-10 rounded-xl bg-blue-100 border border-blue-300 flex items-center justify-center text-xl mb-3">
+            <div className="bg-white border-2 border-blue-500 rounded-3xl p-6 shadow-sm text-left relative overflow-hidden group hover:shadow-md transition-all">
+              <div className="w-12 h-12 rounded-2xl bg-blue-100 border border-blue-300 flex items-center justify-center text-2xl mb-4">
                 🤝
               </div>
-              <h3 className="font-display font-black text-slate-950 text-base mb-1">
-                Active Student Community & Connections
+              <h3 className="font-display font-black text-slate-950 text-lg mb-2">
+                Active Community & Connections
               </h3>
-              <p className="text-xs text-slate-700 leading-relaxed font-medium">
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
                 Connect with top architects, interior designers, and studio owners in Lagos, Abuja, and Port Harcourt. Share work, get client referrals, and never feel alone.
               </p>
             </div>
 
             {/* Card 3: Free Software Links */}
-            <div className="bg-white border-2 border-amber-500 rounded-2xl p-5 shadow-sm text-left relative overflow-hidden">
-              <div className="w-10 h-10 rounded-xl bg-amber-100 border border-amber-300 flex items-center justify-center text-xl mb-3">
+            <div className="bg-white border-2 border-amber-500 rounded-3xl p-6 shadow-sm text-left relative overflow-hidden group hover:shadow-md transition-all">
+              <div className="w-12 h-12 rounded-2xl bg-amber-100 border border-amber-300 flex items-center justify-center text-2xl mb-4">
                 💻
               </div>
-              <h3 className="font-display font-black text-slate-950 text-base mb-1">
+              <h3 className="font-display font-black text-slate-950 text-lg mb-2">
                 Free Software Links & 24/7 Setup Help
               </h3>
-              <p className="text-xs text-slate-700 leading-relaxed font-medium">
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
                 Don't spend millions buying software. We provide direct download links for student/free software versions (AutoCAD, SketchUp, V-Ray, Lumion & AI) + 24/7 team installation support.
               </p>
             </div>
@@ -278,78 +278,125 @@ const LandingPage: React.FC = () => {
         </section>
 
         {/* ═══ 3. THE 3 SIMPLE STEPS (Plan → Design → Render) ═══ */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 my-10">
-          <div className="bg-white border-2 border-red-500 rounded-3xl p-5 sm:p-6 text-center shadow-md">
-            <div className="inline-block bg-red-600 text-white text-[10px] sm:text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider mb-3">
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12">
+          <div className="bg-white border-2 border-red-500 rounded-3xl p-6 sm:p-8 text-center shadow-md">
+            <div className="inline-block bg-red-600 text-white text-[10px] sm:text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider mb-4">
               ⚡ HOW IT WORKS IN 3 SIMPLE STEPS
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 my-2">
-              <div className="bg-yellow-100 border border-yellow-400 rounded-xl p-3.5 text-center">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-2">
+              <div className="bg-yellow-100 border border-yellow-400 rounded-2xl p-4 text-center">
                 <span className="text-xs font-mono font-black text-yellow-900 block mb-1">STEP 1</span>
-                <span className="font-display font-black text-slate-950 text-sm block">📐 1. Plan</span>
-                <p className="text-[11px] text-slate-700 mt-1 font-medium">Draw clean 2D floor blueprints with AutoCAD & Revit.</p>
+                <span className="font-display font-black text-slate-950 text-base block">📐 1. Plan</span>
+                <p className="text-xs text-slate-700 mt-1.5 font-medium">Draw clean 2D floor blueprints with AutoCAD & Revit.</p>
               </div>
 
-              <div className="bg-red-100 border border-red-300 rounded-xl p-3.5 text-center">
+              <div className="bg-red-100 border border-red-300 rounded-2xl p-4 text-center">
                 <span className="text-xs font-mono font-black text-red-900 block mb-1">STEP 2</span>
-                <span className="font-display font-black text-slate-950 text-sm block">🏢 2. Design</span>
-                <p className="text-[11px] text-slate-700 mt-1 font-medium">Build 3D rooms & furniture with SketchUp & 3ds Max.</p>
+                <span className="font-display font-black text-slate-950 text-base block">🏢 2. Design</span>
+                <p className="text-xs text-slate-700 mt-1.5 font-medium">Build 3D rooms & furniture with SketchUp & 3ds Max.</p>
               </div>
 
-              <div className="bg-yellow-100 border border-yellow-400 rounded-xl p-3.5 text-center">
+              <div className="bg-yellow-100 border border-yellow-400 rounded-2xl p-4 text-center">
                 <span className="text-xs font-mono font-black text-yellow-900 block mb-1">STEP 3</span>
-                <span className="font-display font-black text-slate-950 text-sm block">🚀 3. Render & AI</span>
-                <p className="text-[11px] text-slate-700 mt-1 font-medium">Create photorealistic images & videos with V-Ray, Lumion & AI.</p>
+                <span className="font-display font-black text-slate-950 text-base block">🚀 3. Render & AI</span>
+                <p className="text-xs text-slate-700 mt-1.5 font-medium">Create photorealistic images & videos with V-Ray, Lumion & AI.</p>
               </div>
             </div>
 
-            <p className="mt-3 text-xs sm:text-sm font-extrabold text-slate-800">
+            <p className="mt-4 text-xs sm:text-sm font-extrabold text-slate-800">
               That's <span className="underline decoration-red-600 font-black text-red-700">ALL</span> you need to build a profitable studio or career in Nigeria! 💰
             </p>
           </div>
         </section>
 
-        {/* ═══ 4. ALL 12 TOOLS SHOWCASE (Compact Carousel) ═══ */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 my-10 overflow-hidden">
-          <div className="text-center mb-4">
-            <div className="inline-flex items-center justify-center gap-2 px-3 py-1 bg-amber-100 border border-amber-300 rounded-full text-slate-900 font-black text-xs mb-2">
-              🎓 Includes Official Certificate Equivalent to Diploma
-            </div>
-            <h2 className="text-xl sm:text-2xl font-display font-black text-slate-950">
-              Master All 12 Premium Software Tools
+        {/* ═══ 4. 10,000+ NIGERIAN STUDENTS PROOF ═══ */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12 text-center">
+          <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm">
+            <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950 mb-3">
+              10,000+ {country.name} Students {country.flag}
             </h2>
-            <p className="text-xs text-slate-600 font-medium">Everything included in one single bundle download.</p>
+            <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto mb-6">
+              You're in great company. Students across Lagos, Abuja, Port Harcourt, and Ibadan use this exact system.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+              <img src="/student1.jpg" alt="Nigerian Students 1" loading="lazy" className="rounded-2xl shadow-md w-full sm:w-1/2 object-cover border border-slate-200 hover:scale-[1.01] transition-transform" />
+              <img src="/student2.jpg" alt="Nigerian Students 2" loading="lazy" className="rounded-2xl shadow-md w-full sm:w-1/2 object-cover border border-slate-200 hover:scale-[1.01] transition-transform" />
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ 5. INCOME TIERS (ROI STORY) ═══ */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950 mb-2">
+              Financial Transformation (Real Earning Potential)
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600">See what happens when you master 3D rendering & AI.</p>
           </div>
 
-          {/* SLIDESHOW CAROUSEL */}
-          <div className="flex flex-col gap-2.5 relative w-full overflow-hidden pb-2">
-            <div className="flex gap-2.5 animate-scroll-right hover:pause w-max">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {INCOME_TIERS.map((tier, i) => (
+              <div key={i} className="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs flex flex-col justify-between hover:border-blue-300 transition-all">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-bold text-slate-900 leading-tight w-2/3">{tier.label}</span>
+                  <span className="text-2xl">{tier.icon}</span>
+                </div>
+                <div className="flex items-center justify-between text-xs pt-3 border-t border-slate-100">
+                  <div>
+                    <p className="text-[9px] font-mono text-slate-400 uppercase">Before</p>
+                    <p className="text-slate-400 line-through font-semibold">{tier.before}</p>
+                  </div>
+                  <ArrowRight size={14} className="text-blue-500" />
+                  <div className="text-right">
+                    <p className="text-[9px] font-mono text-blue-500 uppercase">After</p>
+                    <p className="text-emerald-600 font-black">{tier.after}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ═══ 6. ALL 12 TOOLS SHOWCASE (Carousel Grid) ═══ */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12 overflow-hidden text-center">
+          <div className="mb-6">
+            <div className="inline-flex items-center justify-center gap-2 px-3.5 py-1 bg-amber-100 border border-amber-300 rounded-full text-slate-900 font-black text-xs mb-2">
+              🎓 Includes Official Certificate Equivalent to Diploma
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950">
+              Master All 12 Premium Software Tools
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 font-medium">Everything included in one single bundle download.</p>
+          </div>
+
+          <div className="flex flex-col gap-3 relative w-full overflow-hidden pb-4">
+            <div className="flex gap-3 animate-scroll-right hover:pause w-max">
               {[...COURSES.slice(0, 6), ...COURSES.slice(0, 6)].map((course, i) => (
-                <div key={`clean-row1-${course.id}-${i}`} className="w-[105px] sm:w-[115px] md:w-[125px] shrink-0 bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden group">
+                <div key={`full-row1-${course.id}-${i}`} className="w-[110px] sm:w-[125px] md:w-[135px] shrink-0 bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden group">
                   <div className="relative aspect-square overflow-hidden bg-slate-100">
                     <img src={course.imageUrl} alt={course.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute top-1 left-1 w-5 h-5 bg-white/95 rounded-full flex items-center justify-center font-bold text-gray-900 text-[9px] border border-gray-200">{(i % 6) + 1}</div>
                     <div className="absolute top-1 right-1 bg-white/95 text-gray-900 text-[7px] font-bold uppercase tracking-wider px-1 py-0.5 rounded-full border border-gray-200">{course.software}</div>
                   </div>
-                  <div className="p-1.5 text-left">
-                    <h3 className="font-display font-bold text-gray-900 text-[11px] mb-0.5 line-clamp-1 leading-tight">{course.title}</h3>
+                  <div className="p-2 text-left">
+                    <h3 className="font-display font-bold text-gray-900 text-xs mb-0.5 line-clamp-1 leading-tight">{course.title}</h3>
                     <div className="bg-emerald-50 text-emerald-600 text-[8px] font-bold px-1 py-0.5 rounded text-center border border-emerald-100">✓ Included</div>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="flex gap-2.5 animate-scroll-right hover:pause w-max" style={{ animationDelay: '-22.5s' }}>
+            <div className="flex gap-3 animate-scroll-right hover:pause w-max" style={{ animationDelay: '-22.5s' }}>
               {[...COURSES.slice(6, 12), ...COURSES.slice(6, 12)].map((course, i) => (
-                <div key={`clean-row2-${course.id}-${i}`} className="w-[105px] sm:w-[115px] md:w-[125px] shrink-0 bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden group">
+                <div key={`full-row2-${course.id}-${i}`} className="w-[110px] sm:w-[125px] md:w-[135px] shrink-0 bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden group">
                   <div className="relative aspect-square overflow-hidden bg-slate-100">
                     <img src={course.imageUrl} alt={course.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute top-1 left-1 w-5 h-5 bg-white/95 rounded-full flex items-center justify-center font-bold text-gray-900 text-[9px] border border-gray-200">{(i % 6) + 7}</div>
                     <div className="absolute top-1 right-1 bg-white/95 text-gray-900 text-[7px] font-bold uppercase tracking-wider px-1 py-0.5 rounded-full border border-gray-200">{course.software}</div>
                   </div>
-                  <div className="p-1.5 text-left">
-                    <h3 className="font-display font-bold text-gray-900 text-[11px] mb-0.5 line-clamp-1 leading-tight">{course.title}</h3>
+                  <div className="p-2 text-left">
+                    <h3 className="font-display font-bold text-gray-900 text-xs mb-0.5 line-clamp-1 leading-tight">{course.title}</h3>
                     <div className="bg-emerald-50 text-emerald-600 text-[8px] font-bold px-1 py-0.5 rounded text-center border border-emerald-100">✓ Included</div>
                   </div>
                 </div>
@@ -358,18 +405,219 @@ const LandingPage: React.FC = () => {
           </div>
         </section>
 
-        {/* ═══ 5. SIMPLE CHECKOUT OFFER CARD ═══ */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 my-10">
-          <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden shadow-2xl">
-            <div className="inline-block bg-yellow-400 text-slate-950 font-black text-[10px] sm:text-xs uppercase tracking-widest px-3 py-1 rounded-full mb-3">
+        {/* ═══ 7. STUDENT TRANSFORMATIONS & RENDER SHOWCASE ═══ */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950 mb-2">
+              Real Student Case Studies & Render Gallery
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600">See what our students create in just 15 to 30 days.</p>
+          </div>
+
+          {/* Student Stories */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            {TRANSFORMATION_STORIES.map((story, i) => (
+              <div key={i} className="bg-white p-5 rounded-2xl border border-slate-200 text-left shadow-xs">
+                <div className="flex items-center justify-between mb-3 pb-2 border-b border-slate-100">
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-sm sm:text-base">{story.name}</h4>
+                    <p className="text-xs text-blue-600 font-medium">{story.role}</p>
+                  </div>
+                  <span className="text-2xl">{story.emoji}</span>
+                </div>
+                <p className="text-xs text-slate-600 mb-2"><strong>Before:</strong> {story.before}</p>
+                <p className="text-xs text-slate-900 font-bold bg-emerald-50 p-2.5 rounded-xl border border-emerald-100"><strong>After 15 Days:</strong> {story.after}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Render Carousels */}
+          <div className="flex flex-col gap-3 relative w-full overflow-hidden">
+            <div className="flex gap-3 animate-scroll-left hover:pause w-max">
+              {[...PAGE_PREVIEWS_ROW1, ...PAGE_PREVIEWS_ROW1].map((src, i) => (
+                <div key={`full-ren1-${i}`} className="w-[200px] sm:w-[260px] aspect-[4/3] rounded-2xl overflow-hidden shadow-xs border border-slate-200 bg-slate-100 shrink-0">
+                  <img src={src} alt="Student Render" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+                </div>
+              ))}
+            </div>
+            <div className="flex gap-3 animate-scroll-right hover:pause w-max">
+              {[...PAGE_PREVIEWS_ROW2, ...PAGE_PREVIEWS_ROW2].map((src, i) => (
+                <div key={`full-ren2-${i}`} className="w-[200px] sm:w-[260px] aspect-[4/3] rounded-2xl overflow-hidden shadow-xs border border-slate-200 bg-slate-100 shrink-0">
+                  <img src={src} alt="Student Render" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ 8. PROOF STATS (AI & Industry Shift) ═══ */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12">
+          <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 text-center shadow-xl">
+            <h2 className="text-2xl sm:text-3xl font-display font-black text-white mb-2">
+              Don't Fear AI. Partner With It.
+            </h2>
+            <p className="text-xs sm:text-sm text-zinc-400 mb-6 max-w-xl mx-auto">
+              Top global studios use AI to generate 50 concepts in 10 minutes, then render them in Lumion & V-Ray.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {FEAR_STATS.map((item, i) => (
+                <div key={i} className="bg-slate-800/80 border border-slate-700/80 p-4 rounded-2xl text-center">
+                  <span className="text-2xl block mb-1">{item.icon}</span>
+                  <span className="text-xl sm:text-2xl font-black text-yellow-400 block">{item.stat}</span>
+                  <p className="text-[11px] text-zinc-400 font-medium leading-snug mt-1">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ 9. TEAM MANIFESTO ═══ */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12">
+          <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-orange-200 rounded-3xl p-6 sm:p-8 shadow-xs">
+            <h2 className="text-xl sm:text-2xl font-display font-black text-slate-950 mb-3">
+              A Message From Our Team
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed mb-4 font-medium">
+              Learning complex 3D software alone is overwhelming. That's why our program includes <strong>24/7 team support</strong>. From software download links to fixing rendering lighting at date night or 2 AM, our team is always ready to guide you step-by-step!
+            </p>
+            <div className="flex flex-wrap items-center gap-4 text-xs font-bold text-slate-900">
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-orange-500" /> 12 Courses Included</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-orange-500" /> Direct Free Software Links</span>
+              <span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-orange-500" /> 24/7 Hand-Holding Support</span>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ 10. OLD VS NEW SYSTEM ═══ */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950 mb-2">
+              The Frustrating Path vs. Our Hand-Holding System
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="bg-red-50 border border-red-200 rounded-3xl p-6 text-left">
+              <h3 className="font-bold text-red-600 text-base mb-3 flex items-center gap-2">
+                <X size={20} /> The Frustrating Path
+              </h3>
+              <ul className="text-xs sm:text-sm text-slate-700 space-y-2.5">
+                {PROBLEM_POINTS.map((p, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="shrink-0">{p.emoji}</span>
+                    <span>{p.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-emerald-50 border border-emerald-200 rounded-3xl p-6 text-left">
+              <h3 className="font-bold text-emerald-700 text-base mb-3 flex items-center gap-2">
+                <CheckCircle size={20} /> Our Hand-Holding System
+              </h3>
+              <ul className="text-xs sm:text-sm text-slate-800 space-y-2.5 font-medium">
+                <li className="flex items-start gap-2"><CheckCircle size={16} className="text-emerald-600 shrink-0 mt-0.5" /> Clear step-by-step pipeline: AutoCAD → Revit → SketchUp → V-Ray → AI</li>
+                <li className="flex items-start gap-2"><CheckCircle size={16} className="text-emerald-600 shrink-0 mt-0.5" /> 3 real paid freelance projects included ($300 USD value)</li>
+                <li className="flex items-start gap-2"><CheckCircle size={16} className="text-emerald-600 shrink-0 mt-0.5" /> Free software student download links provided</li>
+                <li className="flex items-start gap-2"><CheckCircle size={16} className="text-emerald-600 shrink-0 mt-0.5" /> 24/7 technical team support whenever you get stuck</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ 11. VALUE STACK ═══ */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950 mb-2">
+              Everything Included With Your Access Today
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600">A complete learning ecosystem for a single low price.</p>
+          </div>
+          <div className="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-xs">
+            {VALUE_STACK_ITEMS.map((item, i) => (
+              <div key={i} className="flex justify-between items-center px-6 py-4 border-b border-slate-100 text-xs sm:text-sm">
+                <span className="text-slate-800 font-medium">{item.name}</span>
+                <span className="font-bold text-slate-500">{item.value}</span>
+              </div>
+            ))}
+            <div className="bg-emerald-50 px-6 py-4 flex justify-between items-center text-xs sm:text-sm font-bold text-emerald-900 border-t border-emerald-100">
+              <span>All Software (Free/Student Edition Links)</span>
+              <span className="text-emerald-600 font-black">INCLUDED</span>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ 12. STUDENT REVIEWS & GLOBAL MENTORS ═══ */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12 text-center">
+          <div className="mb-8">
+            <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950 mb-2">
+              Student Reviews & Global Mentors
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600">50,000+ learners • 4.9★ average rating</p>
+          </div>
+
+          {/* Testimonial Cards Carousel */}
+          <div className="flex gap-4 overflow-x-auto pb-4 snap-x mb-8" style={{ scrollbarWidth: 'none' }}>
+            {[...TESTIMONIALS_LANDING, ...TESTIMONIALS_LANDING].map((t, i) => (
+              <div key={i} className="w-[300px] shrink-0 bg-white border border-slate-200 p-5 rounded-2xl text-left shadow-xs">
+                <div className="flex gap-1 mb-2">{[...Array(5)].map((_, j) => <Star key={j} size={12} className="fill-amber-400 text-amber-400" />)}</div>
+                <p className="text-slate-700 text-xs leading-relaxed mb-4 italic">"{t.content}"</p>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs">{t.name[0]}</div>
+                  <div>
+                    <p className="text-xs font-bold text-slate-900">{t.name}</p>
+                    <p className="text-[10px] text-slate-500">{t.role} • {t.location}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Mentors */}
+          <div className="flex gap-4 overflow-x-auto pb-4 snap-x" style={{ scrollbarWidth: 'none' }}>
+            {[
+              { name: 'Alex Mercer', role: 'Lead 3D Artist', image: 'https://images.unsplash.com/photo-1678282342910-a135f7b900ae?q=80&w=1296&auto=format&fit=crop' },
+              { name: 'Elena Rossi', role: 'Architectural Visualizer', image: 'https://images.pexels.com/photos/36813835/pexels-photo-36813835.jpeg' },
+              { name: 'Julian Vance', role: 'Senior Interior Designer', image: 'https://images.unsplash.com/photo-1614023342667-6f060e9d1e04?q=80&w=2671&auto=format' },
+            ].map((mentor, idx) => (
+              <div key={idx} className="shrink-0 w-[150px] sm:w-[170px] bg-slate-900 rounded-2xl overflow-hidden text-white text-left p-2.5 shadow-sm">
+                <img src={mentor.image} alt={mentor.name} className="w-full aspect-[4/5] object-cover rounded-xl mb-2" />
+                <p className="font-bold text-xs leading-tight">{mentor.name}</p>
+                <p className="text-[10px] text-blue-300 font-medium">{mentor.role}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ═══ 13. FAQ & FINAL CHECKOUT CARD ═══ */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950 mb-2">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div className="space-y-3 mb-10 text-left max-w-3xl mx-auto">
+            {FAQ_ITEMS_LANDING.map((faq, i) => (
+              <details key={i} className="group bg-white border border-slate-200 rounded-2xl overflow-hidden p-4 shadow-xs" open={openFaqIndex === i}>
+                <summary className="text-xs sm:text-sm font-bold text-slate-900 cursor-pointer list-none flex justify-between items-center" onClick={(e) => { e.preventDefault(); setOpenFaqIndex(openFaqIndex === i ? null : i); }}>
+                  <span>{faq.question}</span>
+                  <ChevronDown size={16} className={`text-slate-400 transition-transform ${openFaqIndex === i ? 'rotate-180' : ''}`} />
+                </summary>
+                <p className="text-xs text-slate-600 mt-2.5 leading-relaxed font-medium">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+
+          {/* CHECKOUT CARD */}
+          <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-10 text-center relative overflow-hidden shadow-2xl">
+            <div className="inline-block bg-yellow-400 text-slate-950 font-black text-[10px] sm:text-xs uppercase tracking-widest px-3.5 py-1 rounded-full mb-3">
               🚨 STUDENTS WEEK DISCOUNT ({country.formattedPrice})
             </div>
             
-            <h2 className="text-xl sm:text-3xl font-display font-black text-white mb-2">
+            <h2 className="text-2xl sm:text-4xl font-display font-black text-white mb-2">
               Get Instant Access To All 12 Courses + 3 Freelance Projects
             </h2>
 
-            <p className="text-xs sm:text-sm text-zinc-300 mb-6 max-w-xl mx-auto font-medium">
+            <p className="text-xs sm:text-sm text-zinc-300 mb-8 max-w-xl mx-auto font-medium">
               Join 50,000+ students. Download all 12 courses, free software links, and join our active community today.
             </p>
 
