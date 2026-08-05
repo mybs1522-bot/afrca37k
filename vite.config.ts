@@ -25,15 +25,21 @@ export default defineConfig(({ mode }) => {
       },
       esbuild: {
         drop: ['console', 'debugger'],
+        legalComments: 'none',
       },
       build: {
-        target: 'esnext',
+        target: 'es2020',
         cssCodeSplit: true,
+        minify: 'esbuild',
+        cssMinify: true,
         rollupOptions: {
           output: {
-            manualChunks: {
-              'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-              'vendor-icons': ['lucide-react'],
+            manualChunks(id) {
+              if (id.includes('node_modules')) {
+                if (id.includes('lucide-react')) return 'vendor-icons';
+                if (id.includes('react')) return 'vendor-react';
+                return 'vendor-libs';
+              }
             }
           }
         }
