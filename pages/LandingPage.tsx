@@ -242,9 +242,9 @@ const LandingPage: React.FC = () => {
               🎓 Includes Official Certificate Equivalent to Diploma
             </div>
             <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950">
-              Master All 12 Premium Software Tools
+              12 Software Used in this Industry
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 font-medium">Everything included in one single bundle download.</p>
+            <p className="text-xs sm:text-sm text-slate-600 font-medium">Learn What You Need and Share With Your Friends ❤️</p>
           </div>
 
           <div className="flex flex-col gap-3 relative w-full overflow-hidden pb-4">
