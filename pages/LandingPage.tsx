@@ -170,61 +170,71 @@ const LandingPage: React.FC = () => {
           <div className="max-w-5xl mx-auto px-5 relative z-10">
             <div className="flex flex-col items-center text-center pt-6 md:pt-12">
               
-              {/* 🚨 PROVOKING POSTER HOOK — Fun Poster Style with Yellow & Red Highlights */}
-              <div className="w-full max-w-4xl mx-auto mb-6 relative overflow-hidden rounded-3xl bg-gradient-to-b from-amber-50 via-yellow-50/50 to-red-50/40 text-slate-900 p-4 sm:p-6 md:p-8 shadow-[0_12px_40px_-12px_rgba(239,68,68,0.2)] border-2 border-red-200 text-center">
+              {/* 🇳🇬 STORYTELLING LETTER HOOK FOR NIGERIA */}
+              <div className="w-full max-w-4xl mx-auto mb-6 relative overflow-hidden rounded-3xl bg-gradient-to-b from-amber-50 via-yellow-50/60 to-red-50/40 text-slate-900 p-5 sm:p-7 md:p-9 shadow-[0_12px_40px_-12px_rgba(239,68,68,0.2)] border-2 border-red-200 text-left">
                 <div className="absolute -top-10 -right-10 w-48 h-48 bg-yellow-300/40 rounded-full blur-3xl pointer-events-none"></div>
                 <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-red-400/20 rounded-full blur-3xl pointer-events-none"></div>
 
-                <div className="relative z-10 flex flex-col items-center">
-                  {/* Poster Sticker Tagline */}
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-yellow-400 border border-yellow-500 text-red-950 text-[10px] md:text-xs font-black uppercase tracking-wider mb-3 rounded-full shadow-sm">
-                    <span className="bg-red-600 text-white px-1.5 py-0.5 rounded-full text-[9px] font-black">MUST READ</span>
-                    <span>Interior Design Shortcut ⚡</span>
+                <div className="relative z-10 flex flex-col items-center text-center">
+                  {/* Personal Letter Badge */}
+                  <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-yellow-400 border border-yellow-500 text-red-950 text-[10px] md:text-xs font-black uppercase tracking-wider mb-3 rounded-full shadow-sm">
+                    <span className="bg-red-600 text-white px-2 py-0.5 rounded-full text-[9px] font-black">🇳🇬 A PERSONAL LETTER</span>
+                    <span>TO NIGERIAN DESIGNERS & CREATIVES ⚡</span>
                   </div>
 
-                  {/* Main Provoking Statement — Small but Impactful Poster Title */}
-                  <h1 className="text-lg sm:text-xl md:text-2xl font-display font-black tracking-tight leading-snug text-slate-900 mb-4 max-w-3xl">
+                  {/* Main Headline */}
+                  <h1 className="text-xl sm:text-2xl md:text-3xl font-display font-black tracking-tight leading-snug text-slate-900 mb-4 max-w-3xl">
                     You don't need a{' '}
                     <span className="bg-yellow-300 text-slate-900 px-2 py-0.5 rounded-md border border-yellow-400 shadow-xs inline-block font-black">
-                      degree in Design
+                      4-year degree in Design
                     </span>{' '}
-                    to Start{' '}
+                    to Start a High-Paying{' '}
                     <span className="bg-red-600 text-white px-2 py-0.5 rounded-md shadow-xs inline-block font-black">
                       Interior Design Career.
                     </span>
                   </h1>
 
-                  {/* Poster Cut the Crap Box */}
-                  <div className="w-full max-w-3xl bg-white border-2 border-red-500/80 rounded-2xl p-2.5 sm:p-3.5 my-2 text-center shadow-md relative">
-                    <div className="inline-block bg-red-600 text-white text-[10px] sm:text-[11px] md:text-xs font-black px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider shadow-sm mb-1.5">
-                      ⚡ CUT THE CRAP & SIMPLY LEARN
+                  {/* Story Intro Card — Conversational Letter Style */}
+                  <div className="w-full bg-white/90 backdrop-blur-sm border-2 border-amber-300/80 rounded-2xl p-4 sm:p-5 my-2 text-left shadow-sm relative">
+                    <p className="text-xs sm:text-sm md:text-base font-serif italic text-slate-800 leading-relaxed mb-3">
+                      "Let's be <strong className="font-sans font-black bg-yellow-300 text-slate-950 px-1.5 py-0.5 rounded not-italic">100% honest for a minute...</strong> Whether you live in <strong className="font-sans font-black text-slate-900 not-italic">Lagos, Abuja, Port Harcourt, Ibadan</strong>, or anywhere across Nigeria—you already know the hard truth."
+                    </p>
+                    <p className="text-xs sm:text-sm md:text-base text-slate-800 font-medium leading-relaxed">
+                      Clients in <em>Victoria Island</em> or <em>Maitama</em> don't care about university theory. They care about <strong>ONE thing:</strong> <span className="bg-red-100 text-red-700 font-black px-1.5 py-0.5 rounded border border-red-200">Can you show them a photorealistic 3D view of their dream home before construction starts?</span>
+                    </p>
+                  </div>
+
+                  {/* Poster Cut the Crap Steps Box */}
+                  <div className="w-full max-w-3xl bg-white border-2 border-red-500/80 rounded-2xl p-3 sm:p-4 my-3 text-center shadow-md relative">
+                    <div className="inline-block bg-red-600 text-white text-[10px] sm:text-[11px] md:text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-sm mb-2">
+                      ⚡ CUT THE CRAP & SIMPLY MASTER THIS BLUEPRINT
                     </div>
 
                     {/* Single line steps row */}
-                    <div className="flex flex-nowrap items-center justify-center gap-1 sm:gap-1.5 md:gap-2 whitespace-nowrap py-1 overflow-x-auto">
-                      <span className="bg-yellow-400 text-slate-900 border border-yellow-500 font-black px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs rounded-xl shadow-xs tracking-tight">
+                    <div className="flex flex-nowrap items-center justify-center gap-1.5 sm:gap-2 md:gap-2.5 whitespace-nowrap py-1 overflow-x-auto">
+                      <span className="bg-yellow-400 text-slate-900 border border-yellow-500 font-black px-2.5 py-1 text-[10px] sm:text-xs rounded-xl shadow-xs tracking-tight">
                         1. PLANNING
                       </span>
                       <span className="text-red-500 text-[10px] sm:text-xs font-black">→</span>
-                      <span className="bg-red-600 text-white font-black px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs rounded-xl shadow-xs tracking-tight">
+                      <span className="bg-red-600 text-white font-black px-2.5 py-1 text-[10px] sm:text-xs rounded-xl shadow-xs tracking-tight">
                         2. DESIGNING
                       </span>
                       <span className="text-red-500 text-[10px] sm:text-xs font-black">→</span>
-                      <span className="bg-yellow-400 text-slate-900 border border-yellow-500 font-black px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs rounded-xl shadow-xs tracking-tight">
-                        3. RENDERING
+                      <span className="bg-yellow-400 text-slate-900 border border-yellow-500 font-black px-2.5 py-1 text-[10px] sm:text-xs rounded-xl shadow-xs tracking-tight">
+                        3. RENDERING & AI
                       </span>
                     </div>
 
-                    {/* Single line bottom yellow box */}
-                    <div className="mt-1.5 flex justify-center">
-                      <span className="bg-yellow-200 text-slate-900 text-[10px] sm:text-xs md:text-xs font-extrabold px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-xl border border-yellow-300 inline-block shadow-xs whitespace-nowrap max-w-full overflow-hidden text-ellipsis">
-                        That’s <span className="underline decoration-red-600 decoration-2 font-black text-red-700">ALL</span> needed to make money in this industry! 💰
+                    {/* Bottom statement */}
+                    <div className="mt-2 flex justify-center">
+                      <span className="bg-yellow-200 text-slate-900 text-[11px] sm:text-xs font-extrabold px-3 py-1 rounded-xl border border-yellow-300 inline-block shadow-xs whitespace-nowrap">
+                        That’s <span className="underline decoration-red-600 decoration-2 font-black text-red-700">ALL</span> needed to build a profitable studio or career! 💰
                       </span>
                     </div>
                   </div>
 
                   {/* We Teach You Exactly What Is Required */}
-                  <div className="mt-3 inline-flex items-center gap-2 bg-red-50 border border-red-200 rounded-xl px-3.5 py-1.5 text-xs md:text-sm font-bold text-slate-800 shadow-xs">
+                  <div className="mt-2 inline-flex items-center gap-2 bg-red-50 border border-red-200 rounded-xl px-4 py-2 text-xs md:text-sm font-bold text-slate-800 shadow-xs">
                     <span>✅</span>
                     <p className="leading-tight text-center">
                       We teach you <span className="bg-yellow-300 text-slate-900 font-black px-1.5 py-0.5 rounded">EXACTLY</span> what is required.
@@ -235,7 +245,7 @@ const LandingPage: React.FC = () => {
               </div>
               
               {/* Story & Video Section — Poster Styled */}
-              <div className="w-full max-w-4xl mx-auto mb-10 text-left bg-gradient-to-b from-white via-amber-50/20 to-red-50/20 p-5 md:p-8 rounded-3xl shadow-lg border-2 border-amber-200/80 relative">
+              <div className="w-full max-w-4xl mx-auto mb-10 text-left bg-gradient-to-b from-white via-amber-50/30 to-red-50/20 p-5 md:p-8 rounded-3xl shadow-lg border-2 border-amber-200/80 relative">
                 {/* Hero Video inside card with Video Facade for PageSpeed 90+ */}
                 <div style={{ position: 'relative', paddingTop: '56.25%' }} className="rounded-2xl overflow-hidden mb-6 shadow-md border border-slate-200 group bg-slate-950">
                   {isVideoLoaded ? (
@@ -263,41 +273,46 @@ const LandingPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-yellow-100/90 border-l-4 border-yellow-500 p-3.5 md:p-4 rounded-r-xl mb-4 shadow-xs">
-                  <p className="text-sm md:text-base font-display font-bold text-slate-900 leading-snug">
-                    "In our business of Architecture and Design, <span className="bg-yellow-300 text-slate-950 font-black px-1.5 py-0.5 rounded">Planning, Design and Rendering</span> matter the most."
+                {/* 📖 CHAPTER 1: THE REAL FRUSTRATION */}
+                <div className="bg-yellow-100/90 border-l-4 border-yellow-500 p-4 md:p-5 rounded-r-2xl mb-5 shadow-xs">
+                  <h3 className="text-xs uppercase font-black tracking-wider text-amber-900 mb-1">CHAPTER 1: THE COMMON FRUSTRATION</h3>
+                  <p className="text-sm md:text-base font-serif italic text-slate-900 leading-snug">
+                    "Have you ever spent 14 exhausting hours on YouTube trying to figure out 3ds Max or V-Ray, only for your laptop to freeze, your render to look fake, and clients to negotiate your price down?"
                   </p>
                 </div>
 
-                <div className="bg-red-600 text-white rounded-2xl p-4 md:p-5 mb-4 shadow-md text-center">
+                {/* ⚡ THE BIG QUESTION */}
+                <div className="bg-red-600 text-white rounded-2xl p-4 md:p-5 mb-5 shadow-md text-center">
                   <p className="text-xs md:text-sm uppercase tracking-wider font-extrabold text-yellow-300 mb-1">
-                    THE BIG QUESTION ISN'T IF YOU CAN...
+                    THE BIG QUESTION ISN'T IF YOU CAN DESIGN...
                   </p>
                   <p className="text-base md:text-xl font-display font-black text-white tracking-wide">
-                    ⚡ How to do it <span className="bg-yellow-400 text-slate-950 px-2 py-0.5 rounded-md">FASTER & BETTER?</span>
+                    ⚡ How to do it <span className="bg-yellow-400 text-slate-950 px-2 py-0.5 rounded-md">FASTER, BETTER & EARN MORE?</span>
                   </p>
                 </div>
 
-                <div className="w-full bg-white border border-red-200 rounded-xl p-3.5 md:p-4 shadow-sm">
+                {/* 🚀 THE 30-DAY SOLUTION */}
+                <div className="w-full bg-white border border-red-200 rounded-2xl p-4 md:p-5 shadow-sm">
+                  <h3 className="text-xs uppercase font-black tracking-wider text-red-600 mb-1.5">CHAPTER 2: THE 30-DAY BLUEPRINT</h3>
                   <p className="text-slate-800 text-xs md:text-sm font-medium leading-relaxed">
-                    That's exactly why we built this: A complete step-by-step blueprint from software basics to client-ready renders designed to make you <span className="bg-red-100 text-red-700 font-extrabold px-1.5 py-0.5 rounded border border-red-200">job or business ready in 30 days!</span> 🚀
+                    That's exactly why we built this master bundle: A complete step-by-step blueprint from software basics to client-ready renders designed to make you <span className="bg-red-100 text-red-700 font-extrabold px-1.5 py-0.5 rounded border border-red-200">job or business ready in 30 days!</span> 🚀
                   </p>
                 </div>
               </div>
 
-              {/* 🌱 Start from absolute zero badge — Poster Sticker Style */}
+              {/* 🌱 Start from absolute zero badge */}
               <div className="mb-4 inline-flex items-center gap-2 text-xs md:text-sm font-black text-slate-900 bg-yellow-400 border-2 border-slate-900 px-4 py-2 rounded-full shadow-[3px_3px_0px_#000]">
                 <span>🌱</span>
                 <span>Start from absolute zero <span className="bg-red-600 text-white px-2 py-0.5 rounded-full text-[10px] uppercase font-black ml-1">No Experience Needed</span></span>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 items-center mb-6">
+              <div className="flex flex-col sm:flex-row gap-4 items-center mb-4">
                 <button onClick={openPaymentModal} className="px-8 md:px-10 py-4 md:py-5 bg-gradient-to-r from-red-600 via-orange-600 to-red-600 text-white rounded-2xl font-black text-base md:text-lg border-2 border-slate-900 shadow-[4px_4px_0px_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none transition-all flex items-center gap-3 group whitespace-nowrap">
                   <Download size={18} className="shrink-0" />
                   Get All Courses & 24/7 Team Support <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
                 </button>
               </div>
-              <div className="bg-amber-100/70 border border-amber-300 px-3 py-1.5 rounded-xl text-[11px] md:text-xs text-slate-800 font-extrabold mb-8 inline-block shadow-xs">
+              <div className="bg-amber-100/70 border border-amber-300 px-3.5 py-1.5 rounded-xl text-[11px] md:text-xs text-slate-800 font-extrabold mb-8 inline-block shadow-xs">
                 ✨ 24/7 Team Support • Free Software Links Included • 7-Day Money-Back Guarantee
               </div>
               
