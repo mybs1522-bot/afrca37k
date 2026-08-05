@@ -221,10 +221,56 @@ const LandingPage: React.FC = () => {
             </button>
             <p className="text-xs text-slate-500 font-bold">✨ Instant Download • 24/7 Support • 7-Day Guarantee</p>
           </div>
-
         </section>
 
-        {/* ═══ 2. THE 3 CORE GAME-CHANGERS ═══ */}
+        {/* ═══ 2. ALL 12 TOOLS SHOWCASE (Carousel Grid) ═══ */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-10 overflow-hidden text-center">
+          <div className="mb-6">
+            <div className="inline-flex items-center justify-center gap-2 px-3.5 py-1 bg-amber-100 border border-amber-300 rounded-full text-slate-900 font-black text-xs mb-2">
+              🎓 Includes Official Certificate Equivalent to Diploma
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950">
+              Master All 12 Premium Software Tools
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 font-medium">Everything included in one single bundle download.</p>
+          </div>
+
+          <div className="flex flex-col gap-3 relative w-full overflow-hidden pb-4">
+            <div className="flex gap-3 animate-scroll-right hover:pause w-max">
+              {[...COURSES.slice(0, 6), ...COURSES.slice(0, 6)].map((course, i) => (
+                <div key={`full-row1-${course.id}-${i}`} className="w-[110px] sm:w-[125px] md:w-[135px] shrink-0 bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden group">
+                  <div className="relative aspect-square overflow-hidden bg-slate-100">
+                    <img src={course.imageUrl} alt={course.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute top-1 left-1 w-5 h-5 bg-white/95 rounded-full flex items-center justify-center font-bold text-gray-900 text-[9px] border border-gray-200">{(i % 6) + 1}</div>
+                    <div className="absolute top-1 right-1 bg-white/95 text-gray-900 text-[7px] font-bold uppercase tracking-wider px-1 py-0.5 rounded-full border border-gray-200">{course.software}</div>
+                  </div>
+                  <div className="p-2 text-left">
+                    <h3 className="font-display font-bold text-gray-900 text-xs mb-0.5 line-clamp-1 leading-tight">{course.title}</h3>
+                    <div className="bg-emerald-50 text-emerald-600 text-[8px] font-bold px-1 py-0.5 rounded text-center border border-emerald-100">✓ Included</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex gap-3 animate-scroll-right hover:pause w-max" style={{ animationDelay: '-22.5s' }}>
+              {[...COURSES.slice(6, 12), ...COURSES.slice(6, 12)].map((course, i) => (
+                <div key={`full-row2-${course.id}-${i}`} className="w-[110px] sm:w-[125px] md:w-[135px] shrink-0 bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden group">
+                  <div className="relative aspect-square overflow-hidden bg-slate-100">
+                    <img src={course.imageUrl} alt={course.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute top-1 left-1 w-5 h-5 bg-white/95 rounded-full flex items-center justify-center font-bold text-gray-900 text-[9px] border border-gray-200">{(i % 6) + 7}</div>
+                    <div className="absolute top-1 right-1 bg-white/95 text-gray-900 text-[7px] font-bold uppercase tracking-wider px-1 py-0.5 rounded-full border border-gray-200">{course.software}</div>
+                  </div>
+                  <div className="p-2 text-left">
+                    <h3 className="font-display font-bold text-gray-900 text-xs mb-0.5 line-clamp-1 leading-tight">{course.title}</h3>
+                    <div className="bg-emerald-50 text-emerald-600 text-[8px] font-bold px-1 py-0.5 rounded text-center border border-emerald-100">✓ Included</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ 3. THE 3 CORE GAME-CHANGERS ═══ */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12">
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950">
@@ -274,134 +320,6 @@ const LandingPage: React.FC = () => {
               </p>
             </div>
 
-          </div>
-        </section>
-
-        {/* ═══ 3. THE 3 SIMPLE STEPS (Plan → Design → Render) ═══ */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12">
-          <div className="bg-white border-2 border-red-500 rounded-3xl p-6 sm:p-8 text-center shadow-md">
-            <div className="inline-block bg-red-600 text-white text-[10px] sm:text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider mb-4">
-              ⚡ HOW IT WORKS IN 3 SIMPLE STEPS
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-2">
-              <div className="bg-yellow-100 border border-yellow-400 rounded-2xl p-4 text-center">
-                <span className="text-xs font-mono font-black text-yellow-900 block mb-1">STEP 1</span>
-                <span className="font-display font-black text-slate-950 text-base block">📐 1. Plan</span>
-                <p className="text-xs text-slate-700 mt-1.5 font-medium">Draw clean 2D floor blueprints with AutoCAD & Revit.</p>
-              </div>
-
-              <div className="bg-red-100 border border-red-300 rounded-2xl p-4 text-center">
-                <span className="text-xs font-mono font-black text-red-900 block mb-1">STEP 2</span>
-                <span className="font-display font-black text-slate-950 text-base block">🏢 2. Design</span>
-                <p className="text-xs text-slate-700 mt-1.5 font-medium">Build 3D rooms & furniture with SketchUp & 3ds Max.</p>
-              </div>
-
-              <div className="bg-yellow-100 border border-yellow-400 rounded-2xl p-4 text-center">
-                <span className="text-xs font-mono font-black text-yellow-900 block mb-1">STEP 3</span>
-                <span className="font-display font-black text-slate-950 text-base block">🚀 3. Render & AI</span>
-                <p className="text-xs text-slate-700 mt-1.5 font-medium">Create photorealistic images & videos with V-Ray, Lumion & AI.</p>
-              </div>
-            </div>
-
-            <p className="mt-4 text-xs sm:text-sm font-extrabold text-slate-800">
-              That's <span className="underline decoration-red-600 font-black text-red-700">ALL</span> you need to build a profitable studio or career in Nigeria! 💰
-            </p>
-          </div>
-        </section>
-
-        {/* ═══ 4. 10,000+ NIGERIAN STUDENTS PROOF ═══ */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12 text-center">
-          <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm">
-            <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950 mb-3">
-              10,000+ {country.name} Students {country.flag}
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto mb-6">
-              You're in great company. Students across Lagos, Abuja, Port Harcourt, and Ibadan use this exact system.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-              <img src="/student1.jpg" alt="Nigerian Students 1" loading="lazy" className="rounded-2xl shadow-md w-full sm:w-1/2 object-cover border border-slate-200 hover:scale-[1.01] transition-transform" />
-              <img src="/student2.jpg" alt="Nigerian Students 2" loading="lazy" className="rounded-2xl shadow-md w-full sm:w-1/2 object-cover border border-slate-200 hover:scale-[1.01] transition-transform" />
-            </div>
-          </div>
-        </section>
-
-        {/* ═══ 5. INCOME TIERS (ROI STORY) ═══ */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950 mb-2">
-              Financial Transformation (Real Earning Potential)
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-600">See what happens when you master 3D rendering & AI.</p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {INCOME_TIERS.map((tier, i) => (
-              <div key={i} className="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs flex flex-col justify-between hover:border-blue-300 transition-all">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-bold text-slate-900 leading-tight w-2/3">{tier.label}</span>
-                  <span className="text-2xl">{tier.icon}</span>
-                </div>
-                <div className="flex items-center justify-between text-xs pt-3 border-t border-slate-100">
-                  <div>
-                    <p className="text-[9px] font-mono text-slate-400 uppercase">Before</p>
-                    <p className="text-slate-400 line-through font-semibold">{tier.before}</p>
-                  </div>
-                  <ArrowRight size={14} className="text-blue-500" />
-                  <div className="text-right">
-                    <p className="text-[9px] font-mono text-blue-500 uppercase">After</p>
-                    <p className="text-emerald-600 font-black">{tier.after}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ═══ 6. ALL 12 TOOLS SHOWCASE (Carousel Grid) ═══ */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12 overflow-hidden text-center">
-          <div className="mb-6">
-            <div className="inline-flex items-center justify-center gap-2 px-3.5 py-1 bg-amber-100 border border-amber-300 rounded-full text-slate-900 font-black text-xs mb-2">
-              🎓 Includes Official Certificate Equivalent to Diploma
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950">
-              Master All 12 Premium Software Tools
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-600 font-medium">Everything included in one single bundle download.</p>
-          </div>
-
-          <div className="flex flex-col gap-3 relative w-full overflow-hidden pb-4">
-            <div className="flex gap-3 animate-scroll-right hover:pause w-max">
-              {[...COURSES.slice(0, 6), ...COURSES.slice(0, 6)].map((course, i) => (
-                <div key={`full-row1-${course.id}-${i}`} className="w-[110px] sm:w-[125px] md:w-[135px] shrink-0 bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden group">
-                  <div className="relative aspect-square overflow-hidden bg-slate-100">
-                    <img src={course.imageUrl} alt={course.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute top-1 left-1 w-5 h-5 bg-white/95 rounded-full flex items-center justify-center font-bold text-gray-900 text-[9px] border border-gray-200">{(i % 6) + 1}</div>
-                    <div className="absolute top-1 right-1 bg-white/95 text-gray-900 text-[7px] font-bold uppercase tracking-wider px-1 py-0.5 rounded-full border border-gray-200">{course.software}</div>
-                  </div>
-                  <div className="p-2 text-left">
-                    <h3 className="font-display font-bold text-gray-900 text-xs mb-0.5 line-clamp-1 leading-tight">{course.title}</h3>
-                    <div className="bg-emerald-50 text-emerald-600 text-[8px] font-bold px-1 py-0.5 rounded text-center border border-emerald-100">✓ Included</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex gap-3 animate-scroll-right hover:pause w-max" style={{ animationDelay: '-22.5s' }}>
-              {[...COURSES.slice(6, 12), ...COURSES.slice(6, 12)].map((course, i) => (
-                <div key={`full-row2-${course.id}-${i}`} className="w-[110px] sm:w-[125px] md:w-[135px] shrink-0 bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden group">
-                  <div className="relative aspect-square overflow-hidden bg-slate-100">
-                    <img src={course.imageUrl} alt={course.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute top-1 left-1 w-5 h-5 bg-white/95 rounded-full flex items-center justify-center font-bold text-gray-900 text-[9px] border border-gray-200">{(i % 6) + 7}</div>
-                    <div className="absolute top-1 right-1 bg-white/95 text-gray-900 text-[7px] font-bold uppercase tracking-wider px-1 py-0.5 rounded-full border border-gray-200">{course.software}</div>
-                  </div>
-                  <div className="p-2 text-left">
-                    <h3 className="font-display font-bold text-gray-900 text-xs mb-0.5 line-clamp-1 leading-tight">{course.title}</h3>
-                    <div className="bg-emerald-50 text-emerald-600 text-[8px] font-bold px-1 py-0.5 rounded text-center border border-emerald-100">✓ Included</div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
