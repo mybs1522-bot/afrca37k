@@ -159,436 +159,235 @@ const LandingPage: React.FC = () => {
         </div>
       </div>
 
-      <main className="bg-amber-50/40 py-4 sm:py-8 min-h-screen">
-        {/* 📰 SHORT STORY EDITORIAL DISPATCH CONTAINER */}
-        <article className="max-w-4xl mx-auto px-4 sm:px-8 py-8 md:py-12 bg-white shadow-2xl rounded-3xl border border-slate-200/90 text-slate-900 font-sans relative">
+      <main className="bg-slate-50 min-h-screen py-4 sm:py-8 font-sans text-slate-900">
+        
+        {/* ═══ 1. HERO SECTION — Instant Value in 3 Seconds ═══ */}
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 mb-8 text-center">
           
-          {/* MASTHEAD HEADER */}
-          <header className="border-b-2 border-slate-900 pb-6 mb-8 text-center">
-            <div className="flex flex-wrap items-center justify-between gap-2 text-[10px] md:text-xs font-mono uppercase tracking-widest text-slate-500 mb-3 border-b border-slate-100 pb-2">
-              <span className="font-bold text-red-600">📰 THE ARCHITECTURE & DESIGN DISPATCH</span>
-              <span>ISSUE #42 • NIGERIA EDITION</span>
-              <span className="font-bold text-slate-700">6 MIN READ</span>
-            </div>
+          {/* Top Offer Badge */}
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-yellow-400 border border-yellow-500 text-slate-950 text-[11px] sm:text-xs font-black uppercase tracking-wider mb-4 rounded-full shadow-sm">
+            <span>🇳🇬 NIGERIA STUDENTS WEEK SPECIAL OFFER</span>
+          </div>
 
-            {/* Title */}
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-display font-black tracking-tight leading-snug text-slate-950 mb-4 text-left">
-              The Unspoken Shortcut to a High-Paying Interior & Architectural Design Career in Nigeria{' '}
-              <span className="bg-yellow-300 text-slate-950 px-2 py-0.5 rounded-md border border-yellow-400 font-black inline-block">
-                (Without Spending 4 Years in University)
-              </span>
-            </h1>
+          {/* Straight to the Point Headline */}
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-display font-black tracking-tight leading-tight text-slate-950 mb-3 max-w-3xl mx-auto">
+            Learn Interior & 3D Design in 30 Days.{' '}
+            <span className="bg-yellow-300 text-slate-950 px-2 py-0.5 rounded-md border border-yellow-400 inline-block">
+              Start Earning Fast
+            </span>{' '}
+            with 3 Paid Freelance Projects.
+          </h1>
 
-            {/* Subtitle */}
-            <p className="text-sm md:text-base text-slate-600 font-serif italic text-left leading-relaxed">
-              A personal story & step-by-step master guide for every creative, student, and architect in Lagos, Abuja, Port Harcourt, and across Nigeria.
-            </p>
+          {/* Simple Subtitle */}
+          <p className="text-sm sm:text-base md:text-lg text-slate-600 font-medium max-w-2xl mx-auto mb-6 leading-relaxed">
+            No university degree needed. No expensive software to buy. Everything you need is included.
+          </p>
 
-            {/* Author Bar */}
-            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between gap-4 text-left">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-yellow-400 border-2 border-slate-900 flex items-center justify-center font-black text-slate-900 text-base shadow-sm">
-                  🇳🇬
-                </div>
-                <div>
-                  <p className="text-xs font-black uppercase tracking-wider text-slate-900">By Avada Learn Academy</p>
-                  <p className="text-[11px] text-slate-500 font-medium">Dedicated to Nigerian Designers & Architects</p>
-                </div>
-              </div>
-              <span className="bg-emerald-100 text-emerald-800 text-[10px] font-black uppercase px-2.5 py-1 rounded-full border border-emerald-200 hidden sm:inline-block">
-                ✓ Complete Story Edition
-              </span>
-            </div>
-          </header>
-
-          {/* EDITORIAL SHORT STORY BODY */}
-          <div className="space-y-6 text-sm md:text-base text-slate-800 leading-relaxed font-normal">
-            
-            {/* PROLOGUE LETTER */}
-            <p className="font-serif italic text-base md:text-lg text-slate-900 font-bold border-l-4 border-yellow-400 pl-4 py-1 bg-yellow-50/60 rounded-r-xl">
-              Dear Friend & Future Design Pioneer,
-            </p>
-
-            <p>
-              If you are reading this from <strong>Lagos, Abuja, Port Harcourt, Ibadan, Enugu</strong>, or anywhere across Nigeria—let's have a completely honest conversation about building a career in architecture and interior design today.
-            </p>
-
-            <p>
-              Most Nigerian universities teach 10-year-old architectural theory that hasn't changed since 2010. But when you sit across a high-value client in <em>Victoria Island, Lekki Phase 1, or Maitama</em>, they don't ask to see your university certificate.
-            </p>
-
-            {/* PULL QUOTE */}
-            <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-4 md:p-5 text-slate-900 text-center shadow-xs">
-              <p className="text-xs uppercase font-black tracking-wider text-red-600 mb-1">THE ONLY QUESTION CLIENTS CARE ABOUT</p>
-              <p className="text-base md:text-xl font-display font-black text-slate-950 leading-snug">
-                "Can you show me a photorealistic 3D render of how my living room, office, or villa will look <span className="bg-yellow-300 text-slate-950 px-1.5 py-0.5 rounded">BEFORE I pay?</span>"
-              </p>
-            </div>
-
-            {/* 🎥 CHAPTER 1: THE DEMONSTRATION */}
-            <div className="my-8 pt-2">
-              <div className="bg-slate-900 text-white text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded-t-xl inline-block border-t border-x border-slate-700">
-                CHAPTER 1: THE VIDEO DEMONSTRATION 📹
-              </div>
-              <div className="rounded-2xl overflow-hidden shadow-xl border-2 border-slate-900 relative bg-slate-950">
-                <div style={{ position: 'relative', paddingTop: '56.25%' }}>
-                  {isVideoLoaded ? (
-                    <iframe src="https://iframe.mediadelivery.net/embed/494628/1f7b76dd-7d47-4f39-87af-bff5a6b02d08?autoplay=true&loop=true&muted=true&responsive=true" loading="lazy" style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowFullScreen={true}></iframe>
-                  ) : (
-                    <div 
-                      onClick={() => setIsVideoLoaded(true)}
-                      className="absolute inset-0 cursor-pointer bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 flex flex-col items-center justify-center group"
-                    >
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 flex items-center justify-center text-slate-950 shadow-2xl group-hover:scale-110 transition-all duration-300 relative z-10">
-                        <Play size={32} className="fill-slate-950 translate-x-0.5" />
-                        <span className="absolute inset-0 rounded-full bg-yellow-400/40 animate-ping pointer-events-none"></span>
-                      </div>
-                      <span className="mt-3 text-xs sm:text-sm font-black text-yellow-300 uppercase tracking-widest bg-black/40 px-3 py-1 rounded-full border border-yellow-400/30">
-                        ▶ Click To Play Video Preview
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Overlay Banner */}
-                  <div className="absolute top-2 sm:top-4 left-1/2 -translate-x-1/2 z-20 w-auto max-w-[96%] text-center pointer-events-none">
-                    <h2 className="inline-block bg-yellow-400/95 backdrop-blur-sm border border-slate-900 text-slate-950 text-[9px] sm:text-xs font-semibold px-3 py-1 rounded-xl shadow-sm tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
-                      🏡 Learn To Design Complete Homes, Offices and Villas
-                    </h2>
+          {/* HERO VIDEO PLAYER FACADE (Preserved for 90+ PageSpeed & Autoplay) */}
+          <div className="w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-900 relative bg-slate-950 mb-8">
+            <div style={{ position: 'relative', paddingTop: '56.25%' }}>
+              {isVideoLoaded ? (
+                <iframe src="https://iframe.mediadelivery.net/embed/494628/1f7b76dd-7d47-4f39-87af-bff5a6b02d08?autoplay=true&loop=true&muted=true&responsive=true" loading="lazy" style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowFullScreen={true}></iframe>
+              ) : (
+                <div 
+                  onClick={() => setIsVideoLoaded(true)}
+                  className="absolute inset-0 cursor-pointer bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 flex flex-col items-center justify-center group"
+                >
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 flex items-center justify-center text-slate-950 shadow-2xl group-hover:scale-110 transition-all duration-300 relative z-10">
+                    <Play size={32} className="fill-slate-950 translate-x-0.5" />
+                    <span className="absolute inset-0 rounded-full bg-yellow-400/40 animate-ping pointer-events-none"></span>
                   </div>
+                  <span className="mt-3 text-xs sm:text-sm font-black text-yellow-300 uppercase tracking-widest bg-black/40 px-3 py-1 rounded-full border border-yellow-400/30">
+                    ▶ Click To Play Video Preview
+                  </span>
                 </div>
+              )}
+              
+              {/* Overlay Banner Over Video */}
+              <div className="absolute top-2 sm:top-3 left-1/2 -translate-x-1/2 z-20 w-auto max-w-[96%] text-center pointer-events-none">
+                <h2 className="inline-block bg-yellow-400/95 backdrop-blur-sm border border-slate-900 text-slate-950 text-[9px] sm:text-xs font-semibold px-3 py-1 rounded-xl shadow-sm tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
+                  🏡 Learn To Design Complete Homes, Offices and Villas
+                </h2>
               </div>
             </div>
+          </div>
 
-            {/* CHAPTER 2: THE 3-STEP SHORTCUT */}
-            <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 pt-4 border-t border-slate-100">
-              Chapter 2: The 3-Pillar Shortcut
+          {/* Quick CTA Button */}
+          <div className="flex flex-col items-center gap-2">
+            <button onClick={openPaymentModal} className="w-full sm:w-auto px-8 md:px-12 py-4 md:py-5 bg-gradient-to-r from-red-600 via-orange-600 to-red-600 text-white rounded-2xl font-black text-base md:text-lg border-2 border-slate-900 shadow-[4px_4px_0px_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none transition-all inline-flex items-center justify-center gap-3">
+              <Download size={20} className="shrink-0" />
+              <span>Get All Courses & Start Learning ({country.formattedPrice})</span>
+              <ArrowRight size={20} />
+            </button>
+            <p className="text-xs text-slate-500 font-bold">✨ Instant Download • 24/7 Support • 7-Day Guarantee</p>
+          </div>
+
+        </section>
+
+        {/* ═══ 2. THE 3 GAME-CHANGERS (Why This Course Actually Works) ═══ */}
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 my-10">
+          <div className="text-center mb-6">
+            <h2 className="text-xl sm:text-3xl font-display font-black text-slate-950">
+              3 Reasons Why 50,000+ Students Succeed With Us
             </h2>
+            <p className="text-xs sm:text-sm text-slate-600 font-medium">Simple, clear, and designed to get you results fast.</p>
+          </div>
 
-            <p>
-              To run a profitable design business or land high-paying remote roles, you don't need academic fluff. You only need to master <strong>3 core pillars:</strong>
-            </p>
-
-            {/* STEPS BOX */}
-            <div className="w-full bg-white border-2 border-red-500 rounded-2xl p-4 my-4 text-center shadow-md">
-              <div className="inline-block bg-red-600 text-white text-[10px] sm:text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider mb-2">
-                ⚡ THE ONLY 3 PILLARS YOU NEED
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            
+            {/* Card 1: Freelance Projects */}
+            <div className="bg-white border-2 border-emerald-500 rounded-2xl p-5 shadow-sm text-left relative overflow-hidden">
+              <div className="w-10 h-10 rounded-xl bg-emerald-100 border border-emerald-300 flex items-center justify-center text-xl mb-3">
+                💰
               </div>
-
-              <div className="flex flex-nowrap items-center justify-center gap-1.5 sm:gap-2.5 whitespace-nowrap py-1 overflow-x-auto">
-                <span className="bg-yellow-400 text-slate-900 border border-yellow-500 font-black px-2.5 py-1 text-xs rounded-xl shadow-xs">
-                  1. PLANNING
-                </span>
-                <span className="text-red-500 font-black">→</span>
-                <span className="bg-red-600 text-white font-black px-2.5 py-1 text-xs rounded-xl shadow-xs">
-                  2. DESIGNING
-                </span>
-                <span className="text-red-500 font-black">→</span>
-                <span className="bg-yellow-400 text-slate-900 border border-yellow-500 font-black px-2.5 py-1 text-xs rounded-xl shadow-xs">
-                  3. RENDERING & AI
-                </span>
-              </div>
-
-              <p className="mt-2 text-xs font-extrabold text-slate-800">
-                That's <span className="underline decoration-red-600 font-black text-red-700">EXACTLY</span> what we teach you in this master bundle. Nothing less, nothing more. 💰
-              </p>
-            </div>
-
-            {/* SPECIAL FREELANCE BONUS */}
-            <div className="bg-gradient-to-r from-emerald-50 via-green-50 to-emerald-50 border-2 border-emerald-400 rounded-2xl p-4 sm:p-5 my-4 text-slate-900 shadow-sm">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-600 text-white font-black text-[10px] uppercase tracking-wider rounded-full mb-2">
-                💰 SPECIAL NIGERIAN STUDENT BONUS
-              </div>
-              <h3 className="text-base sm:text-lg font-display font-black text-slate-950 mb-1">
-                3 Freelance Paid Projects For Every Student in Nigeria (Worth $300 USD)
+              <h3 className="font-display font-black text-slate-950 text-base mb-1">
+                3 Paid Freelance Projects Included ($300 Value)
               </h3>
-              <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
-                Every student who completes our course gets <strong>3 real paid freelance design projects</strong> inside our community to build real-world experience and earnings!
+              <p className="text-xs text-slate-700 leading-relaxed font-medium">
+                We don't just teach theory. Every student receives <strong>3 real paid freelance design projects</strong> upon completion so you start earning income and building real client confidence immediately.
               </p>
             </div>
 
-            {/* CHAPTER 3: THE 10,000+ NIGERIAN STUDENTS */}
-            <div className="pt-6 border-t border-slate-100">
-              <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-3">
-                Chapter 3: Joined by 10,000+ Nigerian Students {country.flag}
-              </h2>
-              <p className="text-sm text-slate-600 mb-4">
-                You are not walking this path alone. Over 10,000 students across Lagos, Abuja, Port Harcourt, and Ibadan have taken this exact blueprint to upgrade their careers.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center items-center gap-4 my-4">
-                <img src="/student1.jpg" alt="Nigerian Students 1" loading="lazy" className="rounded-2xl shadow-md w-full sm:w-1/2 object-cover border border-slate-200" />
-                <img src="/student2.jpg" alt="Nigerian Students 2" loading="lazy" className="rounded-2xl shadow-md w-full sm:w-1/2 object-cover border border-slate-200" />
+            {/* Card 2: Community Connections */}
+            <div className="bg-white border-2 border-blue-500 rounded-2xl p-5 shadow-sm text-left relative overflow-hidden">
+              <div className="w-10 h-10 rounded-xl bg-blue-100 border border-blue-300 flex items-center justify-center text-xl mb-3">
+                🤝
               </div>
+              <h3 className="font-display font-black text-slate-950 text-base mb-1">
+                Active Student Community & Connections
+              </h3>
+              <p className="text-xs text-slate-700 leading-relaxed font-medium">
+                Connect with top architects, interior designers, and studio owners in Lagos, Abuja, and Port Harcourt. Share work, get client referrals, and never feel alone.
+              </p>
             </div>
 
-            {/* CHAPTER 4: INCOME TIERS (ROI STORY) */}
-            <div className="pt-6 border-t border-slate-100">
-              <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-3">
-                Chapter 4: The Financial Transformation (Real Earnings ROI)
-              </h2>
-              <p className="text-sm text-slate-600 mb-4">
-                Here is what happens to your earning potential when you upgrade from simple drawings to high-end 3D & AI visualization:
+            {/* Card 3: Free Software Links */}
+            <div className="bg-white border-2 border-amber-500 rounded-2xl p-5 shadow-sm text-left relative overflow-hidden">
+              <div className="w-10 h-10 rounded-xl bg-amber-100 border border-amber-300 flex items-center justify-center text-xl mb-3">
+                💻
+              </div>
+              <h3 className="font-display font-black text-slate-950 text-base mb-1">
+                Free Software Links & 24/7 Setup Help
+              </h3>
+              <p className="text-xs text-slate-700 leading-relaxed font-medium">
+                Don't spend millions buying software. We provide direct download links for student/free software versions (AutoCAD, SketchUp, V-Ray, Lumion & AI) + 24/7 team installation support.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-4">
-                {INCOME_TIERS.map((tier, i) => (
-                  <div key={i} className="bg-slate-50 border border-slate-200 rounded-2xl p-4 flex flex-col justify-between shadow-xs">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-xs font-bold text-slate-900 leading-tight w-2/3">{tier.label}</span>
-                      <span className="text-2xl">{tier.icon}</span>
-                    </div>
-                    <div className="flex items-center justify-between text-xs">
-                      <div>
-                        <p className="text-[9px] font-mono text-slate-400 uppercase">Before</p>
-                        <p className="text-slate-400 line-through">{tier.before}</p>
-                      </div>
-                      <ArrowRight size={14} className="text-blue-500" />
-                      <div className="text-right">
-                        <p className="text-[9px] font-mono text-blue-500 uppercase">After</p>
-                        <p className="text-emerald-600 font-bold">{tier.after}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* CHAPTER 5: WHAT YOU CAN ACHIEVE */}
-            <div className="pt-6 border-t border-slate-100">
-              <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-3">
-                Chapter 5: What You Can Achieve After 30 Days
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-                <div className="bg-yellow-100/90 border-2 border-yellow-400 rounded-2xl p-4 flex flex-col gap-1 shadow-sm">
-                  <div className="flex items-center gap-2.5">
-                    <span className="text-xl bg-yellow-300 p-1.5 rounded-lg border border-yellow-400">💼</span>
-                    <span className="font-display font-black text-slate-900 text-sm sm:text-base">Get a Higher-Paying Job</span>
-                  </div>
-                  <p className="text-slate-700 text-xs sm:text-sm pl-10 font-bold">Land high-paying design & rendering roles in top Nigerian firms or remote international agencies.</p>
-                </div>
-                <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-4 flex flex-col gap-1 shadow-sm">
-                  <div className="flex items-center gap-2.5">
-                    <span className="text-xl bg-red-200 p-1.5 rounded-lg border border-red-300">🏢</span>
-                    <span className="font-display font-black text-slate-900 text-sm sm:text-base">Launch Your Own Studio</span>
-                  </div>
-                  <p className="text-slate-700 text-xs sm:text-sm pl-10 font-bold">Take private freelance clients, design luxury apartments, shortlets, and commercial offices.</p>
-                </div>
-              </div>
             </div>
 
           </div>
+        </section>
 
-          {/* CHAPTER 6: MASTER ALL 12 TOOLS (SLIDESHOW) */}
-          <section className="mt-10 pt-8 border-t-2 border-slate-900">
-            <div className="text-center mb-6">
-              <div className="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 bg-gradient-to-r from-amber-500/10 via-amber-400/20 to-amber-500/10 border border-amber-400/50 rounded-full text-slate-900 font-extrabold text-xs shadow-sm mb-2">
-                <span>🎓</span>
-                <span className="text-amber-950 font-black">You will get Design Management certificate equivalent to Diploma</span>
-              </div>
-              <h2 className="text-xl md:text-3xl font-display font-black text-slate-950">
-                Chapter 6: Master All 12 Premium Software Tools
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-600 font-serif italic mt-1">
-                AutoCAD, Revit, SketchUp, 3ds Max, V-Ray, Lumion, D5 Render, Enscape, Midjourney AI, Stable Diffusion, Unreal Engine 5, Photoshop.
-              </p>
+        {/* ═══ 3. THE 3 SIMPLE STEPS (Plan → Design → Render) ═══ */}
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 my-10">
+          <div className="bg-white border-2 border-red-500 rounded-3xl p-5 sm:p-6 text-center shadow-md">
+            <div className="inline-block bg-red-600 text-white text-[10px] sm:text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider mb-3">
+              ⚡ HOW IT WORKS IN 3 SIMPLE STEPS
             </div>
 
-            {/* SLIDESHOW CAROUSEL */}
-            <div className="flex flex-col gap-3 relative w-full overflow-hidden pb-4">
-              <div className="flex gap-3 animate-scroll-right hover:pause w-max">
-                {[...COURSES.slice(0, 6), ...COURSES.slice(0, 6)].map((course, i) => (
-                  <div key={`nls-row1-${course.id}-${i}`} className="w-[105px] sm:w-[115px] md:w-[125px] shrink-0 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden group hover:shadow-md transition-all">
-                    <div className="relative aspect-square overflow-hidden bg-gray-100">
-                      <img src={course.imageUrl} alt={course.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                      <div className="absolute top-1 left-1 w-5 h-5 bg-white/95 rounded-full flex items-center justify-center font-bold text-gray-900 text-[9px] border border-gray-200">{(i % 6) + 1}</div>
-                      <div className="absolute top-1 right-1 bg-white/95 text-gray-900 text-[7px] font-bold uppercase tracking-wider px-1 py-0.5 rounded-full border border-gray-200">{course.software}</div>
-                    </div>
-                    <div className="p-1.5">
-                      <h3 className="font-display font-bold text-gray-900 text-[11px] md:text-xs mb-0.5 line-clamp-1 leading-tight">{course.title}</h3>
-                      <div className="bg-emerald-50 text-emerald-600 text-[8px] font-bold px-1 py-0.5 rounded text-center border border-emerald-100">✓ Included</div>
-                    </div>
-                  </div>
-                ))}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 my-2">
+              <div className="bg-yellow-100 border border-yellow-400 rounded-xl p-3.5 text-center">
+                <span className="text-xs font-mono font-black text-yellow-900 block mb-1">STEP 1</span>
+                <span className="font-display font-black text-slate-950 text-sm block">📐 1. Plan</span>
+                <p className="text-[11px] text-slate-700 mt-1 font-medium">Draw clean 2D floor blueprints with AutoCAD & Revit.</p>
               </div>
 
-              <div className="flex gap-3 animate-scroll-right hover:pause w-max" style={{ animationDelay: '-22.5s' }}>
-                {[...COURSES.slice(6, 12), ...COURSES.slice(6, 12)].map((course, i) => (
-                  <div key={`nls-row2-${course.id}-${i}`} className="w-[105px] sm:w-[115px] md:w-[125px] shrink-0 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden group hover:shadow-md transition-all">
-                    <div className="relative aspect-square overflow-hidden bg-gray-100">
-                      <img src={course.imageUrl} alt={course.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                      <div className="absolute top-1 left-1 w-5 h-5 bg-white/95 rounded-full flex items-center justify-center font-bold text-gray-900 text-[9px] border border-gray-200">{(i % 6) + 7}</div>
-                      <div className="absolute top-1 right-1 bg-white/95 text-gray-900 text-[7px] font-bold uppercase tracking-wider px-1 py-0.5 rounded-full border border-gray-200">{course.software}</div>
-                    </div>
-                    <div className="p-1.5">
-                      <h3 className="font-display font-bold text-gray-900 text-[11px] md:text-xs mb-0.5 line-clamp-1 leading-tight">{course.title}</h3>
-                      <div className="bg-emerald-50 text-emerald-600 text-[8px] font-bold px-1 py-0.5 rounded text-center border border-emerald-100">✓ Included</div>
-                    </div>
-                  </div>
-                ))}
+              <div className="bg-red-100 border border-red-300 rounded-xl p-3.5 text-center">
+                <span className="text-xs font-mono font-black text-red-900 block mb-1">STEP 2</span>
+                <span className="font-display font-black text-slate-950 text-sm block">🏢 2. Design</span>
+                <p className="text-[11px] text-slate-700 mt-1 font-medium">Build 3D rooms & furniture with SketchUp & 3ds Max.</p>
+              </div>
+
+              <div className="bg-yellow-100 border border-yellow-400 rounded-xl p-3.5 text-center">
+                <span className="text-xs font-mono font-black text-yellow-900 block mb-1">STEP 3</span>
+                <span className="font-display font-black text-slate-950 text-sm block">🚀 3. Render & AI</span>
+                <p className="text-[11px] text-slate-700 mt-1 font-medium">Create photorealistic images & videos with V-Ray, Lumion & AI.</p>
               </div>
             </div>
-          </section>
 
-          {/* CHAPTER 7: STUDENT CASE STUDIES & RENDER GALLERY */}
-          <section className="pt-8 border-t border-slate-100">
-            <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-3 text-center">
-              Chapter 7: Real Student Case Studies & Render Gallery
+            <p className="mt-3 text-xs sm:text-sm font-extrabold text-slate-800">
+              That's <span className="underline decoration-red-600 font-black text-red-700">ALL</span> you need to build a profitable studio or career in Nigeria! 💰
+            </p>
+          </div>
+        </section>
+
+        {/* ═══ 4. ALL 12 TOOLS SHOWCASE (Compact Carousel) ═══ */}
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 my-10 overflow-hidden">
+          <div className="text-center mb-4">
+            <div className="inline-flex items-center justify-center gap-2 px-3 py-1 bg-amber-100 border border-amber-300 rounded-full text-slate-900 font-black text-xs mb-2">
+              🎓 Includes Official Certificate Equivalent to Diploma
+            </div>
+            <h2 className="text-xl sm:text-2xl font-display font-black text-slate-950">
+              Master All 12 Premium Software Tools
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-              {TRANSFORMATION_STORIES.map((story, i) => (
-                <div key={i} className="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-left">
-                  <div className="flex items-center justify-between mb-2">
-                    <div>
-                      <h4 className="font-bold text-slate-900 text-sm">{story.name}</h4>
-                      <p className="text-[11px] text-blue-600 font-medium">{story.role}</p>
-                    </div>
-                    <span className="text-xl">{story.emoji}</span>
+            <p className="text-xs text-slate-600 font-medium">Everything included in one single bundle download.</p>
+          </div>
+
+          {/* SLIDESHOW CAROUSEL */}
+          <div className="flex flex-col gap-2.5 relative w-full overflow-hidden pb-2">
+            <div className="flex gap-2.5 animate-scroll-right hover:pause w-max">
+              {[...COURSES.slice(0, 6), ...COURSES.slice(0, 6)].map((course, i) => (
+                <div key={`clean-row1-${course.id}-${i}`} className="w-[105px] sm:w-[115px] md:w-[125px] shrink-0 bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden group">
+                  <div className="relative aspect-square overflow-hidden bg-slate-100">
+                    <img src={course.imageUrl} alt={course.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute top-1 left-1 w-5 h-5 bg-white/95 rounded-full flex items-center justify-center font-bold text-gray-900 text-[9px] border border-gray-200">{(i % 6) + 1}</div>
+                    <div className="absolute top-1 right-1 bg-white/95 text-gray-900 text-[7px] font-bold uppercase tracking-wider px-1 py-0.5 rounded-full border border-gray-200">{course.software}</div>
                   </div>
-                  <p className="text-xs text-slate-600 mb-2"><strong>Before:</strong> {story.before}</p>
-                  <p className="text-xs text-slate-900 font-bold bg-emerald-50 p-2 rounded-lg border border-emerald-100"><strong>After 15 Days:</strong> {story.after}</p>
+                  <div className="p-1.5 text-left">
+                    <h3 className="font-display font-bold text-gray-900 text-[11px] mb-0.5 line-clamp-1 leading-tight">{course.title}</h3>
+                    <div className="bg-emerald-50 text-emerald-600 text-[8px] font-bold px-1 py-0.5 rounded text-center border border-emerald-100">✓ Included</div>
+                  </div>
                 </div>
               ))}
             </div>
 
-            {/* RENDER SHOWCASE ROW */}
-            <div className="flex flex-col gap-3 relative w-full overflow-hidden my-4">
-              <div className="flex gap-3 animate-scroll-left hover:pause w-max">
-                {[...PAGE_PREVIEWS_ROW1, ...PAGE_PREVIEWS_ROW1].map((src, i) => (
-                  <div key={`st-r1-${i}`} className="w-[180px] sm:w-[220px] aspect-[4/3] rounded-xl overflow-hidden shadow-xs border border-slate-200 bg-slate-100 shrink-0">
-                    <img src={src} alt="Student Render" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+            <div className="flex gap-2.5 animate-scroll-right hover:pause w-max" style={{ animationDelay: '-22.5s' }}>
+              {[...COURSES.slice(6, 12), ...COURSES.slice(6, 12)].map((course, i) => (
+                <div key={`clean-row2-${course.id}-${i}`} className="w-[105px] sm:w-[115px] md:w-[125px] shrink-0 bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden group">
+                  <div className="relative aspect-square overflow-hidden bg-slate-100">
+                    <img src={course.imageUrl} alt={course.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute top-1 left-1 w-5 h-5 bg-white/95 rounded-full flex items-center justify-center font-bold text-gray-900 text-[9px] border border-gray-200">{(i % 6) + 7}</div>
+                    <div className="absolute top-1 right-1 bg-white/95 text-gray-900 text-[7px] font-bold uppercase tracking-wider px-1 py-0.5 rounded-full border border-gray-200">{course.software}</div>
                   </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* CHAPTER 8: INDUSTRY SHIFT & PROOF STATS */}
-          <section className="pt-8 border-t border-slate-100 text-center">
-            <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-2">
-              Chapter 8: Don't Fear AI. Partner With It.
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 my-4">
-              {FEAR_STATS.map((item, i) => (
-                <div key={i} className="bg-slate-900 text-white p-3.5 rounded-xl text-center">
-                  <span className="text-xl block mb-1">{item.icon}</span>
-                  <span className="text-lg md:text-xl font-black text-yellow-400 block">{item.stat}</span>
-                  <p className="text-[10px] text-zinc-400 font-normal leading-tight mt-1">{item.label}</p>
+                  <div className="p-1.5 text-left">
+                    <h3 className="font-display font-bold text-gray-900 text-[11px] mb-0.5 line-clamp-1 leading-tight">{course.title}</h3>
+                    <div className="bg-emerald-50 text-emerald-600 text-[8px] font-bold px-1 py-0.5 rounded text-center border border-emerald-100">✓ Included</div>
+                  </div>
                 </div>
               ))}
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* CHAPTER 9: TEAM MANIFESTO */}
-          <section className="pt-8 border-t border-slate-100">
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-orange-200 rounded-2xl p-5 shadow-xs">
-              <h3 className="text-base font-bold text-slate-900 mb-2">Chapter 9: A Message From Our Team</h3>
-              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed mb-3">
-                Learning complex software alone is frustrating. That's why our program includes <strong>24/7 team support</strong>. From software installation links to render debugging at 2 AM, our team is always ready to hold your hand!
-              </p>
+        {/* ═══ 5. SIMPLE CHECKOUT OFFER CARD ═══ */}
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 my-10">
+          <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden shadow-2xl">
+            <div className="inline-block bg-yellow-400 text-slate-950 font-black text-[10px] sm:text-xs uppercase tracking-widest px-3 py-1 rounded-full mb-3">
+              🚨 STUDENTS WEEK DISCOUNT ({country.formattedPrice})
             </div>
-          </section>
-
-          {/* CHAPTER 10: OLD VS NEW SYSTEM */}
-          <section className="pt-8 border-t border-slate-100">
-            <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-3 text-center">
-              Chapter 10: The Frustrating Path vs Our System
+            
+            <h2 className="text-xl sm:text-3xl font-display font-black text-white mb-2">
+              Get Instant Access To All 12 Courses + 3 Freelance Projects
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-red-50 border border-red-200 rounded-2xl p-4">
-                <h4 className="font-bold text-red-600 text-sm mb-2">❌ The Frustrating Path</h4>
-                <ul className="text-xs text-slate-700 space-y-1.5">
-                  {PROBLEM_POINTS.map((p, i) => <li key={i}>• {p.text}</li>)}
-                </ul>
-              </div>
-              <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-4">
-                <h4 className="font-bold text-emerald-700 text-sm mb-2">✅ Our Hand-Holding System</h4>
-                <ul className="text-xs text-slate-800 space-y-1.5 font-medium">
-                  <li>• Step-by-step pipeline: AutoCAD → Revit → SketchUp → V-Ray → AI</li>
-                  <li>• 3 real paid freelance projects included ($300 USD value)</li>
-                  <li>• 24/7 technical team support whenever you get stuck</li>
-                </ul>
-              </div>
+
+            <p className="text-xs sm:text-sm text-zinc-300 mb-6 max-w-xl mx-auto font-medium">
+              Join 50,000+ students. Download all 12 courses, free software links, and join our active community today.
+            </p>
+
+            <button onClick={openPaymentModal} className="w-full max-w-md mx-auto py-4 sm:py-5 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-2xl font-black text-base sm:text-lg uppercase tracking-wider shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+              <span>Claim Offer & Download ({country.formattedPrice})</span>
+              <ArrowRight size={20} />
+            </button>
+
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-[10px] sm:text-xs text-zinc-400 font-bold uppercase tracking-wider">
+              <span>🛡️ 7-Day 100% Money-Back Guarantee</span>
+              <span>•</span>
+              <span>⚡ Instant Access</span>
+              <span>•</span>
+              <span>💬 24/7 WhatsApp Support</span>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* CHAPTER 11: VALUE STACK */}
-          <section className="pt-8 border-t border-slate-100">
-            <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-3 text-center">
-              Chapter 11: Everything Included With Your Access Today
-            </h2>
-            <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs my-4">
-              {VALUE_STACK_ITEMS.map((item, i) => (
-                <div key={i} className="flex justify-between items-center px-4 py-3 border-b border-slate-100 text-xs">
-                  <span className="text-slate-800 font-medium">{item.name}</span>
-                  <span className="font-bold text-slate-500">{item.value}</span>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* CHAPTER 12: STUDENT REVIEWS & GLOBAL MENTORS */}
-          <section className="pt-8 border-t border-slate-100 text-center">
-            <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-3">
-              Chapter 12: Student Reviews & Global Mentors
-            </h2>
-            <div className="flex gap-4 overflow-x-auto pb-4 snap-x my-3" style={{ scrollbarWidth: 'none' }}>
-              {[
-                { name: 'Alex Mercer', role: 'Lead 3D Artist', image: 'https://images.unsplash.com/photo-1678282342910-a135f7b900ae?q=80&w=1296&auto=format&fit=crop' },
-                { name: 'Elena Rossi', role: 'Architectural Visualizer', image: 'https://images.pexels.com/photos/36813835/pexels-photo-36813835.jpeg' },
-                { name: 'Julian Vance', role: 'Senior Interior Designer', image: 'https://images.unsplash.com/photo-1614023342667-6f060e9d1e04?q=80&w=2671&auto=format' },
-              ].map((mentor, idx) => (
-                <div key={idx} className="shrink-0 w-[140px] bg-slate-900 rounded-xl overflow-hidden text-white text-left p-2">
-                  <img src={mentor.image} alt={mentor.name} className="w-full aspect-[4/5] object-cover rounded-lg mb-1.5" />
-                  <p className="font-bold text-xs leading-tight">{mentor.name}</p>
-                  <p className="text-[9px] text-blue-300">{mentor.role}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* CHAPTER 13: FAQ & FINAL OFFER */}
-          <footer className="mt-10 pt-8 border-t-2 border-slate-900">
-            <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-4 text-center">
-              Chapter 13: Frequently Asked Questions
-            </h2>
-            <div className="space-y-2 mb-8 text-left">
-              {FAQ_ITEMS_LANDING.map((faq, i) => (
-                <details key={i} className="group bg-slate-50 border border-slate-200 rounded-xl overflow-hidden p-3" open={openFaqIndex === i}>
-                  <summary className="text-xs sm:text-sm font-bold text-slate-900 cursor-pointer list-none flex justify-between items-center" onClick={(e) => { e.preventDefault(); setOpenFaqIndex(openFaqIndex === i ? null : i); }}>
-                    <span>{faq.question}</span>
-                    <ChevronDown size={14} className={`text-slate-400 transition-transform ${openFaqIndex === i ? 'rotate-180' : ''}`} />
-                  </summary>
-                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">{faq.answer}</p>
-                </details>
-              ))}
-            </div>
-
-            {/* CHECKOUT CARD */}
-            <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden shadow-2xl">
-              <div className="inline-block bg-yellow-400 text-slate-950 font-black text-[10px] sm:text-xs uppercase tracking-widest px-3 py-1 rounded-full mb-3">
-                🚨 LIMITED TIME STUDENTS WEEK OFFER
-              </div>
-              <h2 className="text-xl sm:text-3xl font-display font-black text-white mb-2">
-                Get All 12 Courses + 3 Freelance Projects + 24/7 Team Support
-              </h2>
-              <p className="text-xs sm:text-sm text-zinc-300 mb-6 max-w-xl mx-auto font-serif italic">
-                Get lifetime access to all 12 master courses for only <strong className="text-yellow-400 not-italic font-black text-base">{country.formattedPrice} {country.flag}</strong> (Students Week Special Price).
-              </p>
-
-              <button onClick={openPaymentModal} className="w-full max-w-md mx-auto py-4 sm:py-5 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-2xl font-black text-base sm:text-lg uppercase tracking-wider shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
-                <span>Claim Your Special Offer Now</span>
-                <ArrowRight size={20} />
-              </button>
-
-              <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-[10px] sm:text-xs text-zinc-400 font-bold uppercase tracking-wider">
-                <span>🛡️ 7-Day Money-Back Guarantee</span>
-                <span>•</span>
-                <span>⚡ Instant Lifetime Access</span>
-                <span>•</span>
-                <span>💬 24/7 WhatsApp Support</span>
-              </div>
-            </div>
-          </footer>
-
-        </article>
       </main>
 
       <footer className="bg-slate-900 py-12 px-6 text-center border-t border-slate-800 text-white/70">
