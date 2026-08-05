@@ -160,18 +160,18 @@ const LandingPage: React.FC = () => {
       </div>
 
       <main className="bg-amber-50/40 py-4 sm:py-8 min-h-screen">
-        {/* 📰 NEWSLETTER EDITORIAL CONTAINER */}
+        {/* 📰 SHORT STORY EDITORIAL DISPATCH CONTAINER */}
         <article className="max-w-4xl mx-auto px-4 sm:px-8 py-8 md:py-12 bg-white shadow-2xl rounded-3xl border border-slate-200/90 text-slate-900 font-sans relative">
           
-          {/* NEWSLETTER MASTHEAD HEADER */}
+          {/* MASTHEAD HEADER */}
           <header className="border-b-2 border-slate-900 pb-6 mb-8 text-center">
             <div className="flex flex-wrap items-center justify-between gap-2 text-[10px] md:text-xs font-mono uppercase tracking-widest text-slate-500 mb-3 border-b border-slate-100 pb-2">
               <span className="font-bold text-red-600">📰 THE ARCHITECTURE & DESIGN DISPATCH</span>
               <span>ISSUE #42 • NIGERIA EDITION</span>
-              <span className="font-bold text-slate-700">5 MIN READ</span>
+              <span className="font-bold text-slate-700">6 MIN READ</span>
             </div>
 
-            {/* Newsletter Headline */}
+            {/* Title */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-display font-black tracking-tight leading-snug text-slate-950 mb-4 text-left">
               The Unspoken Shortcut to a High-Paying Interior & Architectural Design Career in Nigeria{' '}
               <span className="bg-yellow-300 text-slate-950 px-2 py-0.5 rounded-md border border-yellow-400 font-black inline-block">
@@ -181,10 +181,10 @@ const LandingPage: React.FC = () => {
 
             {/* Subtitle */}
             <p className="text-sm md:text-base text-slate-600 font-serif italic text-left leading-relaxed">
-              How a new wave of Nigerian creatives in Lagos, Abuja, Port Harcourt, and Ibadan are skipping academic fluff, mastering 3D + AI visualization, and landing ₦500,000+ clients in 30 days.
+              A personal story & step-by-step master guide for every creative, student, and architect in Lagos, Abuja, Port Harcourt, and across Nigeria.
             </p>
 
-            {/* Author / Editor Info Bar */}
+            {/* Author Bar */}
             <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between gap-4 text-left">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-yellow-400 border-2 border-slate-900 flex items-center justify-center font-black text-slate-900 text-base shadow-sm">
@@ -195,31 +195,29 @@ const LandingPage: React.FC = () => {
                   <p className="text-[11px] text-slate-500 font-medium">Dedicated to Nigerian Designers & Architects</p>
                 </div>
               </div>
-              <div className="hidden sm:block">
-                <span className="bg-emerald-100 text-emerald-800 text-[10px] font-black uppercase px-2.5 py-1 rounded-full border border-emerald-200">
-                  ✓ Verified Guide
-                </span>
-              </div>
+              <span className="bg-emerald-100 text-emerald-800 text-[10px] font-black uppercase px-2.5 py-1 rounded-full border border-emerald-200 hidden sm:inline-block">
+                ✓ Complete Story Edition
+              </span>
             </div>
           </header>
 
-          {/* EDITORIAL LETTER BODY */}
+          {/* EDITORIAL SHORT STORY BODY */}
           <div className="space-y-6 text-sm md:text-base text-slate-800 leading-relaxed font-normal">
             
-            {/* SALUTATION */}
+            {/* PROLOGUE LETTER */}
             <p className="font-serif italic text-base md:text-lg text-slate-900 font-bold border-l-4 border-yellow-400 pl-4 py-1 bg-yellow-50/60 rounded-r-xl">
               Dear Friend & Future Design Pioneer,
             </p>
 
             <p>
-              If you are reading this from <strong>Lagos, Abuja, Port Harcourt, Ibadan, Enugu</strong>, or anywhere across Nigeria—let's have a completely honest conversation about the design industry today.
+              If you are reading this from <strong>Lagos, Abuja, Port Harcourt, Ibadan, Enugu</strong>, or anywhere across Nigeria—let's have a completely honest conversation about building a career in architecture and interior design today.
             </p>
 
             <p>
               Most Nigerian universities teach 10-year-old architectural theory that hasn't changed since 2010. But when you sit across a high-value client in <em>Victoria Island, Lekki Phase 1, or Maitama</em>, they don't ask to see your university certificate.
             </p>
 
-            {/* PULL QUOTE CALLOUT */}
+            {/* PULL QUOTE */}
             <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-4 md:p-5 text-slate-900 text-center shadow-xs">
               <p className="text-xs uppercase font-black tracking-wider text-red-600 mb-1">THE ONLY QUESTION CLIENTS CARE ABOUT</p>
               <p className="text-base md:text-xl font-display font-black text-slate-950 leading-snug">
@@ -227,14 +225,10 @@ const LandingPage: React.FC = () => {
               </p>
             </div>
 
-            <p>
-              If you can't render fast, you lose the deal. If your 3D views look fake or outdated, clients negotiate your price down to pennies.
-            </p>
-
-            {/* 🎥 NEWSLETTER VIDEO FEATURE EMBED */}
+            {/* 🎥 CHAPTER 1: THE DEMONSTRATION */}
             <div className="my-8 pt-2">
               <div className="bg-slate-900 text-white text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded-t-xl inline-block border-t border-x border-slate-700">
-                📹 FEATURED VIDEO LESSON: WATCH BEFORE READING FURTHER
+                CHAPTER 1: THE VIDEO DEMONSTRATION 📹
               </div>
               <div className="rounded-2xl overflow-hidden shadow-xl border-2 border-slate-900 relative bg-slate-950">
                 <div style={{ position: 'relative', paddingTop: '56.25%' }}>
@@ -255,7 +249,7 @@ const LandingPage: React.FC = () => {
                     </div>
                   )}
 
-                  {/* Overlay Banner Over Video */}
+                  {/* Overlay Banner */}
                   <div className="absolute top-2 sm:top-4 left-1/2 -translate-x-1/2 z-20 w-auto max-w-[96%] text-center pointer-events-none">
                     <h2 className="inline-block bg-yellow-400/95 backdrop-blur-sm border border-slate-900 text-slate-950 text-[9px] sm:text-xs font-semibold px-3 py-1 rounded-xl shadow-sm tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
                       🏡 Learn To Design Complete Homes, Offices and Villas
@@ -265,38 +259,16 @@ const LandingPage: React.FC = () => {
               </div>
             </div>
 
-            {/* SECTION 1: THE 3 PAINFUL BOTTLENECKS */}
+            {/* CHAPTER 2: THE 3-STEP SHORTCUT */}
             <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 pt-4 border-t border-slate-100">
-              Section 1: The 3 Bottlenecks Holding Back Nigerian Designers
-            </h2>
-
-            <div className="grid grid-cols-1 gap-3 my-4">
-              <div className="bg-amber-50/80 border-l-4 border-amber-500 p-3.5 sm:p-4 rounded-r-xl">
-                <p className="font-bold text-slate-900 text-xs sm:text-sm mb-1">1. YouTube Frustration</p>
-                <p className="text-xs sm:text-sm text-slate-700">Spending 14 exhausting hours watching fragmented YouTube tutorials, only to get stuck when lighting or textures crash at 2 AM.</p>
-              </div>
-
-              <div className="bg-red-50/80 border-l-4 border-red-500 p-3.5 sm:p-4 rounded-r-xl">
-                <p className="font-bold text-slate-900 text-xs sm:text-sm mb-1">2. Underpricing Your Work</p>
-                <p className="text-xs sm:text-sm text-slate-700">Watching top studios in VI charge ₦2,000,000 per project while you struggle to negotiate ₦50,000 because your renders look basic.</p>
-              </div>
-
-              <div className="bg-blue-50/80 border-l-4 border-blue-500 p-3.5 sm:p-4 rounded-r-xl">
-                <p className="font-bold text-slate-900 text-xs sm:text-sm mb-1">3. AI Panic</p>
-                <p className="text-xs sm:text-sm text-slate-700">Worrying that AI generation tools will make traditional 3D software skills obsolete before you even launch your firm.</p>
-              </div>
-            </div>
-
-            {/* SECTION 2: THE 3-STEP SHORTCUT */}
-            <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 pt-4 border-t border-slate-100">
-              Section 2: The 3-Step Master Blueprint
+              Chapter 2: The 3-Pillar Shortcut
             </h2>
 
             <p>
-              You don't need 20 different theories. To run a profitable design business or land high-paying remote roles, you only need to master <strong>3 core pillars:</strong>
+              To run a profitable design business or land high-paying remote roles, you don't need academic fluff. You only need to master <strong>3 core pillars:</strong>
             </p>
 
-            {/* SINGLE LINE STEPS BOX */}
+            {/* STEPS BOX */}
             <div className="w-full bg-white border-2 border-red-500 rounded-2xl p-4 my-4 text-center shadow-md">
               <div className="inline-block bg-red-600 text-white text-[10px] sm:text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider mb-2">
                 ⚡ THE ONLY 3 PILLARS YOU NEED
@@ -321,8 +293,8 @@ const LandingPage: React.FC = () => {
               </p>
             </div>
 
-            {/* SPECIAL BONUS NOTE: 3 PAID FREELANCE PROJECTS */}
-            <div className="bg-gradient-to-r from-emerald-50 via-green-50 to-emerald-50 border-2 border-emerald-400 rounded-2xl p-4 sm:p-5 my-6 text-slate-900 shadow-sm">
+            {/* SPECIAL FREELANCE BONUS */}
+            <div className="bg-gradient-to-r from-emerald-50 via-green-50 to-emerald-50 border-2 border-emerald-400 rounded-2xl p-4 sm:p-5 my-4 text-slate-900 shadow-sm">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-600 text-white font-black text-[10px] uppercase tracking-wider rounded-full mb-2">
                 💰 SPECIAL NIGERIAN STUDENT BONUS
               </div>
@@ -330,25 +302,59 @@ const LandingPage: React.FC = () => {
                 3 Freelance Paid Projects For Every Student in Nigeria (Worth $300 USD)
               </h3>
               <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
-                We don't just give you video lessons and leave you alone. Every student who completes the course gets <strong>3 real paid freelance design projects</strong> inside our active community network to build your real-world confidence and client portfolio!
+                Every student who completes our course gets <strong>3 real paid freelance design projects</strong> inside our community to build real-world experience and earnings!
               </p>
             </div>
 
-            {/* CALL TO ACTION BUTTON BAR */}
-            <div className="text-center py-4">
-              <button onClick={openPaymentModal} className="px-8 md:px-12 py-4 md:py-5 bg-gradient-to-r from-red-600 via-orange-600 to-red-600 text-white rounded-2xl font-black text-base md:text-lg border-2 border-slate-900 shadow-[4px_4px_0px_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none transition-all inline-flex items-center justify-center gap-3 group">
-                <Download size={20} className="shrink-0" />
-                Claim Your Bundle & 24/7 Team Support <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-              </button>
-              <p className="text-[11px] font-bold text-slate-500 mt-2">
-                ✨ 24/7 Team Support • Free Software Links Included • 7-Day Money-Back Guarantee
+            {/* CHAPTER 3: THE 10,000+ NIGERIAN STUDENTS */}
+            <div className="pt-6 border-t border-slate-100">
+              <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-3">
+                Chapter 3: Joined by 10,000+ Nigerian Students {country.flag}
+              </h2>
+              <p className="text-sm text-slate-600 mb-4">
+                You are not walking this path alone. Over 10,000 students across Lagos, Abuja, Port Harcourt, and Ibadan have taken this exact blueprint to upgrade their careers.
               </p>
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4 my-4">
+                <img src="/student1.jpg" alt="Nigerian Students 1" loading="lazy" className="rounded-2xl shadow-md w-full sm:w-1/2 object-cover border border-slate-200" />
+                <img src="/student2.jpg" alt="Nigerian Students 2" loading="lazy" className="rounded-2xl shadow-md w-full sm:w-1/2 object-cover border border-slate-200" />
+              </div>
             </div>
 
-            {/* AFTER THIS COURSE YOU CAN */}
-            <div className="w-full mt-6 pt-6 border-t border-slate-100">
-              <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-4">
-                Section 3: What You Can Achieve After 30 Days
+            {/* CHAPTER 4: INCOME TIERS (ROI STORY) */}
+            <div className="pt-6 border-t border-slate-100">
+              <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-3">
+                Chapter 4: The Financial Transformation (Real Earnings ROI)
+              </h2>
+              <p className="text-sm text-slate-600 mb-4">
+                Here is what happens to your earning potential when you upgrade from simple drawings to high-end 3D & AI visualization:
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-4">
+                {INCOME_TIERS.map((tier, i) => (
+                  <div key={i} className="bg-slate-50 border border-slate-200 rounded-2xl p-4 flex flex-col justify-between shadow-xs">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-xs font-bold text-slate-900 leading-tight w-2/3">{tier.label}</span>
+                      <span className="text-2xl">{tier.icon}</span>
+                    </div>
+                    <div className="flex items-center justify-between text-xs">
+                      <div>
+                        <p className="text-[9px] font-mono text-slate-400 uppercase">Before</p>
+                        <p className="text-slate-400 line-through">{tier.before}</p>
+                      </div>
+                      <ArrowRight size={14} className="text-blue-500" />
+                      <div className="text-right">
+                        <p className="text-[9px] font-mono text-blue-500 uppercase">After</p>
+                        <p className="text-emerald-600 font-bold">{tier.after}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* CHAPTER 5: WHAT YOU CAN ACHIEVE */}
+            <div className="pt-6 border-t border-slate-100">
+              <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-3">
+                Chapter 5: What You Can Achieve After 30 Days
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                 <div className="bg-yellow-100/90 border-2 border-yellow-400 rounded-2xl p-4 flex flex-col gap-1 shadow-sm">
@@ -370,7 +376,7 @@ const LandingPage: React.FC = () => {
 
           </div>
 
-          {/* ═══════ NEWSLETTER FEATURED GALLERY (COURSE SLIDESHOW) ═══════ */}
+          {/* CHAPTER 6: MASTER ALL 12 TOOLS (SLIDESHOW) */}
           <section className="mt-10 pt-8 border-t-2 border-slate-900">
             <div className="text-center mb-6">
               <div className="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 bg-gradient-to-r from-amber-500/10 via-amber-400/20 to-amber-500/10 border border-amber-400/50 rounded-full text-slate-900 font-extrabold text-xs shadow-sm mb-2">
@@ -378,7 +384,7 @@ const LandingPage: React.FC = () => {
                 <span className="text-amber-950 font-black">You will get Design Management certificate equivalent to Diploma</span>
               </div>
               <h2 className="text-xl md:text-3xl font-display font-black text-slate-950">
-                Master All 12 Industry-Standard Software Tools
+                Chapter 6: Master All 12 Premium Software Tools
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 font-serif italic mt-1">
                 AutoCAD, Revit, SketchUp, 3ds Max, V-Ray, Lumion, D5 Render, Enscape, Midjourney AI, Stable Diffusion, Unreal Engine 5, Photoshop.
@@ -387,10 +393,9 @@ const LandingPage: React.FC = () => {
 
             {/* SLIDESHOW CAROUSEL */}
             <div className="flex flex-col gap-3 relative w-full overflow-hidden pb-4">
-              {/* ROW 1 */}
               <div className="flex gap-3 animate-scroll-right hover:pause w-max">
                 {[...COURSES.slice(0, 6), ...COURSES.slice(0, 6)].map((course, i) => (
-                  <div key={`nl-row1-${course.id}-${i}`} className="w-[105px] sm:w-[115px] md:w-[125px] shrink-0 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden group hover:shadow-md transition-all">
+                  <div key={`nls-row1-${course.id}-${i}`} className="w-[105px] sm:w-[115px] md:w-[125px] shrink-0 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden group hover:shadow-md transition-all">
                     <div className="relative aspect-square overflow-hidden bg-gray-100">
                       <img src={course.imageUrl} alt={course.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       <div className="absolute top-1 left-1 w-5 h-5 bg-white/95 rounded-full flex items-center justify-center font-bold text-gray-900 text-[9px] border border-gray-200">{(i % 6) + 1}</div>
@@ -404,10 +409,9 @@ const LandingPage: React.FC = () => {
                 ))}
               </div>
 
-              {/* ROW 2 */}
               <div className="flex gap-3 animate-scroll-right hover:pause w-max" style={{ animationDelay: '-22.5s' }}>
                 {[...COURSES.slice(6, 12), ...COURSES.slice(6, 12)].map((course, i) => (
-                  <div key={`nl-row2-${course.id}-${i}`} className="w-[105px] sm:w-[115px] md:w-[125px] shrink-0 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden group hover:shadow-md transition-all">
+                  <div key={`nls-row2-${course.id}-${i}`} className="w-[105px] sm:w-[115px] md:w-[125px] shrink-0 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden group hover:shadow-md transition-all">
                     <div className="relative aspect-square overflow-hidden bg-gray-100">
                       <img src={course.imageUrl} alt={course.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       <div className="absolute top-1 left-1 w-5 h-5 bg-white/95 rounded-full flex items-center justify-center font-bold text-gray-900 text-[9px] border border-gray-200">{(i % 6) + 7}</div>
@@ -423,8 +427,141 @@ const LandingPage: React.FC = () => {
             </div>
           </section>
 
-          {/* 📰 NEWSLETTER FOOTER OFFER & CHECKOUT CARD */}
-          <footer className="mt-12 pt-8 border-t-2 border-slate-900">
+          {/* CHAPTER 7: STUDENT CASE STUDIES & RENDER GALLERY */}
+          <section className="pt-8 border-t border-slate-100">
+            <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-3 text-center">
+              Chapter 7: Real Student Case Studies & Render Gallery
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+              {TRANSFORMATION_STORIES.map((story, i) => (
+                <div key={i} className="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-left">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <h4 className="font-bold text-slate-900 text-sm">{story.name}</h4>
+                      <p className="text-[11px] text-blue-600 font-medium">{story.role}</p>
+                    </div>
+                    <span className="text-xl">{story.emoji}</span>
+                  </div>
+                  <p className="text-xs text-slate-600 mb-2"><strong>Before:</strong> {story.before}</p>
+                  <p className="text-xs text-slate-900 font-bold bg-emerald-50 p-2 rounded-lg border border-emerald-100"><strong>After 15 Days:</strong> {story.after}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* RENDER SHOWCASE ROW */}
+            <div className="flex flex-col gap-3 relative w-full overflow-hidden my-4">
+              <div className="flex gap-3 animate-scroll-left hover:pause w-max">
+                {[...PAGE_PREVIEWS_ROW1, ...PAGE_PREVIEWS_ROW1].map((src, i) => (
+                  <div key={`st-r1-${i}`} className="w-[180px] sm:w-[220px] aspect-[4/3] rounded-xl overflow-hidden shadow-xs border border-slate-200 bg-slate-100 shrink-0">
+                    <img src={src} alt="Student Render" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* CHAPTER 8: INDUSTRY SHIFT & PROOF STATS */}
+          <section className="pt-8 border-t border-slate-100 text-center">
+            <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-2">
+              Chapter 8: Don't Fear AI. Partner With It.
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 my-4">
+              {FEAR_STATS.map((item, i) => (
+                <div key={i} className="bg-slate-900 text-white p-3.5 rounded-xl text-center">
+                  <span className="text-xl block mb-1">{item.icon}</span>
+                  <span className="text-lg md:text-xl font-black text-yellow-400 block">{item.stat}</span>
+                  <p className="text-[10px] text-zinc-400 font-normal leading-tight mt-1">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* CHAPTER 9: TEAM MANIFESTO */}
+          <section className="pt-8 border-t border-slate-100">
+            <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-orange-200 rounded-2xl p-5 shadow-xs">
+              <h3 className="text-base font-bold text-slate-900 mb-2">Chapter 9: A Message From Our Team</h3>
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed mb-3">
+                Learning complex software alone is frustrating. That's why our program includes <strong>24/7 team support</strong>. From software installation links to render debugging at 2 AM, our team is always ready to hold your hand!
+              </p>
+            </div>
+          </section>
+
+          {/* CHAPTER 10: OLD VS NEW SYSTEM */}
+          <section className="pt-8 border-t border-slate-100">
+            <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-3 text-center">
+              Chapter 10: The Frustrating Path vs Our System
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-red-50 border border-red-200 rounded-2xl p-4">
+                <h4 className="font-bold text-red-600 text-sm mb-2">❌ The Frustrating Path</h4>
+                <ul className="text-xs text-slate-700 space-y-1.5">
+                  {PROBLEM_POINTS.map((p, i) => <li key={i}>• {p.text}</li>)}
+                </ul>
+              </div>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-4">
+                <h4 className="font-bold text-emerald-700 text-sm mb-2">✅ Our Hand-Holding System</h4>
+                <ul className="text-xs text-slate-800 space-y-1.5 font-medium">
+                  <li>• Step-by-step pipeline: AutoCAD → Revit → SketchUp → V-Ray → AI</li>
+                  <li>• 3 real paid freelance projects included ($300 USD value)</li>
+                  <li>• 24/7 technical team support whenever you get stuck</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* CHAPTER 11: VALUE STACK */}
+          <section className="pt-8 border-t border-slate-100">
+            <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-3 text-center">
+              Chapter 11: Everything Included With Your Access Today
+            </h2>
+            <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs my-4">
+              {VALUE_STACK_ITEMS.map((item, i) => (
+                <div key={i} className="flex justify-between items-center px-4 py-3 border-b border-slate-100 text-xs">
+                  <span className="text-slate-800 font-medium">{item.name}</span>
+                  <span className="font-bold text-slate-500">{item.value}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* CHAPTER 12: STUDENT REVIEWS & GLOBAL MENTORS */}
+          <section className="pt-8 border-t border-slate-100 text-center">
+            <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-3">
+              Chapter 12: Student Reviews & Global Mentors
+            </h2>
+            <div className="flex gap-4 overflow-x-auto pb-4 snap-x my-3" style={{ scrollbarWidth: 'none' }}>
+              {[
+                { name: 'Alex Mercer', role: 'Lead 3D Artist', image: 'https://images.unsplash.com/photo-1678282342910-a135f7b900ae?q=80&w=1296&auto=format&fit=crop' },
+                { name: 'Elena Rossi', role: 'Architectural Visualizer', image: 'https://images.pexels.com/photos/36813835/pexels-photo-36813835.jpeg' },
+                { name: 'Julian Vance', role: 'Senior Interior Designer', image: 'https://images.unsplash.com/photo-1614023342667-6f060e9d1e04?q=80&w=2671&auto=format' },
+              ].map((mentor, idx) => (
+                <div key={idx} className="shrink-0 w-[140px] bg-slate-900 rounded-xl overflow-hidden text-white text-left p-2">
+                  <img src={mentor.image} alt={mentor.name} className="w-full aspect-[4/5] object-cover rounded-lg mb-1.5" />
+                  <p className="font-bold text-xs leading-tight">{mentor.name}</p>
+                  <p className="text-[9px] text-blue-300">{mentor.role}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* CHAPTER 13: FAQ & FINAL OFFER */}
+          <footer className="mt-10 pt-8 border-t-2 border-slate-900">
+            <h2 className="text-xl md:text-2xl font-display font-black text-slate-950 mb-4 text-center">
+              Chapter 13: Frequently Asked Questions
+            </h2>
+            <div className="space-y-2 mb-8 text-left">
+              {FAQ_ITEMS_LANDING.map((faq, i) => (
+                <details key={i} className="group bg-slate-50 border border-slate-200 rounded-xl overflow-hidden p-3" open={openFaqIndex === i}>
+                  <summary className="text-xs sm:text-sm font-bold text-slate-900 cursor-pointer list-none flex justify-between items-center" onClick={(e) => { e.preventDefault(); setOpenFaqIndex(openFaqIndex === i ? null : i); }}>
+                    <span>{faq.question}</span>
+                    <ChevronDown size={14} className={`text-slate-400 transition-transform ${openFaqIndex === i ? 'rotate-180' : ''}`} />
+                  </summary>
+                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+
+            {/* CHECKOUT CARD */}
             <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden shadow-2xl">
               <div className="inline-block bg-yellow-400 text-slate-950 font-black text-[10px] sm:text-xs uppercase tracking-widest px-3 py-1 rounded-full mb-3">
                 🚨 LIMITED TIME STUDENTS WEEK OFFER
@@ -449,9 +586,10 @@ const LandingPage: React.FC = () => {
                 <span>💬 24/7 WhatsApp Support</span>
               </div>
             </div>
-            </footer>
-          </article>
-        </main>
+          </footer>
+
+        </article>
+      </main>
 
       <footer className="bg-slate-900 py-12 px-6 text-center border-t border-slate-800 text-white/70">
         <p className="text-xs uppercase tracking-[0.2em] mb-4">Avada Design & Architecture • 2026</p>
