@@ -289,6 +289,10 @@ const LandingPage: React.FC = () => {
               Why 50,000+ Students Choose Avada
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 font-medium">The 3 game-changing pillars built into your enrollment.</p>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-5">
+              <img src="/student1.jpg" alt="Nigerian Students 1" loading="lazy" className="rounded-2xl shadow-md w-full sm:w-1/2 object-cover border border-slate-200" />
+              <img src="/student2.jpg" alt="Nigerian Students 2" loading="lazy" className="rounded-2xl shadow-md w-full sm:w-1/2 object-cover border border-slate-200" />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
