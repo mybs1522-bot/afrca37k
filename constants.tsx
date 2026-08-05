@@ -218,14 +218,16 @@ const RAW_COURSES: Course[] = [
   }
 ];
 
-// --- AUTO-FIX LOGIC ---
+// --- AUTO-FIX LOGIC WITH WEBP & RESPONSIVE IMAGE COMPRESSION ---
 export const COURSES = RAW_COURSES.map(course => {
   let url = course.imageUrl;
   if (url.includes('drive.google.com') && url.includes('/file/d/')) {
     const idMatch = url.match(/\/d\/([^/]+)/);
     if (idMatch && idMatch[1]) {
-      url = `https://lh3.googleusercontent.com/d/${idMatch[1]}`;
+      url = `https://lh3.googleusercontent.com/d/${idMatch[1]}=w400-rw`;
     }
+  } else if (url.includes('lh3.googleusercontent.com/d/') && !url.includes('=')) {
+    url = `${url}=w400-rw`;
   }
   return { ...course, imageUrl: url };
 });
