@@ -340,7 +340,7 @@ const LandingPage: React.FC = () => {
         </section>
 
         {/* ═══ 7. STUDENT TRANSFORMATIONS & RENDER SHOWCASE ═══ */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12">
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12 cv-auto">
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950 mb-2">
               Real Student Case Studies & Render Gallery
@@ -385,7 +385,7 @@ const LandingPage: React.FC = () => {
         </section>
 
         {/* ═══ 8. PROOF STATS (AI & Industry Shift) ═══ */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12">
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12 cv-auto">
           <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 text-center shadow-xl">
             <h2 className="text-2xl sm:text-3xl font-display font-black text-white mb-2">
               Don't Fear AI. Partner With It.
@@ -406,7 +406,7 @@ const LandingPage: React.FC = () => {
         </section>
 
         {/* ═══ 9. TEAM MANIFESTO ═══ */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12">
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12 cv-auto">
           <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-orange-200 rounded-3xl p-6 sm:p-8 shadow-xs">
             <h2 className="text-xl sm:text-2xl font-display font-black text-slate-950 mb-3">
               A Message From Our Team
@@ -423,7 +423,7 @@ const LandingPage: React.FC = () => {
         </section>
 
         {/* ═══ 10. OLD VS NEW SYSTEM ═══ */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12">
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12 cv-auto">
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950 mb-2">
               The Frustrating Path vs. Our Hand-Holding System
@@ -458,7 +458,7 @@ const LandingPage: React.FC = () => {
         </section>
 
         {/* ═══ 11. VALUE STACK ═══ */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12">
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12 cv-auto">
           <div className="text-center mb-6">
             <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950 mb-2">
               Everything Included With Your Access Today
@@ -480,7 +480,7 @@ const LandingPage: React.FC = () => {
         </section>
 
         {/* ═══ 12. STUDENT REVIEWS & GLOBAL MENTORS ═══ */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12 text-center">
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12 text-center cv-auto">
           <div className="mb-8">
             <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950 mb-2">
               Student Reviews & Global Mentors
@@ -522,7 +522,7 @@ const LandingPage: React.FC = () => {
         </section>
 
         {/* ═══ 13. FAQ & FINAL CHECKOUT CARD ═══ */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12">
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12 cv-auto">
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950 mb-2">
               Frequently Asked Questions
