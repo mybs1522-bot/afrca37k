@@ -167,7 +167,7 @@ const LandingPage: React.FC = () => {
           
           {/* Top Offer Badge */}
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-yellow-400 border border-yellow-500 text-slate-950 text-[11px] sm:text-xs font-black uppercase tracking-wider mb-4 rounded-full shadow-sm">
-            <span>Avada Academy for Architecture & Interior Design</span>
+            <span>Start charging 50,000–200,000 NGN for designing and rendering.</span>
           </div>
 
           {/* Headline */}
