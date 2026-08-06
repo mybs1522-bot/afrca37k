@@ -230,6 +230,11 @@ const LandingPage: React.FC = () => {
               <ArrowRight size={20} />
             </button>
             <p className="text-xs text-slate-500 font-bold">✨ Instant Download • 24/7 Support • 7-Day Guarantee</p>
+
+            {/* Green Banner Bar */}
+            <div className="w-full max-w-3xl mx-auto mt-3 bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 text-white py-3 px-4 rounded-2xl text-center shadow-md border border-emerald-400/30">
+              <span className="text-xs sm:text-sm md:text-base font-extrabold tracking-tight">{country.bannerText}</span>
+            </div>
           </div>
         </section>
 
