@@ -224,7 +224,7 @@ const LandingPage: React.FC = () => {
         {/* ═══ BANNER IMAGE ═══ */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 my-8">
           <div className="rounded-2xl overflow-hidden cursor-pointer hover:shadow-lg transition-shadow" onClick={openPaymentModal}>
-            <img src="/banner-hero.jpg" alt="Learn to Design Homes, Offices & Villas — Build Skills, Design Spaces, Start Earning From First Month" className="w-full h-auto block" loading="eager" />
+            <img src="/banner-hero.jpg" alt="Learn to Design Homes, Offices & Villas — Build Skills, Design Spaces, Start Earning From First Month" className="w-full h-auto block" loading="eager" fetchPriority="high" />
           </div>
         </section>
 
