@@ -207,6 +207,18 @@ const LandingPage: React.FC = () => {
 
           {/* Quick CTA Button */}
           <div className="flex flex-col items-center gap-2">
+            {/* Dark Countdown Pill */}
+            <div className="inline-flex items-center gap-3 bg-slate-950 border border-slate-800 text-white px-5 py-2 rounded-full shadow-md mb-1">
+              <span className="text-[11px] sm:text-xs font-mono text-zinc-400 font-bold uppercase tracking-wider">OFFER ENDS IN</span>
+              <div className="flex items-center gap-1 font-mono text-yellow-400 font-bold text-xs sm:text-sm">
+                <span>{timeLeft.h.toString().padStart(2, '0')}h</span>
+                <span>:</span>
+                <span>{timeLeft.m.toString().padStart(2, '0')}m</span>
+                <span>:</span>
+                <span>{timeLeft.s.toString().padStart(2, '0')}s</span>
+              </div>
+            </div>
+
             {/* Pricing */}
             <div className="flex items-center gap-3">
               <span className="text-slate-400 line-through text-base sm:text-lg font-bold">₦1,00,000</span>
