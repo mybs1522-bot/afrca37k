@@ -221,10 +221,13 @@ const LandingPage: React.FC = () => {
           </div>
         </section>
 
-        {/* ═══ BANNER IMAGE ═══ */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-8">
+        {/* ═══ BANNER IMAGES ═══ */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 my-8 space-y-6">
           <div className="rounded-2xl overflow-hidden cursor-pointer hover:shadow-lg transition-shadow" onClick={openPaymentModal}>
             <img src="/banner-hero.jpg" alt="Learn to Design Homes, Offices & Villas — Build Skills, Design Spaces, Start Earning From First Month" className="w-full h-auto block" loading="eager" fetchPriority="high" />
+          </div>
+          <div className="rounded-2xl overflow-hidden cursor-pointer hover:shadow-lg transition-shadow" onClick={openPaymentModal}>
+            <img src="/banner-global-clients.jpg" alt="Best Part? Design for Clients From US, UK, Europe — We Teach You How To Get Those Clients and Make Good Income" className="w-full h-auto block" loading="lazy" decoding="async" />
           </div>
         </section>
 
