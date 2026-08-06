@@ -400,7 +400,7 @@ const LandingPage: React.FC = () => {
                 </div>
                 <h3 className="text-2xl font-display font-bold mb-2">All {COURSES.length} Courses</h3>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-display font-black">{country.formattedPrice} {country.flag}</span>
+                  <span className="text-3xl font-display font-black">{country.formattedPrice}</span>
                   <span className="text-gray-400 text-sm line-through">{country.formattedOriginalPrice}</span>
                   <span className="bg-emerald-500/20 text-emerald-400 text-xs font-bold px-2 py-0.5 rounded-full">66% OFF</span>
                 </div>
