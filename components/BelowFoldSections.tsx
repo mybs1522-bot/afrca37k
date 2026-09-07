@@ -166,17 +166,17 @@ export const BelowFoldSections: React.FC<BelowFoldSectionsProps> = ({
         </div>
       </section>
 
-      {/* ═══ 12. STUDENT REVIEWS & GLOBAL MENTORS ═══ */}
+      {/* ═══ 12. STUDENT REVIEWS ═══ */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 my-12 text-center cv-auto">
         <div className="mb-8">
           <h2 className="text-2xl sm:text-3xl font-display font-black text-slate-950 mb-2">
-            Student Reviews & Global Mentors
+            Student Reviews
           </h2>
           <p className="text-xs sm:text-sm text-slate-600">50,000+ learners • 4.9★ average rating</p>
         </div>
 
         {/* Testimonial Cards Carousel */}
-        <div className="flex gap-4 overflow-x-auto pb-4 snap-x mb-8" style={{ scrollbarWidth: 'none' }}>
+        <div className="flex gap-4 overflow-x-auto pb-4 snap-x" style={{ scrollbarWidth: 'none' }}>
           {[...TESTIMONIALS_LANDING, ...TESTIMONIALS_LANDING].map((t, i) => (
             <div key={i} className="w-[300px] shrink-0 bg-white border border-slate-200 p-5 rounded-2xl text-left shadow-xs">
               <div className="flex gap-1 mb-2">{[...Array(5)].map((_, j) => <Star key={j} size={12} className="fill-amber-400 text-amber-400" />)}</div>
@@ -188,21 +188,6 @@ export const BelowFoldSections: React.FC<BelowFoldSectionsProps> = ({
                   <p className="text-[10px] text-slate-500">{t.role} • {t.location}</p>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Mentors */}
-        <div className="flex gap-4 overflow-x-auto pb-4 snap-x" style={{ scrollbarWidth: 'none' }}>
-          {[
-            { name: 'Alex Mercer', role: 'Lead 3D Artist', image: 'https://images.unsplash.com/photo-1678282342910-a135f7b900ae?q=80&w=1296&auto=format&fit=crop' },
-            { name: 'Elena Rossi', role: 'Architectural Visualizer', image: 'https://images.pexels.com/photos/36813835/pexels-photo-36813835.jpeg' },
-            { name: 'Julian Vance', role: 'Senior Interior Designer', image: 'https://images.unsplash.com/photo-1614023342667-6f060e9d1e04?q=80&w=2671&auto=format' },
-          ].map((mentor, idx) => (
-            <div key={idx} className="shrink-0 w-[150px] sm:w-[170px] bg-slate-900 rounded-2xl overflow-hidden text-white text-left p-2.5 shadow-sm">
-              <img src={mentor.image} alt={mentor.name} className="w-full aspect-[4/5] object-cover rounded-xl mb-2" />
-              <p className="font-bold text-xs leading-tight">{mentor.name}</p>
-              <p className="text-[10px] text-blue-300 font-medium">{mentor.role}</p>
             </div>
           ))}
         </div>
