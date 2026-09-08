@@ -7,6 +7,7 @@ import { openSelarCheckout } from '../services/razorpay';
 import { ReviewTicker } from '../components/ReviewTicker';
 import { trackInitiateCheckout, trackLead, trackAddPaymentInfo, trackSubmitApplication, trackPurchase, trackCompleteRegistration } from '../lib/pixel';
 import { useCountry } from '../lib/CountryContext';
+import { CountrySelector } from '../components/CountrySelector';
 
 import {
   Logo, SocialProofToast,
@@ -153,14 +154,22 @@ const LandingPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans overflow-x-hidden selection:bg-blue-100 grid-bg">
 
-      <main className="bg-slate-50 min-h-screen py-4 sm:py-8 font-sans text-slate-900">
+      {/* ═══ TOP BAR WITH LOGO & COUNTRY SELECTOR ═══ */}
+      <header className="max-w-5xl mx-auto px-4 sm:px-6 pt-3 pb-2 flex items-center justify-between">
+        <Logo />
+        <div className="flex items-center gap-2">
+          <CountrySelector variant="pill" />
+        </div>
+      </header>
+
+      <main className="bg-slate-50 min-h-screen py-2 sm:py-6 font-sans text-slate-900">
         
         {/* ═══ 1. HERO SECTION ═══ */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-8 text-center">
           
           {/* Top Offer Badge */}
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-yellow-400 border border-yellow-500 text-slate-950 text-[11px] sm:text-xs font-black uppercase tracking-wider mb-4 rounded-full shadow-sm">
-            <span>Start charging {country.currencySymbol}50,000–{country.currencySymbol}200,000 for designing and rendering.</span>
+            <span>Start charging {country.earningRange || `${country.currencySymbol}50,000–${country.currencySymbol}200,000`} for designing and rendering.</span>
           </div>
 
           {/* Headline */}
@@ -214,12 +223,13 @@ const LandingPage: React.FC = () => {
 
             {/* Pricing */}
             <div className="flex items-center gap-3">
-              <span className="text-slate-400 line-through text-base sm:text-lg font-bold">₦1,00,000</span>
-              <span className="text-2xl sm:text-3xl font-black text-emerald-600">₦37,000</span>
+              <span className="text-slate-400 line-through text-base sm:text-lg font-bold">{country.formattedOriginalPrice}</span>
+              <span className="text-2xl sm:text-3xl font-black text-emerald-600">{country.formattedPrice}</span>
+              <span className="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-emerald-200">66% OFF</span>
             </div>
             <button onClick={openPaymentModal} className="w-full sm:w-auto px-8 md:px-12 py-4 md:py-5 bg-gradient-to-r from-red-600 via-orange-600 to-red-600 text-white rounded-2xl font-black text-base md:text-lg border-2 border-slate-900 shadow-[4px_4px_0px_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none transition-all inline-flex items-center justify-center gap-3">
               <Download size={20} className="shrink-0" />
-              <span>Get All Courses</span>
+              <span>Get All Courses ({country.formattedPrice})</span>
               <ArrowRight size={20} />
             </button>
             <p className="text-xs text-slate-500 font-bold">✨ Instant Download • 24/7 Support • 7-Day Guarantee</p>
@@ -325,7 +335,7 @@ const LandingPage: React.FC = () => {
                 Active Community & Connections
               </h3>
               <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
-                Connect with top architects, interior designers, and studio owners in Lagos, Abuja, and Port Harcourt. Share work, get client referrals, and never feel alone.
+                Connect with top architects, interior designers, and studio owners in {country.topCities || 'Lagos, Abuja, and Port Harcourt'}. Share work, get client referrals, and never feel alone.
               </p>
             </div>
 

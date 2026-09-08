@@ -8,6 +8,7 @@ import { TextMarquee } from '../components/ui/text-marquee';
 import { ReviewTicker } from '../components/ReviewTicker';
 import { trackInitiateCheckout, trackLead, trackAddPaymentInfo, trackSubmitApplication, trackPurchase, trackCompleteRegistration } from '../lib/pixel';
 import { useCountry } from '../lib/CountryContext';
+import { CountrySelector } from '../components/CountrySelector';
 
 
 // Logo Component
@@ -231,13 +232,16 @@ const CheckoutPage: React.FC = () => {
       <nav className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 px-4 md:px-8 py-3">
         <div className="container mx-auto flex items-center justify-between">
           <Logo />
-          <button
-            onClick={openModal}
-            className="flex items-center gap-2 bg-gray-900 text-white font-bold text-xs px-5 py-2.5 rounded-full hover:bg-black transition-colors"
-          >
-            <Download size={14} className="text-yellow-400" />
-            <span className="hidden sm:inline">Download All Courses</span>
-          </button>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <CountrySelector variant="light" />
+            <button
+              onClick={openModal}
+              className="flex items-center gap-2 bg-gray-900 text-white font-bold text-xs px-4 sm:px-5 py-2 sm:py-2.5 rounded-full hover:bg-black transition-colors"
+            >
+              <Download size={14} className="text-yellow-400" />
+              <span className="hidden sm:inline">Download All Courses</span>
+            </button>
+          </div>
         </div>
       </nav>
 

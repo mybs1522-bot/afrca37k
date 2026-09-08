@@ -1,9 +1,20 @@
+import { getCountryConfig, DEFAULT_COUNTRY } from './countryConfig';
+
 declare global {
   interface Window {
     fbq?: (...args: any[]) => void;
     _fbq?: any;
   }
 }
+
+const getActiveCountry = () => {
+  try {
+    const code = (typeof window !== 'undefined' && localStorage.getItem('user_country_code')) || DEFAULT_COUNTRY;
+    return getCountryConfig(code);
+  } catch {
+    return getCountryConfig(DEFAULT_COUNTRY);
+  }
+};
 
 const META_PIXEL_ID = '2219202925544751';
 const META_ACCESS_TOKEN = 'EAADE6Lnxf9MBSBGvJs8oC06YIuc1y8siRWiu9fE7JcU2oxpZCYS2Cxwwj28xyTCQJfgSwzZA7CwyqgG1ZC7hBHbedUBt2a2QhtZCGGj0nGiFJBUIAcBijaZBmZBDZBQNzTqbzamWrYd49gxPErYbF3DodmnZBruCm2nuE9bMLZCg27N1nNHybbKZCYg9IC6LN0nNEP3QZDZD';
@@ -140,21 +151,23 @@ export const trackPageView = () => {
 
 // 2. ViewContent
 export const trackViewContent = (params?: { content_name?: string; content_category?: string; value?: number; currency?: string }) => {
+  const active = getActiveCountry();
   return trackEvent('ViewContent', {
     content_name: 'Avada 12-Course Architecture Bundle',
     content_category: 'Architecture & 3D Design Education',
-    value: 37000,
-    currency: 'NGN',
+    value: active.price,
+    currency: active.currencyCode,
     ...params
   });
 };
 
 // 3. InitiateCheckout
 export const trackInitiateCheckout = (params?: { content_name?: string; value?: number; currency?: string; num_items?: number }) => {
+  const active = getActiveCountry();
   return trackEvent('InitiateCheckout', {
     content_name: 'Avada 12-Course Architecture Bundle',
-    value: 37000,
-    currency: 'NGN',
+    value: active.price,
+    currency: active.currencyCode,
     num_items: 12,
     ...params
   });
@@ -162,29 +175,32 @@ export const trackInitiateCheckout = (params?: { content_name?: string; value?: 
 
 // 4. Lead
 export const trackLead = (params?: { content_name?: string; value?: number; currency?: string }, userData?: { email?: string; phone?: string; name?: string }) => {
+  const active = getActiveCountry();
   return trackEvent('Lead', {
     content_name: 'Avada Course Student Lead',
-    value: 37000,
-    currency: 'NGN',
+    value: active.price,
+    currency: active.currencyCode,
     ...params
   }, userData);
 };
 
 // 5. AddPaymentInfo
 export const trackAddPaymentInfo = (params?: { content_name?: string; value?: number; currency?: string }, userData?: { email?: string; phone?: string; name?: string }) => {
+  const active = getActiveCountry();
   return trackEvent('AddPaymentInfo', {
     content_name: 'Avada 12-Course Architecture Bundle',
-    value: 37000,
-    currency: 'NGN',
+    value: active.price,
+    currency: active.currencyCode,
     ...params
   }, userData);
 };
 
 // 6. Purchase
 export const trackPurchase = (params?: { value?: number; currency?: string; content_name?: string; transaction_id?: string }, userData?: { email?: string; phone?: string; name?: string }) => {
+  const active = getActiveCountry();
   return trackEvent('Purchase', {
-    value: 37000,
-    currency: 'NGN',
+    value: active.price,
+    currency: active.currencyCode,
     content_name: 'Avada 12-Course Architecture Bundle',
     ...params
   }, userData);
@@ -210,10 +226,11 @@ export const trackContact = (params?: { method?: string; content_name?: string }
 
 // 9. AddToCart
 export const trackAddToCart = (params?: { content_name?: string; value?: number; currency?: string }) => {
+  const active = getActiveCountry();
   return trackEvent('AddToCart', {
     content_name: 'Avada Architecture Course',
-    value: 37000,
-    currency: 'NGN',
+    value: active.price,
+    currency: active.currencyCode,
     ...params
   });
 };
